@@ -1,0 +1,13 @@
+Todos los ejemplos CSS: https://www.w3schools.com/howto/howto_css_dropdown.asp
+
+Acordeon: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion
+Carrito: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push
+Header submenu: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_subnav
+Ejemplo pagina: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_zig_zag_layout&stacked=h
+Contador: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_coming_soon
+Rating: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_star_rating
+Notificacion: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_notification
+Fixed Header: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_menu
+Notificacion abajo por tiempo: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_snackbar
+Video : https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_fullscreen
+Smooth scroll: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_smooth_scroll
