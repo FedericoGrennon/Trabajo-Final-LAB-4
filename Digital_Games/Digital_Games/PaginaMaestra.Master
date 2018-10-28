@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -14,6 +14,125 @@
             background-color: #111;
             font-family: Arial, Helvetica, sans-serif, "Lato";
             margin: 0;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type=search] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 0px solid #ccc;
+            border-radius: 10px;
+            font-size: 13px;
+            background-color: #888;
+            background-image: url(http://www.flyingvoice.com/images/search.png);
+            background-position: 7px 7px; 
+            background-repeat: no-repeat;
+            padding: 7px 15px 7px 35px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            margin-top: 9px;
+        }
+
+        input[type=search]:focus {
+            width: 66%;
+            background-color:#d5d4d4;
+            color:black;
+        }
+
+        .paddingLogin {
+            padding: 16px;
+        }
+        
+        .botonesLogin {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        botonesLogin:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            color: white;
+            width: 100%;
+            padding: 10px 18px;
+            background-color: #f44336;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cancelbtn:hover{
+            opacity: 0.8;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 30px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto auto auto auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 30%; /* Could be more or less, depending on screen size */
+            height: auto;
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)} 
+            to {-webkit-transform: scale(1)}
+        }
+    
+        @keyframes animatezoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
         }
 
         .sidenav {
@@ -27,7 +146,6 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
-            margin-top: 46px;
         }
 
         .sidenav a {
@@ -54,9 +172,13 @@
             transition: margin-right .5s;
         }
 
+        #navbar{
+            transition: width .5s;
+        }
+
         @media screen and (max-height: 450px) {
-          .sidenav {padding-top: 15px;}
-          .sidenav a {font-size: 18px;}
+              .sidenav {padding-top: 15px;}
+              .sidenav a {font-size: 18px;}
         }
 
         .navbar {
@@ -73,6 +195,7 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .subnav {
@@ -118,71 +241,180 @@
         .subnav:hover .subnav-content {
             display: block;
         }
+
+        .home a:hover{
+            background-color: #333;
+        }
     </style>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+        $( "#datepicker" ).datepicker();
+        } );
+    </script>
 </head>
-<body>
+<body id="cuerpo">
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href ="#hola">Hola</a>
+        <a href ="#hola">Ir al carrito</a>
     </div>
 
-    <div class="navbar">
-        <a href="#home" onclick="openNav()">Home</a>
+    <div id="InicioSesion" class="modal">
+        <form id="iniciar" class="modal-content animate">
+            <div class="paddingLogin">
+                <label for="uname"><b>Usuario</b></label>
+                <input id="txb_nombreUsuario" type="text" placeholder="Ingrese usuario">
+
+                <label for="psw"><b>Contraseña</b></label>
+                <input id="txb_contraseña" type="password" placeholder="Ingrese contraseña">
+        
+                <label style="float: right">
+                <input id="chb_recordar" type="checkbox" checked="checked" /> Recordarme
+                </label>
+
+                <label style="display:none">
+                <input type="checkbox" checked="checked" name="Login" required />Iniciado
+                </label>
+
+                <button class="botonesLogin" id="btn_Login" type="submit">Iniciar Sesion</button>
+                <button class="botonesLogin" id="btn_registrarse" type="button" onclick="abrirRegistrarse()">Registrarse</button>
+                <button type="button" onclick="cerrarIniciar()" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+
+        <form id="regitrarse" class="modal-content animate" style="display:none">
+            <div class="paddingLogin">
+                <label><b>Datos de la cuenta</b></label>
+                <input id="txb_nombreUsuarioReg" type="text" placeholder="Usuario">
+                <input id="txb_MailReg" type="text" placeholder="Email">
+                <input id="txb_contraseñaReg" type="text" placeholder="Contraseña">
+                <input id="txb_ConfirmarcontraseñaReg" type="text" placeholder="Repita contraseña">
+
+                <label><b>Datos personales</b></label>
+                <input id="txb_NombreReg" type="text" placeholder="Nombre completo">
+                <input id="txb_ApellidoReg" type="text" placeholder="Apellido">
+                <input type="text" id="datepicker" placeholder="Fecha de nacimiento">
+                <input id="txb_Pais" type="text" placeholder="Pais">
+                <input id="txb_Provincia" type="text" placeholder="Provincia">
+                <input id="txb_Localidad" type="text" placeholder="Localidad">
+                <input id="txb_Telefono" type="text" placeholder="Telefono">
+
+                <button class="botonesLogin" id="btn_NuevaCuenta" type="button">Crear cuenta</button>
+
+                <button type="button" onclick="abrirIniciar()" class="cancelbtn">Volver</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="navbar" class="navbar" style="display: block">
+        <div class="home" style="float:left"><a href="#home">DigitalGames</a></div>
+        <a href="#carrito" onclick="openNav()">Carrito</a>
+        <a href="#Login" onclick="abrirIniciar()">Inicio Sesion / Registrarse</a>
         <div class="subnav">
-        <button class="subnavbtn" onmouseover="AbrirSubMenu()" onmouseout="CerrarSubMenu()">About <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content" onmouseover="AbrirSubMenu()" onmouseout="CerrarSubMenu()">
-            <a href="#company">Company</a>
-            <a href="#team">Team</a>
-            <a href="#careers">Careers</a>
+        <button class="subnavbtn" style="cursor:pointer">Categorias</button>
+        <div class="subnav-content">
+            <a href="#FPS">FPS</a>
+            <a href="#Roll">Roll</a>
+            <a href="#MOBA">MOBA</a>
+            <a href="#Estrategia">Estrategia</a>
         </div>
         </div> 
         <div class="subnav">
-        <button class="subnavbtn" onmouseover="AbrirSubMenu()" onmouseout="CerrarSubMenu()">Services <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content" onmouseover="AbrirSubMenu()" onmouseout="CerrarSubMenu()">
+        <button class="subnavbtn" style="cursor:pointer">Consolas</button>
+        <div class="subnav-content">
+            <a href="#WII">WII</a>
+            <a href="#PC">PC</a>
+            <a href="#PS4">PS4</a>
+            <a href="#XBOX">XBOX</a>
+        </div>
+        </div>
+        <input id="txb_buscar" type="search" name="buscar" placeholder="Buscar..">
+    </div>
+
+    <div id="navbarIniciado" class="navbar" style="display: none">
+        <div class="home" style="float:left"><a href="#home">DigitalGames</a></div>
+        <a href="#carrito" onclick="openNav()">Carrito</a>
+        
+         <div class="subnav">
+        <button class="subnavbtn" style="cursor:pointer">Nombre Usuario</button>
+        <div class="subnav-content">
             <a href="#bring">Bring</a>
             <a href="#deliver">Deliver</a>
             <a href="#package">Package</a>
             <a href="#express">Express</a>
         </div>
         </div> 
+
         <div class="subnav">
-        <button class="subnavbtn" onmouseover="AbrirSubMenu()" onmouseout="CerrarSubMenu()">Partners <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content" onmouseover="AbrirSubMenu()" onmouseout="CerrarSubMenu()">
-            <a href="#link1">Link 1</a>
-            <a href="#link2">Link 2</a>
-            <a href="#link3">Link 3</a>
-            <a href="#link4">Link 4</a>
+        <button class="subnavbtn" style="cursor:pointer">Categorias</button>
+        <div class="subnav-content">
+            <a href="#FPS">FPS</a>
+            <a href="#Roll">Roll</a>
+            <a href="#MOBA">MOBA</a>
+            <a href="#Estrategia">Estrategia</a>
+        </div>
+        </div> 
+        <div class="subnav">
+        <button class="subnavbtn" style="cursor:pointer">Consolas</button>
+        <div class="subnav-content">
+            <a href="#WII">WII</a>
+            <a href="#PC">PC</a>
+            <a href="#PS4">PS4</a>
+            <a href="#XBOX">XBOX</a>
         </div>
         </div>
-        <a href="#contact">Contact</a>
+        <input id="txb_buscar" type="search" name="buscar" placeholder="Buscar..">
     </div>
 
-    
-
-    <div id="main">
-        <div style="margin-top: 46px;">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+    <div id="main" style="margin-top: 46px;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
     </div>
 
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("main").style.marginRight = "250px";
+            document.getElementById("navbar").style.width = "87%";
         }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginRight= "0";
+            document.getElementById("main").style.marginRight = "0";
+            document.getElementById("navbar").style.width = "100%";
         }
 
-        function AbrirSubMenu() {
-            document.getElementById("mySidenav").style.marginTop = "92px";
+        var modal = document.getElementById('InicioSesion');
+        var cuerpo = document.getElementById('cuerpo');
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                cerrarIniciar();
+            }
         }
 
-        function CerrarSubMenu() {
-            document.getElementById("mySidenav").style.marginTop = "46px";
+        function cerrarIniciar() {
+            modal.style.display = "none";
+            cuerpo.style.overflow = "auto";
+        }
+
+        function abrirIniciar() {
+            modal.style.display = 'block';
+            document.getElementById("iniciar").style.display = "block";
+            document.getElementById("regitrarse").style.display = "none";
+
+            cuerpo.style.overflow = "hidden";
+        }
+
+        function abrirRegistrarse() {
+            document.getElementById("iniciar").style.display = "none";
+            document.getElementById("regitrarse").style.display = "block";
+
+            cuerpo.style.overflow = "hidden";
         }
     </script>
 </body>

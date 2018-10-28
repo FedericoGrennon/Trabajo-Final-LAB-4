@@ -51,53 +51,78 @@
             width: 100%;
           }
         }
+
+        .center {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color:#333;
+        }
+
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: white;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {background-color: #ddd;}
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!-- PRIMER JUEGO -->
     <div class="container" style="background:url(https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2013/01/205245-20-mejores-juegos-wii.jpg)no-repeat bottom;background-size:cover">
       <div class="row">
         <div class="column-66">
-          <h1 class="xlarge-font"><b>The App</b></h1>
-          <h1 class="large-font" style="color:MediumSeaGreen;"><b>Why buy it?</b></h1>
-          <p><span style="font-size:36px">Take photos like a pro.</span> You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <button class="button">Download Application</button>
+          <h1 class="xlarge-font"><b>Titulo</b></h1>
+          <p>Breve descripcion.</p>
+          <button class="button">Entrar Juego</button>
         </div>
       </div>
     </div>
 
-    <!-- SEGUNDO JUEGO -->
     <div class="container" style="background:url(https://cdn4.areajugones.es/wp-content/uploads/2017/04/counter-strike-global-offensive-810x400.png)no-repeat bottom;background-size:cover">
       <div class="row">
         <div class="column-66" style="text-align:right; float: right">
-          <h1 class="xlarge-font"><b>Clarity</b></h1>
-          <h1 class="large-font" style="color:red;"><b>Pixels, who?</b></h1>
-          <p><span style="font-size:24px">A revolution in resolution.</span> aaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaa aaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa</p>
-          <button class="button" style="background-color:red">Read More</button>
+          <h1 class="xlarge-font"><b>Titulo</b></h1>
+          <p>Breve descripcion.</p>
+          <button class="button">Entrar Juego</button>
         </div>
       </div>
     </div>
 
-    <!-- TERCER JUEGO -->
     <div class="container" style="background:url(https://d2skuhm0vrry40.cloudfront.net/2018/articles/2018-07-30-11-26/titan-quest-review-not-all-switch-ports-are-created-equal-1532946388292.jpg/EG11/thumbnail/1920x1080/format/jpg/1987099.jpg)no-repeat bottom;background-size:cover">
       <div class="row">
         <div class="column-66">
-          <h1 class="xlarge-font"><b>The App</b></h1>
-          <h1 class="large-font" style="color:MediumSeaGreen;"><b>Why buy it?</b></h1>
-          <p><span style="font-size:36px">Take photos like a pro.</span> You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          <button class="button">Download Application</button>
+          <h1 class="xlarge-font"><b>Titulo</b></h1>
+          <p>Breve descripcion.</p>
+          <button class="button">Entrar Juego</button>
         </div>
       </div>
     </div>
 
-    <div class="container" style="background:url(https://andaluciagame.andaluciainformacion.es/wp-content/uploads/2018/03/Quake_Champions_March_Update_01_1520518852.jpg)no-repeat bottom;background-size:cover">
-      <div class="row">
-        <div class="column-66" style="text-align:right; float: right">
-          <h1 class="xlarge-font"><b>The App</b></h1>
-          <h1 class="large-font" style="color:MediumSeaGreen;"><b>Why buy it?</b></h1>
-          <p><span style="font-size:36px">Take photos like a pro.</span> You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          <button class="button">Download Application</button>
-        </div>
+    <div class="center">
+      <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#1" class="active">1</a>
+        <a href="#2">2</a>
+        <a href="#3">3</a>
+        <a href="#4">4</a>
+        <a href="#5">5</a>
+        <a href="#6">6</a>
+        <a href="#">&raquo;</a>
       </div>
     </div>
 </asp:Content>

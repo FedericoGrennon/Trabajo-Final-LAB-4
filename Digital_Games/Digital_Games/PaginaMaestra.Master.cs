@@ -11,7 +11,7 @@ namespace Digital_Games
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
