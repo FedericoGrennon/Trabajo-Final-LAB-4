@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApartadoJuegos.aspx" />
+    <Content Include="JuegosConFiltros.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +79,13 @@
     </Compile>
     <Compile Include="ApartadoJuegos.aspx.designer.cs">
       <DependentUpon>ApartadoJuegos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JuegosConFiltros.aspx.cs">
+      <DependentUpon>JuegosConFiltros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JuegosConFiltros.aspx.designer.cs">
+      <DependentUpon>JuegosConFiltros.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>

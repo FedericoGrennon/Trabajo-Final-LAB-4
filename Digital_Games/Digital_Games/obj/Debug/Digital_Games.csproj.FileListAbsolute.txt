@@ -56,3 +56,119 @@ D:\UTN\2do AÑO\Lab 4\TP\TP Integrador\Trabajo-Final-LAB-4\Digital_Games\Digital
 D:\UTN\2do AÑO\Lab 4\TP\TP Integrador\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CopyComplete
 D:\UTN\2do AÑO\Lab 4\TP\TP Integrador\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.dll
 D:\UTN\2do AÑO\Lab 4\TP\TP Integrador\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.pdb
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Digital_Games.dll.config
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Digital_Games.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Digital_Games.pdb
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csc.exe
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csc.exe.config
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csc.rsp
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csi.exe
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csi.exe.config
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csi.rsp
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.AppContext.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Console.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.Compression.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.Pipes.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Claims.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Threading.Thread.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.ValueTuple.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XPath.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\vbc.exe
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\vbc.exe.config
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\vbc.rsp
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\VBCSCompiler.exe
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csprojResolveAssemblyReference.cache
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CoreCompileInputs.cache
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CopyComplete
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.pdb
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Digital_Games.dll.config
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Digital_Games.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Digital_Games.pdb
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csc.exe
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csc.exe.config
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csc.rsp
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csi.exe
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csi.exe.config
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\csi.rsp
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.AppContext.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Console.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.Compression.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.IO.Pipes.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Claims.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Threading.Thread.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.ValueTuple.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XPath.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\vbc.exe
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\vbc.exe.config
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\vbc.rsp
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\VBCSCompiler.exe
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csprojResolveAssemblyReference.cache
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CoreCompileInputs.cache
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CopyComplete
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.dll
+C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.pdb
