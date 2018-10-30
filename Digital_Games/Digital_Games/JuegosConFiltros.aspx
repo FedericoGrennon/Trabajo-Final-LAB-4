@@ -4,69 +4,65 @@
 
 <style>
 
-html {
-  box-sizing: border-box;
-}
+    html {
+      box-sizing: border-box;
+    }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
 
-.column {
-  float: left;
-  width: 31%;
-  margin-bottom: 50px;
-  margin-left: 2%;
-}
+    .column {
+      float: left;
+      width: 31%;
+      margin-bottom: 50px;
+      margin-left: 2%;
+    }
 
-@media screen and (max-width: 300px) {
-  .column {
-    width: 100%;
-    /*display: ;*/
-  }
-}
+    @media screen and (max-width: 300px) {
+      .column {
+        width: 100%;
+        /*display: ;*/
+      }
+    }
 
-.card {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
-}
+    .card {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    }
 
-.container {
-  width: auto;
-  color: white;
-}
+    .container {
+      width: auto;
+      color: white;
+    }
 
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+    .container::after, .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
 
-.title {
-  color: white;
-}
+    .title {
+      color: white;
+    }
 
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #3a7e34;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #3a7e34;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
 
-.button:hover {
-  background-color: #808080;
-}
+    .button:hover {
+      background-color: #808080;
+    }
 </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<h2>Responsive "Meet The Team" Section</h2>
-<p>Resize the browser window to see the effect.</p>
-<br>
-
 <div class="row">
   <div class="column">
     <div class="card">
