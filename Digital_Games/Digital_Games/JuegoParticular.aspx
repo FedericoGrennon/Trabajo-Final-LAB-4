@@ -3,18 +3,28 @@
     <style>
         .titulo{
            padding-top: 20px;
-           padding-left: 20px;
+           padding-left: 15px;
+           padding-bottom: 10px;
+        }
+
+           .subtitulo{
+           padding-top: 20px;
+           padding-left: 25px;
+           padding-bottom: 15px;
+           font-size: 20px;
+           color: white;
+           font-family: Candara;
         }
 
         .titulo a{
             color: white;
             padding: 20px;
-            font-size: 64px;
+            font-size: 55px;
         }
 
         .imagenesGrandes{
             width: 100%;
-            height: 600px;
+            height: 400px;
         }
 
         .imagenesChicas{
@@ -26,6 +36,7 @@
             background-color: black;
             border:5px solid #000000;
             width: 50%;
+            margin-left: 15px;
         }
 
         .mySlides {
@@ -45,7 +56,7 @@
         }
 
         .row{
-            width: 100%;
+            width: auto;
             margin: auto; 
             text-align: center; 
         }
@@ -59,7 +70,7 @@
         .column {
             border:5px solid #000000;
             float: left;
-            width:16%;
+            width:20%;
         }
 
         .scroller{ 
@@ -77,6 +88,58 @@
         .demo:hover {
           opacity: 1;
         }
+
+        .accordion {
+            background-color: #3c456d;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 97.5%;
+            border: none;
+            margin-left: 15px;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active, .accordion:hover {
+            background-color: #7ea8b4; 
+        }
+
+        .panel {
+            display: none;
+            background-color: whitesmoke;
+            overflow: hidden;
+            margin-left: 15px;
+            width: 97.5%;
+
+        }
+
+        .price {
+          color: grey;
+          font-size: 22px;
+          text-align:right;
+        }
+
+        .card button {
+          border: none;
+          outline: 0;
+          float:right;
+          text-align:right;
+          color: white;
+          background-color: #48924e;
+          text-align: center;
+          cursor: pointer;
+          width: 30%;
+          font-size: 18px;
+          padding: 12px;
+        }
+
+        .card button:hover {
+          opacity: 0.7;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -84,7 +147,13 @@
         <a />Titulo Juego
     </div>
 
-    <div class="container">
+    <div class="container"position: "relative;">
+        <div class="card"style="position: absolute; left: 20%; top: 30%">
+          <h1>Precio</h1>
+          <p class="price">$19.99</p>
+          <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum. </p>
+          <p><button>Add to Cart</button></p>
+     </div>
         <div class="mySlides">
             <img class="imagenesGrandes" src="https://steamcdn-a.akamaihd.net/steam/apps/949380/ss_ddc8f5027ed86b086a7469ac97180da121c18b35.600x338.jpg?t=1540435725">
         </div>
@@ -137,6 +206,25 @@
         </div>
     </div>
 
+     <div class="subtitulo">
+        <a />Información sobre el juego:
+    </div>
+
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
     <script>
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -161,7 +249,23 @@
       slides[slideIndex-1].style.display = "block";
       dots[slideIndex-1].className += " active";
       captionText.innerHTML = dots[slideIndex-1].alt;
-    }
+        }
+
+    var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
     </script>
     </a>
 </asp:Content>
