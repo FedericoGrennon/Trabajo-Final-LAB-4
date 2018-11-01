@@ -121,6 +121,7 @@
           width: 100%;
           font-size: 18px;
           padding: 12px;
+          margin: 5px;
         }
 
         .checked {
@@ -197,7 +198,8 @@
                 <a>Counter strike: Global offensive</a>
             </div>
             
-            <div class="price">ARS $1558.00</div>
+            <div class="price"><s>ARS $1558.00</s></div>
+            <div class="price">ARS $1220.00</div>
             
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
@@ -207,6 +209,7 @@
 
             <div class="stock"><div style="float:left; width: 100px"><input id="txb_cantAcomprar" type="text" placeholder="Cantidad"></div><div style="float:left; width: 150px; height:57px; margin-top: 15px"><a>(4 disponibles)</a></div></div>
             <button>Añadir al carrito</button>
+            <button style="background-color:#0885e2">Comprar ahora</button>
         </div>
     </div>
     

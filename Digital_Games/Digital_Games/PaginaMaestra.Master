@@ -6,8 +6,6 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
     <style>
         body
         {
@@ -256,6 +254,9 @@
         $( "#datepicker" ).datepicker();
         } );
     </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body id="cuerpo">
     <div id="mySidenav" class="sidenav">
@@ -390,10 +391,14 @@
 
         var modal = document.getElementById('InicioSesion');
         var cuerpo = document.getElementById('cuerpo');
+        var modal2 = document.getElementById('Modificar');
 
         window.onclick = function(event) {
             if (event.target == modal) {
                 cerrarIniciar();
+            }
+            if (event.target == modal2) {
+                cerrarModificar();
             }
         }
 
