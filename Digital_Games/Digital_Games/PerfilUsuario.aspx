@@ -189,6 +189,7 @@
                         <div><h4>Precio: </h4> <a>ARS $1500</a></div>
                         <div><h4>Fecha de compra: </h4> <a>11/11/1997</a></div>
                         <div><h4>Ultimos 4 digitos de tarjeta: </h4> <a>4455</a></div>
+                        <div><h4>Codigo de activacion: </h4> <a>4455 5558 15SA</a></div>
                     </div>
                 </form>
             </div>

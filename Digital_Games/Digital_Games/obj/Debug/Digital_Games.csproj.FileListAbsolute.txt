@@ -172,3 +172,118 @@ C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Di
 C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CopyComplete
 C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.dll
 C:\Users\fedea\Desktop\Nueva carpeta\Tp Lab\Trabajo-Final-LAB-4\Digital_Games\Digital_Games\obj\Debug\Digital_Games.pdb
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\Digital_Games.dll.config
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\Digital_Games.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\Digital_Games.pdb
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\csc.exe
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\csc.exe.config
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\csc.rsp
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\csi.exe
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\csi.exe.config
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\csi.rsp
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.AppContext.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Collections.Immutable.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Console.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.Process.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.IO.Compression.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.IO.Pipes.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Reflection.Metadata.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Security.AccessControl.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Security.Claims.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Threading.Thread.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.ValueTuple.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XPath.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\vbc.exe
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\vbc.exe.config
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\vbc.rsp
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\VBCSCompiler.exe
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\roslyn\VBCSCompiler.exe.config
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csprojResolveAssemblyReference.cache
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CoreCompileInputs.cache
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\obj\Debug\Digital_Games.dll
+E:\Lab 4\TP\TP Integrador\Digital_Games\Digital_Games\obj\Debug\Digital_Games.pdb
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\Digital_Games.dll.config
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\Digital_Games.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\Digital_Games.pdb
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\csc.exe
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\csc.exe.config
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\csc.rsp
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\csi.exe
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\csi.exe.config
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\csi.rsp
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.AppContext.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Console.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.IO.Compression.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Security.Claims.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.ValueTuple.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\vbc.exe
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\vbc.exe.config
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\vbc.rsp
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\VBCSCompiler.exe
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csprojAssemblyReference.cache
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CoreCompileInputs.cache
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\obj\Debug\Digital_Games.csproj.CopyComplete
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\obj\Debug\Digital_Games.dll
+C:\Users\Grennon\Desktop\Digital_Games\Digital_Games\obj\Debug\Digital_Games.pdb
