@@ -69,8 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApartadoJuegos.aspx" />
+    <Content Include="Carrito.aspx" />
     <Content Include="JuegoParticular.aspx" />
     <Content Include="JuegosConFiltros.aspx" />
+    <Content Include="PerfilUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +82,13 @@
     </Compile>
     <Compile Include="ApartadoJuegos.aspx.designer.cs">
       <DependentUpon>ApartadoJuegos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="JuegoParticular.aspx.cs">
       <DependentUpon>JuegoParticular.aspx</DependentUpon>
@@ -101,6 +110,13 @@
     </Compile>
     <Compile Include="PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
