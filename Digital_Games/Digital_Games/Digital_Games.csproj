@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarQuitarJuego.aspx" />
     <Content Include="ApartadoJuegos.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="JuegoParticular.aspx" />
@@ -76,6 +77,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarQuitarJuego.aspx.cs">
+      <DependentUpon>AgregarQuitarJuego.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarQuitarJuego.aspx.designer.cs">
+      <DependentUpon>AgregarQuitarJuego.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ApartadoJuegos.aspx.cs">
       <DependentUpon>ApartadoJuegos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

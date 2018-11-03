@@ -245,6 +245,33 @@
         .home a:hover{
             background-color: #333;
         }
+
+        .myUL {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .myUL li a {
+          border: 1px solid #ddd;
+          margin-top: -1px;
+          background-color: #f6f6f6;
+          padding: 12px;
+          text-decoration: none;
+          font-size: 18px;
+          color: black;
+          display: block
+        }
+
+        .myUL li a:hover:not(.header) {
+          background-color: #eee;
+        }
+
+        #listaJuegos{
+            padding: 5px;
+            overflow: auto;
+            max-height: 300px;
+        }
     </style>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -313,45 +340,41 @@
         </form>
     </div>
 
-    <div id="navbar" class="navbar" style="display: block">
+    <div id="modifJuego" class="modal">
+        <form id="ModificarJuego" class="modal-content animate"">
+            <div class="paddingLogin">
+                <label for="uname"><b>Nombre juego</b></label>
+                <input id="txb_nombreJuego" type="text" placeholder="Buscar juego..." onkeyup="filtrarJuego()">
+
+                <div id="listaJuegos">
+                    <ul id="myUL" class="myUL">
+                      <li><a href="#">Adeleee e e e e e e e e  e e e e e e e e eeeafdsf e fsf sg df gdfg dfg dgdfg </a></li>
+                      <li><a href="#">Agnes</a></li>
+
+                      <li><a href="#">Billy</a></li>
+                      <li><a href="#">Bob</a></li>
+
+                      <li><a href="#">Calvin</a></li>
+                      <li><a href="#">Christina</a></li>
+                      <li><a href="#">Cindy</a></li>
+                    </ul>
+                </div>
+                <button type="button" onclick="cerrarModificarJuego()" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="navbar" class="navbar">
         <div class="home" style="float:left"><a href="#home">DigitalGames</a></div>
         <a href="#carrito" onclick="openNav()">Carrito</a>
         <a href="#Login" onclick="abrirIniciar()">Inicio Sesion / Registrarse</a>
         <div class="subnav">
-        <button class="subnavbtn" style="cursor:pointer">Categorias</button>
-        <div class="subnav-content">
-            <a href="#FPS">FPS</a>
-            <a href="#Roll">Roll</a>
-            <a href="#MOBA">MOBA</a>
-            <a href="#Estrategia">Estrategia</a>
-        </div>
-        </div> 
-        <div class="subnav">
-        <button class="subnavbtn" style="cursor:pointer">Consolas</button>
-        <div class="subnav-content">
-            <a href="#WII">WII</a>
-            <a href="#PC">PC</a>
-            <a href="#PS4">PS4</a>
-            <a href="#XBOX">XBOX</a>
-        </div>
-        </div>
-        <input id="txb_buscar" type="search" name="buscar" placeholder="Buscar..">
-    </div>
-
-    <div id="navbarIniciado" class="navbar" style="display: none">
-        <div class="home" style="float:left"><a href="#home">DigitalGames</a></div>
-        <a href="#carrito" onclick="openNav()">Carrito</a>
-        
-         <div class="subnav">
         <button class="subnavbtn" style="cursor:pointer">Nombre Usuario</button>
         <div class="subnav-content">
-            <a href="#bring">Bring</a>
-            <a href="#deliver">Deliver</a>
-            <a href="#package">Package</a>
-            <a href="#express">Express</a>
+            <a href="#bring">Perfil</a>
+            <a href="#deliver">Cerrar sesion</a>
         </div>
         </div> 
-
         <div class="subnav">
         <button class="subnavbtn" style="cursor:pointer">Categorias</button>
         <div class="subnav-content">
@@ -362,14 +385,16 @@
         </div>
         </div> 
         <div class="subnav">
-        <button class="subnavbtn" style="cursor:pointer">Consolas</button>
-        <div class="subnav-content">
-            <a href="#WII">WII</a>
-            <a href="#PC">PC</a>
-            <a href="#PS4">PS4</a>
-            <a href="#XBOX">XBOX</a>
+            <button class="subnavbtn" style="cursor:pointer">Consolas</button>
+            <div class="subnav-content">
+                <a href="#WII">WII</a>
+                <a href="#PC">PC</a>
+                <a href="#PS4">PS4</a>
+                <a href="#XBOX">XBOX</a>
+            </div>
         </div>
-        </div>
+        <a href="#agregar">Agregar Juego</a>
+        <a href="#modificar" onclick="abrirModificarJuego()">Modificar Juego</a>
         <input id="txb_buscar" type="search" name="buscar" placeholder="Buscar..">
     </div>
 
@@ -394,6 +419,7 @@
         var modal = document.getElementById('InicioSesion');
         var cuerpo = document.getElementById('cuerpo');
         var modal2 = document.getElementById('Modificar');
+        var modal3 = document.getElementById('modifJuego');
 
         window.onclick = function(event) {
             if (event.target == modal) {
@@ -401,6 +427,9 @@
             }
             if (event.target == modal2) {
                 cerrarModificar();
+            }
+            if (event.target == modal3) {
+                cerrarModificarJuego();
             }
         }
 
@@ -422,6 +451,33 @@
             document.getElementById("regitrarse").style.display = "block";
 
             cuerpo.style.overflow = "hidden";
+        }
+
+        function abrirModificarJuego() {
+            modal3.style.display = "block";
+
+            cuerpo.style.overflow = "hidden";
+        }
+
+        function cerrarModificarJuego() {
+            modal3.style.display = "none";
+            cuerpo.style.overflow = "auto";
+        }
+
+        function filtrarJuego() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("txb_nombreJuego");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
         }
     </script>
 </body>

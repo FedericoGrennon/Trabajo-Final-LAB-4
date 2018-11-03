@@ -194,6 +194,15 @@
                 </form>
             </div>
         </div>
+
+        <div class="datosCuenta">
+            <p>Privacidad de la cuenta</p>
+            <div>
+                <div><a style="color:red; font-weight: bold; -webkit-text-stroke: 0.7px white; font-size: 25px; letter-spacing: 1px">¡ATENCION!</a><a> Al cerrar su cuenta se eliminarán todos sus datos y es irreversible.</a></div>
+                <div><button class="botonEliminar" style="padding: 10px 17px; margin: 0">Cerrar cuenta</button></div>
+                
+            </div>
+        </div>
     </div>
 
     <script>
