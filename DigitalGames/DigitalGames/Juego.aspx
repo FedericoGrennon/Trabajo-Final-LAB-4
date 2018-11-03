@@ -18,6 +18,10 @@
             height: 65px;
         }
 
+        .imagenesChicas:hover{
+            opacity: 0.5;
+        }
+
         .container {
             background-color: rgba(29, 46, 74, 0.70);
             width: 100%;
@@ -45,14 +49,14 @@
 
         .column {
             border:2.5px solid rgba(21, 40, 56, 0.70);
-            float: left;
+            display: inline-block;
         }
 
         .scroller{ 
-            overflow-x: auto;
-            overflow-y: auto;
-            width: 617px;
-            height: 75px;
+            overflow: auto;
+            white-space: nowrap;
+            width: 600px;
+            height: auto;
         } 
 
         .accordion {
