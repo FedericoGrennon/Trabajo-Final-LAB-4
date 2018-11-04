@@ -8,6 +8,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
     <style>
+        /* Alto y ancho */
+        ::-webkit-scrollbar {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* Parte de abajo */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px white; 
+            border-radius: 10px;
+        }
+ 
+        /* Parte de arriba */
+        ::-webkit-scrollbar-thumb {
+            background: #317bb2;
+            border-radius: 10px;
+        }
+
+        /* moviendo o arriba */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #245c86;
+        }
+
         body
         {
             background-color: #203a51;
@@ -29,17 +52,18 @@
             box-sizing: border-box;
             border: 0px solid #ccc;
             border-radius: 10px;
-            font-size: 13px;
-            background-color: #888;
+            font-size: 15px;
+            background-color: #90b3cb;
             padding: 7px 15px 7px 15px;
             -webkit-transition: width 0.4s ease-in-out;
             transition: width 0.4s ease-in-out;
             margin-top: 9px;
+            font-weight: bold;
         }
 
         input[type=search]:focus {
             width: 200px;
-            background-color:#d5d4d4;
+            background-color:#aed0e6;
             color:black;
         }
 
@@ -135,7 +159,7 @@
             position: fixed;
             top: 0;
             right: 0;
-            background-color: #333;
+            background-color: #4e7797;
             overflow: hidden;
             transition: 0.5s;
         }
@@ -147,7 +171,7 @@
         }
 
         .irCarrito button{
-            background-color: #222;
+            background-color: #33526b;
             text-decoration: none;
             color: white;
             cursor: pointer;
@@ -195,12 +219,12 @@
         .contenidoCarrito{
             width:auto; 
             height:500px; 
-            max-height: 500px; 
-            border:2px solid white; 
+            max-height: 500px;
             border-radius: 7px; 
             padding: 5px; 
             margin:10px 10px 0 10px;
             overflow-y:auto;
+            background-color:#33526b;
         }
 
         #main {
@@ -217,7 +241,7 @@
         }
 
         .navbar {
-            background-color: #333;
+            background-color: #4e7797;
             position: initial;
             top: 0;
             width: 100%;
@@ -234,7 +258,7 @@
         }
 
         .navbar a:hover, .contenidoDrop p:hover{
-            background-color: blue;
+            background-color: #436783;
         }
 
         .drop{
@@ -245,7 +269,7 @@
         .contenidoDrop{
             position:fixed;
             display: none;
-            background-color: #333;
+            background-color: #4e7797;
             text-align: center;
             max-height:300px;
             overflow-y: auto;
