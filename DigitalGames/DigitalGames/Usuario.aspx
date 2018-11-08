@@ -6,7 +6,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
-        $( "#fecha" ).datepicker();
+        $( "#<%=txb_fechaNacUsuario.ClientID%>" ).datepicker();
         } );
     </script>
 
@@ -48,7 +48,12 @@
             color: white;
         }
 
-        .datosCuenta form{
+        .camposUsuario{
+            font-size: 16px;
+            color: white;
+        }
+
+        .formularioDatosCuenta{
             border: 2px solid white;
             border-radius: 5px 6px;
             overflow: auto;
@@ -80,16 +85,6 @@
             padding: 4px 7px;
             background-color: red;
             margin-left: 10px;
-            border: 0.5px solid white;
-            cursor: pointer;
-            border-radius: 5px 6px;
-        }
-
-        .botonAgregar{
-            color: white;
-            width: auto;
-            padding: 7px 10px;
-            background-color: green;
             border: 0.5px solid white;
             cursor: pointer;
             border-radius: 5px 6px;
@@ -127,119 +122,154 @@
         .paneles {
             display: none;
             background-color: transparent;
-            overflow: hidden;
+            overflow: auto;
+            max-height: 400px;
+            height: auto;
             margin:auto auto auto auto;
             text-align:center;
             width: 500px;
+        }
+
+        .campoAmodificarUsuario{
+            font-weight:bold;
+            font-size: 20px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="Modificar" class="modal">
-        <form id="modif" class="modal-content animate">
+        <div id="modif" class="modal-content animate">
             <div class="paddingLogin">
-                <label for="uname"><b id="campoModificar"></b></label>
+                <asp:Label runat="server" CssClass="campoAmodificarUsuario" ID="lbl_campoModificarUsuario" Text="campoModificar" />
                 <div id="txbNormal">
-                    <input id="txb_modificar" type="text" >
+                    <asp:TextBox runat="server" ID="txb_modificarUsuario" />
                 </div>
                 
                 <div id="fechaNac">
-                    <input type="text" id="fecha">
+                    <asp:TextBox runat="server" ID="txb_fechaNacUsuario" />
                 </div>
 
                 <div id="repitaContra">
-                    <input type="password" >
+                    <asp:TextBox runat="server" type="password" />
                     <label for="psw"><b>Repita contraseña</b></label>
-                    <input type="password" >
+                    <asp:TextBox runat="server" ID="txb_contraseñaUsuario" type="password" />
                 </div>
 
-                <button class="botonesLogin" id="btn_Modificar" type="button">Modificar</button>
+                <asp:Button runat="server" CssClass="botonesLogin" id="btn_ModificarUsuario" Text="Modificar" />
                 <button type="button" onclick="cerrarModificar()" class="cancelbtn">Cancel</button>
             </div>
-        </form>
+        </div>
     </div>
     
     <div class="contenedor">
         <div class="datosCuenta">
-            <button class="accordion">
+            <button class="accordion" onclick="return false">
                 <p>Datos de la cuenta</p>
             </button>
             <div class="paneles">
-                <div><h4>Usuario: </h4> <a>Fedex</a> <button class="botonModificar" onclick="abrirModificar('Usuario')">Modificar</button></div>
-                <div><h4>Email: </h4> <a>fede@hotmail.com</a> <button class="botonModificar" onclick="abrirModificar('Email')">Modificar</button></div>
-                <div><h4>Contraseña: </h4> <a>******</a> <button class="botonModificar" onclick="abrirModificar('Contraseña')">Modificar</button></div>
+                <div><h4>Usuario: </h4> <asp:Label runat="server" ID="lbl_nombreUsuario" CssClass="camposUsuario" Text="Fedex" /> <button class="botonModificar" onclick="abrirModificar('Usuario'); return false;">Modificar</button></div>
+                <div><h4>Email: </h4> <asp:Label runat="server" ID="lbl_EmailUsuario" CssClass="camposUsuario" Text="fede@hotmail.com" /> <button class="botonModificar" onclick="abrirModificar('Email'); return false;">Modificar</button></div>
+                <div><h4>Contraseña: </h4> <asp:Label runat="server" ID="lbl_contraseñaUsuario" CssClass="camposUsuario" Text="pepito97" /> <button class="botonModificar" onclick="abrirModificar('Contraseña'); return false;">Modificar</button></div>
             </div>
         </div>
         <div class="datosCuenta">
-            <button class="accordion">
+            <button class="accordion" onclick="return false">
                 <p>Datos personales</p>
             </button>
             <div class="paneles">
-                <div><h4>Nombre completo: </h4> <a>Federico</a> <button class="botonModificar" onclick="abrirModificar('Nombre completo')">Modificar</button></div>
-                <div><h4>Apellido: </h4> <a>Grennon</a> <button class="botonModificar" onclick="abrirModificar('Apellido')">Modificar</button></div>
-                <div><h4>Fecha de nacimineto: </h4> <a>11/11/1997</a> <button class="botonModificar" onclick="abrirModificar('Fecha de nacimiento')">Modificar</button></div>
-                <div><h4>Pais: </h4> <a>Argentina</a> <button class="botonModificar" onclick="abrirModificar('Pais')">Modificar</button></div>
-                <div><h4>Provincia: </h4> <a>Buenos Aires</a> <button class="botonModificar" onclick="abrirModificar('Provincia')">Modificar</button></div>
-                <div><h4>Localidad: </h4> <a>Garin</a> <button class="botonModificar" onclick="abrirModificar('Localidad')">Modificar</button></div>
-                <div><h4>Telefono: </h4> <a>1145465657</a> <button class="botonModificar" onclick="abrirModificar('Telefono')">Modificar</button></div>
+                <div>
+                    <h4>Nombre completo: </h4> 
+                    <asp:Label runat="server" ID="lbl_nombreCompletoUsuario" CssClass="camposUsuario" Text="Federico" /> 
+                    <button class="botonModificar" onclick="abrirModificar('Nombre completo'); return false;">Modificar</button>
+                </div>
+                <div>
+                    <h4>Apellido: </h4> 
+                    <asp:Label runat="server" ID="lbl_apellidoUsuario" CssClass="camposUsuario" Text="Grennon" /> 
+                    <button class="botonModificar" onclick="abrirModificar('Apellido'); return false;">Modificar</button>
+                </div>
+                <div>
+                    <h4>Fecha de nacimineto: </h4> 
+                    <asp:Label runat="server" ID="lbl_fechaNacUsuario" CssClass="camposUsuario" Text="08/01/1997" /> 
+                    <button class="botonModificar" onclick="abrirModificar('Fecha de nacimiento'); return false;">Modificar</button>
+                </div>
+                <div>
+                    <h4>Pais: </h4> 
+                    <asp:Label runat="server" ID="lbl_paisUsuario" CssClass="camposUsuario" Text="Argentinta" />  
+                    <button class="botonModificar" onclick="abrirModificar('Pais'); return false;">Modificar</button>
+                </div>
+                <div>
+                    <h4>Provincia: </h4> 
+                    <asp:Label runat="server" ID="lbl_provinciaUsuario" CssClass="camposUsuario" Text="Buenos Aires" /> 
+                    <button class="botonModificar" onclick="abrirModificar('Provincia'); return false;">Modificar</button>
+                </div>
+                <div>
+                    <h4>Localidad: </h4> 
+                    <asp:Label runat="server" ID="lbl_localidadUsuario" CssClass="camposUsuario" Text="Garin" /> 
+                    <button class="botonModificar" onclick="abrirModificar('Localidad'); return false;">Modificar</button>
+                </div>
+                <div>
+                    <h4>Telefono: </h4> 
+                    <asp:Label runat="server" ID="lbl_telefonoUsuario" CssClass="camposUsuario" Text="1131135369" /> 
+                    <button class="botonModificar" onclick="abrirModificar('Telefono'); return false;">Modificar</button>
+                </div>
             </div>
         </div>
         <div class="datosCuenta">
-            <button class="accordion">
+            <button class="accordion" onclick="return false">
                 <p>Tarjetas de credito</p>
             </button>
             
             <div class="paneles">
                 <div>
-                    <div style="text-align:center; padding:10px">
-                        <button class="botonAgregar">Agregar</button>
+                    <div>
+                        <div class="tarjeta">
+                            <div><h4>Ultimos 4 digitos: </h4> <asp:Label runat="server" ID="lbl_ultimosDigitosTarjetaUsuario" CssClass="camposUsuario" Text="4455" /></div>
+                            <div><h4>Banco: </h4> <asp:Label runat="server" ID="lbl_bancoUsuario" CssClass="camposUsuario" Text="Macro" /></div>
+                            <div><h4>Vencimiento: </h4> <asp:Label runat="server" ID="lbl_fechaVencUsuario" CssClass="camposUsuario" Text="11/2025" /></div>
+                            <div style="text-align:right; padding:0">
+                                <asp:Button runat="server" ID="btn_eliminarTarjeta" CssClass="botonEliminar" Text="Eliminar" />
+                            </div>
+                        </div>
                     </div>
-                    <form>
-                        <div class="tarjeta">
-                            <div><h4>Ultimos 4 digitos: </h4> <a>4455</a></div>
-                            <div><h4>Banco: </h4> <a>Macro</a></div>
-                            <div><h4>Vencimiento: </h4> <a>11/2024</a></div>
-                            <div style="text-align:right; padding:0">
-                                <button class="botonEliminar">Eliminar</button>
-                            </div>
-                        </div>
-
-                        <div class="tarjeta">
-                            <div><h4>Ultimos 4 digitos: </h4> <a>5511</a></div>
-                            <div><h4>Banco: </h4> <a>Nacion</a></div>
-                            <div><h4>Vencimiento: </h4> <a>08/2022</a></div>
-                            <div style="text-align:right; padding:0">
-                                <button class="botonEliminar">Eliminar</button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
         <div class="datosCuenta">
-            <button class="accordion">
+            <button class="accordion" onclick="return false">
                 <p>Compras realizadas</p>
             </button>
             <div class="paneles">
-                <form>
+                <div>
                     <div class="compra">
-                        <div><h4>Nombre de juego: </h4> <a>Counter Strike</a></div>
-                        <div><h4>Precio: </h4> <a>ARS $1500</a></div>
-                        <div><h4>Fecha de compra: </h4> <a>11/11/1997</a></div>
-                        <div><h4>Ultimos 4 digitos de tarjeta: </h4> <a>4455</a></div>
-                        <div><h4>Codigo de activacion: </h4> <a>4455 5558 15SA</a></div>
+                        <div>
+                            <h4>Nombre de juego: </h4> 
+                            <asp:Label runat="server" ID="lbl_nombreJuegoUsuario" CssClass="camposUsuario" Text="Counter Strike" />
+                        </div>
+                        <div>
+                            <h4>Precio: </h4> 
+                            <a>ARS $ </a>
+                            <asp:Label runat="server" ID="lbl_precioJuegoUsuario" CssClass="camposUsuario" Text="1500" />
+                        </div>
+                        <div><h4>Fecha de compra: </h4>
+                            <asp:Label runat="server" ID="lbl_FechacompraUsuario" CssClass="camposUsuario" Text="11/08/2018" />
+                        </div>
+                        <div><h4>Ultimos 4 digitos de tarjeta: </h4>
+                            <asp:Label runat="server" ID="lbl_ultimosDigitosCompraUsuario" CssClass="camposUsuario" Text="4455" />
+                        </div>
+                        <div><h4>Codigo de activacion: </h4>
+                            <asp:Label runat="server" ID="lbl_codActivacionUsuario" CssClass="camposUsuario" Text="4455 4455 4455" />
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
         <div class="datosCuenta">
-            <button class="accordion">
+            <button class="accordion" onclick="return false">
                 <p>Privacidad de la cuenta</p>
             </button>
             <div class="paneles">
                 <div><a style="color:red; font-weight: bold; -webkit-text-stroke: 0.7px white; font-size: 25px; letter-spacing: 1px">¡ATENCION!</a><a> Al cerrar su cuenta se eliminarán todos sus datos y es irreversible.</a></div>
-                <div><button class="botonEliminar" style="padding: 10px 17px; margin: 0">Cerrar cuenta</button></div>
-                
+                <div><asp:Button runat="server" ID="btn_eliminarCuentaUsuario" CssClass="botonEliminar" style="padding: 10px 17px; margin: 0" Text="Cerrar cuenta" /></div>    
             </div>
         </div>
     </div>
@@ -261,7 +291,7 @@
                 document.getElementById("txbNormal").style.display = "none";
             }
 
-            document.getElementById("campoModificar").innerText = id;
+            document.getElementById("<%=lbl_campoModificarUsuario.ClientID%>").innerText = id;
 
             cuerpo.style.overflow = "hidden";
         }

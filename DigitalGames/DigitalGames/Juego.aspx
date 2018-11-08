@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .titulo a{
+        .tituloLabel{
             text-align:center;
             color: white;
             font-size: 30px;
@@ -100,7 +100,7 @@
             vertical-align: top;
         }
 
-        .card button {
+        .botonCarta {
           border: none;
           outline: 0;
           color: white;
@@ -116,7 +116,7 @@
             color: orange;
         }
 
-        .card button:hover {
+        .botonCarta:hover {
           opacity: 0.7;
         }
 
@@ -128,6 +128,20 @@
             text-align: left;
             color: #7d7d7d;
             font-size: 20px;
+        }
+
+        .stockTextBox{
+            text-align: left;
+            color: #7d7d7d;
+            font-size: 20px;
+        }
+
+        .descripciones{
+            display: block;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
         }
     </style>
 </asp:Content>
@@ -175,11 +189,15 @@
 
         <div class="card">
             <div class="titulo">
-                <a>Counter strike: Global offensive</a>
+                <asp:Label runat="server" id="lbl_tituloJuego" CssClass="tituloLabel" Text="Counter strike: Global offensive" />
             </div>
 
-            <div class="price"><s>ARS $1558.00</s></div>
-            <div class="price">ARS $1220.00</div>
+            <div id="divDescuento" style="display:block">
+                <div class="price"><s>ARS $</s><asp:Label runat="server" id="lbl_PrecioJuego" style="text-decoration:line-through"  Text="1558.00" /></div>
+            </div>
+            <div>
+                <div class="price">ARS $<asp:Label runat="server" id="lbl_PrecioConDescuento"  Text="1200.00" /></div>
+            </div>
             
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
@@ -189,24 +207,28 @@
             
             <div class="stock">
                 <div style="float:left; width: 100px">
-                    <input id="txb_cantAcomprar" type="text" placeholder="Cantidad"></div>
-                <div style="float:left; width: 150px; height:57px; margin-top: 15px"><a>(4 disponibles)</a></div>
+                    <asp:TextBox runat="server" id="txb_cantAcomprarJuego" placeholder="Cantidad" /></div>
+                <div style="float:left; width: 150px; height:57px; margin-top: 15px">
+                    <a>(</a>
+                    <asp:Label runat="server" id="lbl_stockJuego" CssClass="stockTextBox" Text="4" />
+                    <a>disponibles)</a>
+                </div>
             </div>
 
-            <button>Añadir al carrito</button>
-            <button style="background-color:#0885e2">Comprar ahora</button>
+            <asp:Button runat="server" CssClass="botonCarta" ID="btn_AñadirCarritoJuego" Text="Añadir al carrito" />
+            <asp:Button runat="server" CssClass="botonCarta" style="background-color:#0885e2" ID="btn_comprarJuego" Text="Comprar ahora" />
         </div>
     </div>
 
     <div style="width:100%">
-        <button class="accordion">Acerca de este juego</button>
+        <button class="accordion" onclick="return false">Acerca de este juego</button>
         <div class="panele">
-            <p>Descripcion del juego</p>
+            <asp:Label runat="server" id="lbl_DescripcionJuego" CssClass="descripciones" Text="Descripcion del juego" />
         </div>
 
-        <button class="accordion">Requisitos</button>
+        <button class="accordion" onclick="return false">Requisitos</button>
         <div class="panele">
-            <p>Requisito minimo y recomendado</p>
+            <asp:Label runat="server" id="lbl_requisitosJuego" CssClass="descripciones" Text="Requisito minimo y recomendado" />
         </div>
     </div>
     

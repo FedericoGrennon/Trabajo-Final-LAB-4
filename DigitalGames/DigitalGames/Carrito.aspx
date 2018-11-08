@@ -54,7 +54,7 @@
         }
 
         .NombreJuego{
-            width: 50%;
+            width: 40%;
             font-size: 20px;
             color: #317bb2;
             display:initial;
@@ -71,7 +71,7 @@
         }
 
         .cantidad{
-            width: 10%;
+            width: 20%;
             font-size: 25px;
         }
 
@@ -201,7 +201,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form runat="server">
+    <div>
         <div id="Modificar" class="modal">
             <div id="pago" class="modal-content animate">
                 <div class="paddingLogin">
@@ -282,7 +282,7 @@
                 <div><a>Total: </a> <a>ARS $ </a><asp:Label runat="server" CssClass="totala" ID="lbl_total" Text="400" /></div>   
             </div>
         </div>
-    </form>
+    </div>
     
 
     <script>

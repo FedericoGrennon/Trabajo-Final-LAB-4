@@ -13,5 +13,15 @@ namespace DigitalGames
         {
             
         }
+
+        protected void btn_guardarCambios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cv_listaImagenes_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = lb_urlImagenes.Items.Count > 0;
+        }
     }
 }

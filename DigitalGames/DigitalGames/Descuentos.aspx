@@ -43,6 +43,8 @@
 
     .title {
       color: white;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     .button {
@@ -63,79 +65,114 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="http://www.gamasutra.com/db_area/images/news/2016/Jun/275806/csgothumb.jpg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Counter Strike Global Offensive</h2>
-        <p class="title">Counter Strike Global Offensive</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Ver Mas</button></p>
-      </div>
-    </div>
-  </div>
+    <div class="row">
+        <div class="column">
+        <div class="card">
+            <img src="https://k46.kn3.net/taringa/2/D/9/B/1/1/NegroS0rete/6D7.jpg" alt="Jane" style="width:100%">
+            <div class="container">
+            <div style="margin: 10px 0px 10px 0px">
+                <asp:label runat="server" ID="Label1" CssClass="title" Text="Counter Strike" />
+            </div>
+                <div style="margin: 10px 0px 10px 0px">
+                    <asp:label runat="server" ID="lbl_descripcionJuego" Text="Descipcion"/>
+                </div>
+            <div style="margin: 10px 0px 10px 0px"> 
+                <a>ARS $ </a><asp:Label runat="server" ID="lbl_precioDescuento" Text="150" />
+            </div>
+            <asp:button runat="server" cssClass="button" ID="btn_verMas" Text="Ver Mas"/>
+            </div>
+        </div>
+        </div>
 
-  <div class="column">
-    <div class="card">
-      <img src="https://eu.battle.net/support/static/images/games/tile_overwatch.7adf4d26.jpg" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Overwatch</h2>
-        <p class="title">Art Director</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Ver Mas</button></p>
-      </div>
+        <div class="column">
+            <div class="card">
+                <img src="https://k46.kn3.net/taringa/2/D/9/B/1/1/NegroS0rete/6D7.jpg" alt="Jane" style="width:100%">
+                <div class="container">
+                <div style="margin: 10px 0px 10px 0px">
+                    <asp:label runat="server" ID="Label2" CssClass="title" Text="Counter Strike" />
+                </div>
+                    <div style="margin: 10px 0px 10px 0px">
+                        <asp:label runat="server" ID="Label3" Text="Descipcion"/>
+                    </div>
+                <div style="margin: 10px 0px 10px 0px"> 
+                    <a>ARS $ </a><asp:Label runat="server" ID="Label4" Text="150" />
+                </div>
+                <asp:button runat="server" cssClass="button" ID="Button1" Text="Ver Mas"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="https://k46.kn3.net/taringa/2/D/9/B/1/1/NegroS0rete/6D7.jpg" alt="Jane" style="width:100%">
+                <div class="container">
+                <div style="margin: 10px 0px 10px 0px">
+                    <asp:label runat="server" ID="Label5" CssClass="title" Text="Counter Strike" />
+                </div>
+                    <div style="margin: 10px 0px 10px 0px">
+                        <asp:label runat="server" ID="Label6" Text="Descipcion"/>
+                    </div>
+                <div style="margin: 10px 0px 10px 0px"> 
+                    <a>ARS $ </a><asp:Label runat="server" ID="Label7" Text="150" />
+                </div>
+                <asp:button runat="server" cssClass="button" ID="Button2" Text="Ver Mas"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="https://k46.kn3.net/taringa/2/D/9/B/1/1/NegroS0rete/6D7.jpg" alt="Jane" style="width:100%">
+                <div class="container">
+                <div style="margin: 10px 0px 10px 0px">
+                    <asp:label runat="server" ID="Label8" CssClass="title" Text="Counter Strike" />
+                </div>
+                    <div style="margin: 10px 0px 10px 0px">
+                        <asp:label runat="server" ID="Label9" Text="Descipcion"/>
+                    </div>
+                <div style="margin: 10px 0px 10px 0px"> 
+                    <a>ARS $ </a><asp:Label runat="server" ID="Label10" Text="150" />
+                </div>
+                <asp:button runat="server" cssClass="button" ID="Button3" Text="Ver Mas"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="https://k46.kn3.net/taringa/2/D/9/B/1/1/NegroS0rete/6D7.jpg" alt="Jane" style="width:100%">
+                <div class="container">
+                <div style="margin: 10px 0px 10px 0px">
+                    <asp:label runat="server" ID="Label11" CssClass="title" Text="Counter Strike" />
+                </div>
+                    <div style="margin: 10px 0px 10px 0px">
+                        <asp:label runat="server" ID="Label12" Text="Descipcion"/>
+                    </div>
+                <div style="margin: 10px 0px 10px 0px"> 
+                    <a>ARS $ </a><asp:Label runat="server" ID="Label13" Text="150" />
+                </div>
+                <asp:button runat="server" cssClass="button" ID="Button4" Text="Ver Mas"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="https://k46.kn3.net/taringa/2/D/9/B/1/1/NegroS0rete/6D7.jpg" alt="Jane" style="width:100%">
+                <div class="container">
+                <div style="margin: 10px 0px 10px 0px">
+                    <asp:label runat="server" ID="Label14" CssClass="title" Text="Counter Strike" />
+                </div>
+                    <div style="margin: 10px 0px 10px 0px">
+                        <asp:label runat="server" ID="Label15" Text="Descipcion"/>
+                    </div>
+                <div style="margin: 10px 0px 10px 0px"> 
+                    <a>ARS $ </a><asp:Label runat="server" ID="Label16" Text="150" />
+                </div>
+                <asp:button runat="server" cssClass="button" ID="Button5" Text="Ver Mas"/>
+                </div>
+            </div>
+        </div>
+    
     </div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <img src="https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcdg2UJZOIDSSshaPvjeWQgGVtK2FOHmLSHa2fvTqsCREDh2tmhNJPbEbzgtZqcHedH4SZ8Sfsp.3QARs5_C7pXArwWqajmr4Vk32lk7bnSlbZqfJIwo36EzqE8z77itrIGCbszjdFNdEoVTNF4InoQ1_yZ9MuhY.TJBUqa.Race8-&w=400&format=jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Rainbow Six Siege</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Ver Mas</button></p>
-      </div>
-    </div>
-  </div>
-      <div class="column">
-    <div class="card">
-      <img src="https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcdg2UJZOIDSSshaPvjeWQgGVtK2FOHmLSHa2fvTqsCREDh2tmhNJPbEbzgtZqcHedH4SZ8Sfsp.3QARs5_C7pXArwWqajmr4Vk32lk7bnSlbZqfJIwo36EzqE8z77itrIGCbszjdFNdEoVTNF4InoQ1_yZ9MuhY.TJBUqa.Race8-&w=400&format=jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Rainbow Six Siege</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Ver Mas</button></p>
-      </div>
-    </div>
-  </div>
-      <div class="column">
-    <div class="card">
-      <img src="https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcdg2UJZOIDSSshaPvjeWQgGVtK2FOHmLSHa2fvTqsCREDh2tmhNJPbEbzgtZqcHedH4SZ8Sfsp.3QARs5_C7pXArwWqajmr4Vk32lk7bnSlbZqfJIwo36EzqE8z77itrIGCbszjdFNdEoVTNF4InoQ1_yZ9MuhY.TJBUqa.Race8-&w=400&format=jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Rainbow Six Siege</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Ver Mas</button></p>
-      </div>
-    </div>
-  </div>
-      <div class="column">
-    <div class="card">
-      <img src="https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcdg2UJZOIDSSshaPvjeWQgGVtK2FOHmLSHa2fvTqsCREDh2tmhNJPbEbzgtZqcHedH4SZ8Sfsp.3QARs5_C7pXArwWqajmr4Vk32lk7bnSlbZqfJIwo36EzqE8z77itrIGCbszjdFNdEoVTNF4InoQ1_yZ9MuhY.TJBUqa.Race8-&w=400&format=jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Rainbow Six Siege</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>example@example.com</p>
-        <p><button class="button">Ver Mas</button></p>
-      </div>
-    </div>
-  </div>
-</div>
 </asp:Content>

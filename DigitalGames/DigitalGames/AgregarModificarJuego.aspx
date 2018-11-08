@@ -205,19 +205,23 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form class="contenedor" runat="server">
+    <div class="contenedor">
         <div class="datosCuenta">
             <Button class="accordion" onclick="return false">
                 <p>Datos del juego</p>
             </Button>
             <div class="paneles">
-                <div><asp:TextBox runat="server" ID="txb_nombre" placeholder="Nombre"></asp:TextBox></div>
+                <div><asp:TextBox runat="server" ID="txb_nombre" placeholder="Nombre"  ></asp:TextBox></div>
+                <asp:RequiredFieldValidator runat="server" ID="rfv_validarNombre" ControlToValidate="txb_nombre" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
                 <div><asp:TextBox runat="server" ID="txb_empresa" placeholder="Empresa"></asp:TextBox></div>
+                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" ControlToValidate="txb_empresa" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
                 <div><asp:TextBox runat="server" ID="txb_descripcion" placeholder="Descripcion" rows="10" TextMode="MultiLine"></asp:TextBox></div>
+                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator2" ControlToValidate="txb_descripcion" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
                 <div><asp:TextBox runat="server" ID="txb_requisitos" placeholder="Requisitos" rows="10" TextMode="MultiLine"></asp:TextBox></div>
-         
+                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator3" ControlToValidate="txb_requisitos" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
                 <div>
                     <asp:TextBox runat="server" ID="txb_tipo" placeholder="Buscar tipo..." onkeyup="filtrarTipo(); verficarVacio(this)"></asp:TextBox>
+                    <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator4" ControlToValidate="txb_tipo" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
                     <div id="listaJuegos">
                         <ul id="milista" class="myUL">
                             <li><a style="cursor: pointer" onclick="encontroTipo(this)">Acción</a></li>
@@ -250,6 +254,10 @@
 
                     <div style="text-align:center">
                         <a>Haga doble click sobre la imagen para eliminarla.</a>
+                    </div>
+
+                    <div style="text-align:center">
+                        <asp:customValidator runat="server" ID="cv_listaImagenes" OnServerValidate="cv_listaImagenes_ServerValidate" ForeColor="red" ErrorMessage="Ponga minimo una imagen." />
                     </div>
 
                     <div style="text-align:center; display:none">
@@ -307,11 +315,11 @@
             </button>
             <div class="paneles">
                 <div>
-                    <asp:Button runat="server" cssClass="botonGuardar" Text="Guadar cambios" />
+                    <asp:Button runat="server" ID="btn_guardarCambios" cssClass="botonGuardar" Text="Guadar cambios" />
                 </div> 
             </div>
         </div>
-    </form>
+    </div>
 
     <script>
         function filtrarTipo() {
