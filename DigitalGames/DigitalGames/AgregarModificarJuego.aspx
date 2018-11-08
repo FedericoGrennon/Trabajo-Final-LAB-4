@@ -6,8 +6,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
-            $("#txb_FechaInicio").datepicker();
-            $( "#txb_FechaFin" ).datepicker();
+            $("#<%=txb_FechaInicio.ClientID%>").datepicker();
+            $( "#<%=txb_FechaFin.ClientID%>" ).datepicker();
         } );
     </script>
 
@@ -90,6 +90,7 @@
             padding: 4px 7px;
             background-color: red;
             margin-left: 10px;
+            margin-top: 10px;
             border: 0.5px solid white;
             cursor: pointer;
             border-radius: 5px 6px;
@@ -105,6 +106,19 @@
             border-radius: 5px 6px;
             float:right;
             margin-top: 8px;
+        }
+
+        .botonGuardar{
+            color: white;
+            width: auto;
+            padding: 7px 10px;
+            background-color: green;
+            border: 0.5px solid white;
+            cursor: pointer;
+            border-radius: 5px 6px;
+            float:right;
+            margin: 10px;
+            font-size: 30px;
         }
 
         .compra{
@@ -178,13 +192,7 @@
             width: 15px; 
             height: 15px;
         }
-        .codigos{
-            border: 2px solid white;
-            border-radius: 5px 6px;
-            overflow: auto;
-            max-height: 200px;
-            min-width: 400px;
-        }
+
         .checkDisponi{
             text-align: center;
         }
@@ -197,19 +205,19 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="contenedor">
+    <form class="contenedor" runat="server">
         <div class="datosCuenta">
-            <button class="accordion">
+            <Button class="accordion" onclick="return false">
                 <p>Datos del juego</p>
-            </button>
+            </Button>
             <div class="paneles">
-                <div><input id="txb_nombre" type="text" placeholder="Nombre"></div>
-                <div><input id="txb_empresa" type="text" placeholder="Empresa"></div>
-                <div><textarea id="txb_descripcion" placeholder="Descripcion" rows="10"></textarea></div>
-                <div><textarea id="txb_requisitos" placeholder="Requisitos" rows="10"></textarea></div>
+                <div><asp:TextBox runat="server" ID="txb_nombre" placeholder="Nombre"></asp:TextBox></div>
+                <div><asp:TextBox runat="server" ID="txb_empresa" placeholder="Empresa"></asp:TextBox></div>
+                <div><asp:TextBox runat="server" ID="txb_descripcion" placeholder="Descripcion" rows="10" TextMode="MultiLine"></asp:TextBox></div>
+                <div><asp:TextBox runat="server" ID="txb_requisitos" placeholder="Requisitos" rows="10" TextMode="MultiLine"></asp:TextBox></div>
          
                 <div>
-                    <input id="txb_tipo" type="text" placeholder="Buscar tipo..." onkeyup="filtrarTipo(); verficarVacio(this)">
+                    <asp:TextBox runat="server" ID="txb_tipo" placeholder="Buscar tipo..." onkeyup="filtrarTipo(); verficarVacio(this)"></asp:TextBox>
                     <div id="listaJuegos">
                         <ul id="milista" class="myUL">
                             <li><a style="cursor: pointer" onclick="encontroTipo(this)">Acción</a></li>
@@ -224,15 +232,15 @@
                 </div>
 
                 <div class="radioButtons">
-                        <input type="radio" checked="checked" name="radio" value="PC"><a>PC</a>
-                        <input type="radio" name="radio" value="PS4"><a>PS4</a>
-                        <input type="radio" name="radio" value="PS3"><a>PS3</a>
-                        <input type="radio" name="radio" value="XBOX ONE"><a>XBOX ONE</a>
-                        <input type="radio" name="radio" value="XBOX360"><a>XBOX360</a>
+                        <asp:RadioButton runat="server" checked="true" GroupName="radio" value="PC" /><a>PC</a>
+                        <asp:RadioButton runat="server" GroupName="radio" value="PS4" /><a>PS4</a>
+                        <asp:RadioButton runat="server" GroupName="radio" value="PS3" /><a>PS3</a>
+                        <asp:RadioButton runat="server" GroupName="radio" value="XBOX ONE" /><a>XBOX ONE</a>
+                        <asp:RadioButton runat="server" GroupName="radio" value="XBOX360" /><a>XBOX360</a>
                 </div>
                 <div>
                     <div style="text-align:right; width: 480px; padding:0">
-                        <button class="botonAgregar" onclick="agregarImagen()">Agregar</button>
+                        <button class="botonAgregar" onclick="agregarImagen(); return false">Agregar</button>
                     </div>
                     <div><input id="txb_imagen" type="URL" placeholder="Ingrese URL imagen" style="width:370px; height: 30px" spellcheck="false"></div>
 
@@ -241,49 +249,74 @@
                     </div>
 
                     <div style="text-align:center">
-                        <a>Haga click sobre la imagen para eliminarla.</a>
+                        <a>Haga doble click sobre la imagen para eliminarla.</a>
+                    </div>
+
+                    <div style="text-align:center; display:none">
+                        <asp:ListBox runat="server" ID="lb_urlImagenes"/>
                     </div>
                 </div>
             </div>
             
         </div>
         <div class="datosCuenta">
-            <button class="accordion">
+            <button class="accordion" onclick="return false">
                 <p>Datos comerciales</p>
             </button>
             <div class="paneles">
-                <div><input id="txb_Precio" type="text" placeholder="Precio ARS $"></div>
-                <div style="text-align:center"><a>Stock actual: </a> <a>5</a><input id="txb_stock" type="text" placeholder="Stock a agregar"></div>
-                <div class="codigos">
-                    <div><input type="text" placeholder="COD 1"></div>
-                    <div><input type="text" placeholder="COD 2"></div>
-                    <div><input type="text" placeholder="COD 3"></div>
-                    <div><input type="text" placeholder="COD 4"></div>
-                    <div><input type="text" placeholder="COD 5"></div>
-                    <div><input type="text" placeholder="COD 6"></div>
+                <div><asp:TextBox runat="server" id="txb_Precio" type="text" placeholder="Precio ARS $" /></div>
+                
+                <div style="text-align:center">
+                    <a>Stock actual: </a> <a>5</a>
                 </div>
+
+                
+
+                <div style="text-align:center; width: 480px; padding:0">
+                    <asp:TextBox runat="server" id="txb_codigo" placeholder="Codigo de activacion de un juego" width="380px" />
+                    <button class="botonAgregar" onclick="agregarCodigo(); return false">Agregar</button>
+                </div>
+
+                <div style="text-align: center">
+                    <asp:ListBox runat="server" ID="lb_CodJuegos" Height="200px" Width="480px"></asp:ListBox>
+                </div>
+                
+                <div style="text-align:center">
+                    <a>Haga doble click sobre el codigo para eliminarlo.</a>
+                </div>
+
             </div>
         </div>
         <div class="datosCuenta">  
-            <button class="accordion">
+            <button class="accordion" onclick="return false">
                 <p>Descuento</p>
             </button>
             <div class="paneles">
                 <div>
-                    <div><input id="txb_Porcentaje" type="text" placeholder="Porcentaje de descuento %"></div>
-                    <div><input id="txb_FechaInicio" type="text" placeholder="Fecha de inicio"></div>
-                    <div><input id="txb_FechaFin" type="text" placeholder="Fecha de finalizacion"></div>
+                    <div><asp:TextBox runat="server" id="txb_Porcentaje" placeholder="Porcentaje de descuento %" /></div>
+                    <div><asp:TextBox runat="server" id="txb_FechaInicio" placeholder="Fecha de inicio" /></div>
+                    <div><asp:TextBox runat="server" id="txb_FechaFin" placeholder="Fecha de finalizacion" /></div>
                     <div class="checkDisponi"><a>Descuento Activo / Desactivo </a></div>
-                    <div class="checkDisponi"><input id="txb_Disponibilidad" type="checkbox" checked="true"></div>
+                    <div class="checkDisponi"><asp:CheckBox runat="server" id="txb_Disponibilidad" checked="true" /></div>
                 </div> 
             </div>
         </div>
-    </div>
+        <div class="datosCuenta">  
+            <button class="accordion" onclick="return false">
+                <p>Guardar cambios</p>
+            </button>
+            <div class="paneles">
+                <div>
+                    <asp:Button runat="server" cssClass="botonGuardar" Text="Guadar cambios" />
+                </div> 
+            </div>
+        </div>
+    </form>
 
     <script>
         function filtrarTipo() {
             var input, filter, ul, li, a, i;
-            input = document.getElementById("txb_tipo");
+            input = document.getElementById('<%=txb_tipo.ClientID%>');
             filter = input.value.toUpperCase();
             ul = document.getElementById("milista");
             li = ul.getElementsByTagName("li");
@@ -306,9 +339,42 @@
         function encontroTipo(val) {
             document.getElementById('milista').style.display = "none";
 
-            document.getElementById('txb_tipo').value = val.text;
+            document.getElementById('<%=txb_tipo.ClientID%>').value = val.text;
             
-            document.getElementById('txb_tipo').readonly = true;
+            document.getElementById('<%=txb_tipo.ClientID%>').readonly = true;
+        }
+
+        var codigos = 0;
+
+        function agregarCodigo() {
+            var valor = document.getElementById('<%=txb_codigo.ClientID%>');
+            var listbox = document.getElementById('<%=lb_CodJuegos.ClientID%>');
+            var opcion = document.createElement("option");
+
+            codigos++;
+
+            opcion.id = "op" + codigos;
+            opcion.innerHTML = valor.value;
+            opcion.value = valor.value;
+            listbox.appendChild(opcion);
+            var aux = codigos;
+            opcion.addEventListener("dblclick", function () { eliminarCodigo(aux); });
+
+            valor.value = "";
+
+            return false;
+        }
+
+        function eliminarCodigo(posicion) {
+            if (codigos > 0) {
+                var valor = document.getElementById('<%=txb_codigo.ClientID%>');
+                var listbox = document.getElementById('<%=lb_CodJuegos.ClientID%>');
+                var opcion = document.getElementById("op" + posicion);
+
+                valor.value = opcion.value;
+
+                listbox.removeChild(opcion);
+            }
         }
 
         var imagenes = 0;
@@ -318,28 +384,43 @@
             var nuevoElemento = document.createElement("div");
             var imagen = document.createElement("img");
             var rutaImagen = document.getElementById("txb_imagen").value;
+            var listbox = document.getElementById('<%=lb_urlImagenes.ClientID%>');
+            var opcion = document.createElement("option");
 
             imagenes++;
 
             scroll.appendChild(nuevoElemento);
             nuevoElemento.className = "column";
-            nuevoElemento.id = "" + imagenes;
+            nuevoElemento.id = "imagen" + imagenes;
             nuevoElemento.appendChild(imagen);
             imagen.className = "cursor imagenesChicas";
             imagen.src = rutaImagen;
+
+            opcion.id = "op" + imagenes;
+            opcion.innerHTML = rutaImagen;
+            opcion.value = rutaImagen;
+            listbox.appendChild(opcion);
+
             imagen.alt = "" + imagenes;
             var aux = imagenes;
-            imagen.addEventListener("click", function () { eliminarImagen(aux); });
+            imagen.addEventListener("dblclick", function () { eliminarImagen(aux); });
 
             document.getElementById("txb_imagen").value = "";
         }
 
         function eliminarImagen(posicion) {
             if (imagenes > 0) {
-                var imagen = document.getElementById("" + posicion);
+                var imagen = document.getElementById("imagen" + posicion);
                 var scroll = document.getElementById("scroller");
+                var opcion = document.getElementById("op" + posicion);
+                var listbox = document.getElementById('<%=lb_urlImagenes.ClientID%>');
+                var rutaImagen = document.getElementById("txb_imagen");
 
+                rutaImagen.value = opcion.value;
+
+                listbox.removeChild(opcion);
                 scroll.removeChild(imagen);
+                return false;
             }
         }
 

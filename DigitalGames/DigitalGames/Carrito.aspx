@@ -10,7 +10,7 @@
             background-color: rgba(29, 46, 74, 1);
         }
 
-        .contenedor form{
+        .contenedorJuegos{
             margin: 10px;
             padding: 5px;
             border: 2px solid white;
@@ -26,7 +26,7 @@
             background-color: #317bb2;
         }
 
-        .tituloCarrito button{
+        .botonContinuarCompra{
             color: white;
             width: auto;
             padding: 7px 10px;
@@ -43,10 +43,10 @@
             font-weight: bold;
         }
 
-        .juego{
+        .juegos{
             padding: 5px;
             border-bottom: 0.5px solid white;
-            height: 40px;
+            height: 50px;
         }
 
         .dentroJuego div{
@@ -71,20 +71,24 @@
         }
 
         .cantidad{
-            text-align:center;
             width: 10%;
             font-size: 25px;
-            color: #317bb2;
-            display:initial;
-            margin: 0;
         }
 
-        .cantidad div{
-            float: left;
+        .cantidad a{
+            vertical-align: top;
+            color:grey;
+            font-size: 12px;
+        }
+
+        .stockJuego{
+            vertical-align: top;
+            color:grey;
+            font-size: 12px;
         }
 
         .input{
-            width:30%;
+            width:40%;
             margin-left: 10px;
             margin-right: 10px;
         }
@@ -92,6 +96,11 @@
         .input input{
             padding: 0;
             text-align:center;
+        }
+
+        .input a{
+            font-size: 10px;
+            color: gray;
         }
 
         .precioTotalJuego{
@@ -108,7 +117,7 @@
             text-align:right;
         }
 
-        .botonEliminar button{
+        .aspectosBotonEliminar{
             color: white;
             width: auto;
             padding: 4px 7px;
@@ -130,7 +139,7 @@
             float: right;
         }
 
-        .total button{
+        .BotonPagar{
             color: white;
             font-size: 20px;
             width: auto;
@@ -144,6 +153,13 @@
         }
 
         .total a{
+            font-size: 25px;
+            color: #317bb2;
+            display:initial;
+            margin: 0;
+        }
+
+        .totala{
             font-size: 25px;
             color: #317bb2;
             display:initial;
@@ -185,87 +201,89 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="Modificar" class="modal">
-        <form id="pago" class="modal-content animate">
-            <div class="paddingLogin">
-                <label for="uname"><b></b></label>
-                <div id="elegirTarjeta">
-                    <h4 style="margin: 0"><b>Elegir tarjetas</b></h4>
-                    <div class="tarjetas">
-                        <div><button class="botonesLogin" type="button" onclick="abrirCargarTrajeta()">Banco Nacion 4455</button></div>
-                        <div><button class="botonesLogin" type="button" onclick="abrirCargarTrajeta()">Banco Nacion 4455</button></div>
-                        <div><button class="botonesLogin" type="button" onclick="abrirCargarTrajeta()">Banco Nacion 4455</button></div>
-                        <div><button class="botonesLogin" type="button" onclick="abrirCargarTrajeta()">Banco Nacion 4455</button></div>
-                        <div><button class="botonesLogin" type="button" onclick="abrirCargarTrajeta()">Banco Nacion 4455</button></div>
-                        <div><button class="botonesLogin" type="button" onclick="abrirCargarTrajeta()">Banco Nacion 4455</button></div>
+    <form runat="server">
+        <div id="Modificar" class="modal">
+            <div id="pago" class="modal-content animate">
+                <div class="paddingLogin">
+                    <div id="elegirTarjeta">
+                        <h4 style="margin: 0"><b>Elegir tarjetas</b></h4>
+                        <div class="tarjetas">
+                            <div><asp:Button runat="server" ID="btn_tarjeta1" CssClass="botonesLogin" OnClientClick="abrirCargarTrajeta(); return false" Text="Banco Nacion 4455"  /></div>
+                        </div>
+                        <button type="button" onclick="cerrarModificar()" class="cancelbtn">Cancel</button>
                     </div>
-                    <button type="button" onclick="cerrarModificar()" class="cancelbtn">Cancel</button>
-                </div>
 
-                <div id="cargarTarjeta">
-                    <label><b>Datos de la trajeta</b></label>
-                    <input id="txb_banco" type="text" placeholder="Banco">
-                    <input id="txb_nombreTarjeta" type="text" placeholder="Numero de la tarjeta">
-                    <input id="txb_fechaVencimiento" type="text" placeholder="Fecha de vencimiento">
-                    <input id="txb_codigoSeguridad" type="text" placeholder="Codigo de seguridad">
-                    <input id="txb_NombreTitular" type="text" placeholder="Nombre titular">
-                    <input id="txb_DNI" type="text" placeholder="DNI">
+                    <div id="cargarTarjeta">
+                        <label><b>Datos de la trajeta</b></label>
+                        <asp:TextBox runat="server" id="txb_banco" placeholder="Banco" />
+                        <asp:TextBox runat="server" id="txb_nombreTarjeta" placeholder="Numero de la tarjeta" />
+                        <asp:TextBox runat="server" id="txb_fechaVencimiento" placeholder="Fecha de vencimiento" />
+                        <asp:TextBox runat="server" id="txb_codigoSeguridad" placeholder="Codigo de seguridad" />
+                        <asp:TextBox runat="server" id="txb_NombreTitular" placeholder="Nombre titular" />
+                        <asp:TextBox runat="server" id="txb_DNI" placeholder="DNI" />
 
-                    <button type="button" onclick="abrirComprado()" class="botonesLogin">Finalizar compra</button>
-                    <button type="button" onclick="cerrarModificar()" class="cancelbtn">Cancel</button>
+                        <asp:Button runat="server" OnClientClick="abrirComprado(); return false" CssClass="botonesLogin" Text="Finalizar compra" />
+                        <button type="button" onclick="cerrarModificar()" class="cancelbtn">Cancel</button>
+                    </div>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
 
-    <div id="compraFinalizada" class="modal">
-        <form class="modal-content animate">
-            <div class="paddingLogin">
-                <div class="datosCompra">
-                    <h2><b>Datos de la compra</b></h2>
-                    <div><h4>Nombre de juego: </h4> <a>Player Uknow Battelgroun PC LATAM</a></div>
-                    <div><h4>Precio: </h4> <a>ARS $1500</a></div>
-                    <div><h4>Fecha de compra: </h4> <a>11/11/1997</a></div>
-                    <div><h4>Ultimos 4 digitos de tarjeta: </h4> <a>4455</a></div>
-                    <div><h4>Codigo de activacion: </h4> <a>4455 5558 15SA</a></div>
+        <div id="compraFinalizada" class="modal">
+            <div class="modal-content animate">
+                <div class="paddingLogin">
+                    <div class="datosCompra">
+                        <h2><b>Datos de la compra</b></h2>
+                        <div><h4>Nombre de juego: </h4> <asp:Label runat="server" ID="lbl_nombreJuegoPago" Text="Player Uknow Battelground PC LATAM" /></div>
+                        <div><h4>Precio: </h4> <a>ARS $ </a><asp:Label runat="server" ID="lbl_precioPago" Text="1500" /></div>
+                        <div><h4>Fecha de compra: </h4> <asp:Label runat="server" ID="lbl_fechaPago" Text="11/02/2015" /></div>
+                        <div><h4>Ultimos 4 digitos de tarjeta: </h4> <asp:Label runat="server" ID="lbl_ultNumTarjeta" Text="4455" /></div>
+                        <div><h4>Codigo de activacion: </h4> <asp:Label runat="server" ID="lbl_codActivacion" Text="444 555 888" /></div>
 
-                    <div><h3>Te hemos enviamos un Email con los detalles de la compra</h3></div>
+                        <div><h3>Te hemos enviamos un Email con los detalles de la compra</h3></div>
+                    </div>
+
+                    <asp:Button runat="server" ID="btn_finalizar" CssClass="cancelbtn" Text="Finalizar" />
                 </div>
-
-                <button type="button" class="cancelbtn">Finalizar</button>
             </div>
-        </form>
-    </div>
+        </div>
     
-    <div class="contenedor">
-        <div class="tituloCarrito">
-            <div style="float:right; margin-top: -2px">
-                <button>Continuar comprando</button>
-            </div>
-            <a>Mi Carrito</a>
+        <div class="contenedor">
+            <div class="tituloCarrito">
+                <div style="float:right; margin-top: -2px">
+                    <asp:button runat="server" ID="btn_continuarCompra" Text="Continuar comprando" CssClass="botonContinuarCompra"/>
+                </div>
+                <a>Mi Carrito</a>
             
-        </div>
-        <form>
-            <div class="juego">
-                <div class="dentroJuego">
-                    <div class="NombreJuego"><a>Counter Strike</a></div> 
-                    <div class="precioUnit"><a>ARS $80</a></div> 
-                    <div class="cantidad">
-                        <div><button>-</button>
-                        </div><div class="input"><input class="inputCantidad" type="text" value="5"></div>
-                        <div><button>+</button></div>
-                    </div>  
-                    <div class="precioTotalJuego"><a>ARS $400</a></div> 
-                    <div class="botonEliminar"><button>Eliminar</button></div>
+            </div>
+            <div class="contenedorJuegos">
+                <div class="juegos">
+                    <div class="dentroJuego">
+                        <div class="NombreJuego"><asp:Label runat="server" ID="lbl_nombreJuego" Text="Counter Strike" /></div> 
+                        <div class="precioUnit"><a>ARS $ </a><asp:Label runat="server" ID="lbl_precioUintario" Text="80" /></div> 
+                        <div class="cantidad">
+                            <div style="width: 100%; text-align:center; display:inline-block">
+                                <div><button>-</button></div>
+                                <div class="input"><input class="inputCantidad" type="text" value="5"></div>
+                                <div><button>+</button></div>
+                            </div>
+                            <div style="text-align: left; width: 100%">
+                                <a>stock disponilbe: </a><asp:Label runat="server" CssClass="stockJuego" ID="lbl_stockDisponible" Text="100" />
+                            </div>
+                        </div>  
+                        <div class="precioTotalJuego"><a>ARS $ </a><asp:Label runat="server" ID="lbl_totalJuego" Text="400" /></div> 
+                        <div class="botonEliminar"><asp:Button runat="server" ID="btn_eliminarJuego" CssClass="aspectosBotonEliminar" Text="Eliminar" /></div>
+                    </div>
                 </div>
             </div>
-        </form>
 
-        <div class="total">
-            <div style="width:11%; margin-top: -5px;"><button onclick="abrirPago('true')">Pagar</button></div>
-            <div><a>Total: </a> <a>ARS $400</a></div>   
+            <div class="total">
+                <div style="width:11%; margin-top: -5px;"><asp:Button runat="server" ID="btn_Pagar" CssClass="BotonPagar" OnClientClick="abrirPago('true'); return false" Text="Pagar" /></div>
+                <div><a>Total: </a> <a>ARS $ </a><asp:Label runat="server" CssClass="totala" ID="lbl_total" Text="400" /></div>   
+            </div>
         </div>
-    </div>
+    </form>
+    
 
     <script>
         function abrirPago(tieneTarjeta) {
