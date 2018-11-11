@@ -208,6 +208,11 @@
             width: 40px; 
             height: 40px;
         }
+
+        .textoStock{
+            font-size: 16px;
+            color: white;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -294,10 +299,13 @@
                 <p>Datos comerciales</p>
             </button>
             <div class="paneles">
-                <div><asp:TextBox runat="server" id="txb_Precio" type="text" placeholder="Precio ARS $" /></div>
+                <div>
+                    <asp:TextBox runat="server" id="txb_Precio" Width="450px" type="text" placeholder="Precio ARS $" />
+                    <asp:customValidator runat="server" ID="cv_PrecioJuego" ControlToValidate="txb_Precio" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el precio." Text="*" />
+                </div>
                 
                 <div style="text-align:center">
-                    <a>Stock actual: </a> <a>5</a>
+                    <a>Stock actual: </a> <asp:Label runat="server" ID="lbl_stockActual" CssClass="textoStock" Text="0" />
                 </div>
 
                 
@@ -314,7 +322,6 @@
                 <div style="text-align:center">
                     <a>Haga doble click sobre el codigo para eliminarlo.</a>
                 </div>
-
             </div>
         </div>
         <div class="datosCuenta">  
@@ -337,6 +344,7 @@
             </button>
             <div class="paneles">
                 <div>
+                    <asp:FileUpload runat="server" ID="fu_cargadorDeArchivo" AllowMultiple="true" accept=".png,.jpg,.jpeg;" />
                     <asp:Button runat="server" ID="btn_guardarCambios" cssClass="botonGuardar" Text="Guadar cambios" />
                 </div> 
             </div>
@@ -344,6 +352,19 @@
     </div>
 
     <script>
+        function ValidarListBox(sender, args) {
+            args.IsValid = document.getElementById(sender.controltovalidate).options.length > 0;
+
+            if (!args.IsValid)
+            {
+                document.getElementById("txb_imagen").style.border = "1px solid red";
+            }
+            else
+            {
+                document.getElementById("txb_imagen").style.border  = "0";
+            }
+        }
+
         function ValidarListBox(sender, args){
             args.IsValid = document.getElementById(sender.controltovalidate).options.length > 0;
 
@@ -404,19 +425,27 @@
 
         function agregarCodigo() {
             var valor = document.getElementById('<%=txb_codigo.ClientID%>');
-            var listbox = document.getElementById('<%=lb_CodJuegos.ClientID%>');
-            var opcion = document.createElement("option");
 
-            codigos++;
+            if (valor.value != "") {
+                var listbox = document.getElementById('<%=lb_CodJuegos.ClientID%>');
+                var opcion = document.createElement("option");
 
-            opcion.id = "op" + codigos;
-            opcion.innerHTML = valor.value;
-            opcion.value = valor.value;
-            listbox.appendChild(opcion);
-            var aux = codigos;
-            opcion.addEventListener("dblclick", function () { eliminarCodigo(aux); });
+                var labelStock = document.getElementById('<%=lbl_stockActual.ClientID%>');
 
-            valor.value = "";
+                codigos++;
+
+                opcion.id = "op" + codigos;
+                opcion.innerHTML = valor.value;
+                opcion.value = valor.value;
+                listbox.appendChild(opcion);
+                var aux = codigos;
+                opcion.addEventListener("dblclick", function () { eliminarCodigo(aux); });
+
+                labelStock.textContent = listbox.options.length + "";
+
+                valor.value = "";
+            }
+            
 
             return false;
         }
@@ -427,6 +456,10 @@
                 var listbox = document.getElementById('<%=lb_CodJuegos.ClientID%>');
                 var opcion = document.getElementById("op" + posicion);
 
+                var labelStock = document.getElementById('<%=lbl_stockActual.ClientID%>');
+
+                labelStock.textContent = listbox.options.length - 1 + "";
+
                 valor.value = opcion.value;
 
                 listbox.removeChild(opcion);
@@ -436,32 +469,35 @@
         var imagenes = 0;
 
         function agregarImagen() {
-            var scroll = document.getElementById("scroller");
-            var nuevoElemento = document.createElement("div");
-            var imagen = document.createElement("img");
             var rutaImagen = document.getElementById("txb_imagen").value;
-            var listbox = document.getElementById('<%=lb_urlImagenes.ClientID%>');
-            var opcion = document.createElement("option");
 
-            imagenes++;
+            if (rutaImagen != "") {
+                var scroll = document.getElementById("scroller");
+                var nuevoElemento = document.createElement("div");
+                var imagen = document.createElement("img");
+                var listbox = document.getElementById('<%=lb_urlImagenes.ClientID%>');
+                var opcion = document.createElement("option");
 
-            scroll.appendChild(nuevoElemento);
-            nuevoElemento.className = "column";
-            nuevoElemento.id = "imagen" + imagenes;
-            nuevoElemento.appendChild(imagen);
-            imagen.className = "cursor imagenesChicas";
-            imagen.src = rutaImagen;
+                imagenes++;
 
-            opcion.id = "op" + imagenes;
-            opcion.innerHTML = rutaImagen;
-            opcion.value = rutaImagen;
-            listbox.appendChild(opcion);
+                scroll.appendChild(nuevoElemento);
+                nuevoElemento.className = "column";
+                nuevoElemento.id = "imagen" + imagenes;
+                nuevoElemento.appendChild(imagen);
+                imagen.className = "cursor imagenesChicas";
+                imagen.src = rutaImagen;
 
-            imagen.alt = "" + imagenes;
-            var aux = imagenes;
-            imagen.addEventListener("dblclick", function () { eliminarImagen(aux); });
+                opcion.id = "op" + imagenes;
+                opcion.innerHTML = rutaImagen;
+                opcion.value = rutaImagen;
+                listbox.appendChild(opcion);
 
-            document.getElementById("txb_imagen").value = "";
+                imagen.alt = "" + imagenes;
+                var aux = imagenes;
+                imagen.addEventListener("dblclick", function () { eliminarImagen(aux); });
+
+                document.getElementById("txb_imagen").value = "";
+            }
         }
 
         function eliminarImagen(posicion) {
