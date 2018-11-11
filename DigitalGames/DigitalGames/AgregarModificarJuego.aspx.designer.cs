@@ -22,13 +22,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.TextBox txb_nombre;
         
         /// <summary>
-        /// Control rfv_validarNombre.
+        /// Control cv_nombreJuego.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_validarNombre;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_nombreJuego;
         
         /// <summary>
         /// Control txb_empresa.
@@ -40,13 +40,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.TextBox txb_empresa;
         
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control cv_EmpresaJuego.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_EmpresaJuego;
         
         /// <summary>
         /// Control txb_descripcion.
@@ -58,13 +58,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.TextBox txb_descripcion;
         
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control cv_descripcionJuego.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_descripcionJuego;
         
         /// <summary>
         /// Control txb_requisitos.
@@ -76,13 +76,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.TextBox txb_requisitos;
         
         /// <summary>
-        /// Control RequiredFieldValidator3.
+        /// Control cv_requisitosJuego.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_requisitosJuego;
         
         /// <summary>
         /// Control txb_tipo.
@@ -94,13 +94,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.TextBox txb_tipo;
         
         /// <summary>
-        /// Control RequiredFieldValidator4.
+        /// Control cv_tipoJuego.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_tipoJuego;
         
         /// <summary>
         /// Control cv_listaImagenes.
@@ -110,6 +110,15 @@ namespace DigitalGames {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cv_listaImagenes;
+        
+        /// <summary>
+        /// Control vs_datosDelJuego.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vs_datosDelJuego;
         
         /// <summary>
         /// Control lb_urlImagenes.

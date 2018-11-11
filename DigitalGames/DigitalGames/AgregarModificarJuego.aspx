@@ -57,6 +57,12 @@
             color: white;
         }
 
+        .validationSummary{
+            font-size: 20px;
+            color: #ff9898;
+            border: 2px solid white;
+        }
+
         .datosCuenta form{
             border: 2px solid white;
             border-radius: 5px 6px;
@@ -211,17 +217,28 @@
                 <p>Datos del juego</p>
             </Button>
             <div class="paneles">
-                <div><asp:TextBox runat="server" ID="txb_nombre" placeholder="Nombre"  ></asp:TextBox></div>
-                <asp:RequiredFieldValidator runat="server" ID="rfv_validarNombre" ControlToValidate="txb_nombre" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
-                <div><asp:TextBox runat="server" ID="txb_empresa" placeholder="Empresa"></asp:TextBox></div>
-                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" ControlToValidate="txb_empresa" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
-                <div><asp:TextBox runat="server" ID="txb_descripcion" placeholder="Descripcion" rows="10" TextMode="MultiLine"></asp:TextBox></div>
-                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator2" ControlToValidate="txb_descripcion" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
-                <div><asp:TextBox runat="server" ID="txb_requisitos" placeholder="Requisitos" rows="10" TextMode="MultiLine"></asp:TextBox></div>
-                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator3" ControlToValidate="txb_requisitos" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
                 <div>
-                    <asp:TextBox runat="server" ID="txb_tipo" placeholder="Buscar tipo..." onkeyup="filtrarTipo(); verficarVacio(this)"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator4" ControlToValidate="txb_tipo" SetFocusOnError="true" ForeColor="red" ErrorMessage="Complete el campo." />
+                    <asp:TextBox Width="450px" runat="server" ID="txb_nombre" placeholder="Nombre" ></asp:TextBox>
+                    <asp:customValidator runat="server" ID="cv_nombreJuego" ControlToValidate="txb_nombre" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." Text="*" />
+                </div>
+                <div>
+                    <asp:TextBox Width="450px" runat="server" ID="txb_empresa" placeholder="Empresa"></asp:TextBox>
+                    <asp:customValidator runat="server" ID="cv_EmpresaJuego" ControlToValidate="txb_empresa" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete la empresa." Text="*" />
+                </div>
+                
+                <div>
+                    <asp:TextBox Width="450px" runat="server" ID="txb_descripcion" placeholder="Descripcion" rows="10" TextMode="MultiLine"></asp:TextBox>
+                    <asp:customValidator runat="server" ID="cv_descripcionJuego" ControlToValidate="txb_descripcion" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete la descripcion." Text="*" />
+                </div>
+                
+                <div>
+                    <asp:TextBox Width="450px" runat="server" ID="txb_requisitos" placeholder="Requisitos" rows="10" TextMode="MultiLine"></asp:TextBox>
+                    <asp:customValidator runat="server" ID="cv_requisitosJuego" ControlToValidate="txb_requisitos" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete los requisitos." Text="*" />
+                </div>
+                
+                <div style="text-align:center">
+                    <asp:TextBox Width="450px" runat="server" ID="txb_tipo" placeholder="Buscar tipo..." onkeyup="filtrarTipo(); verficarVacio(this)"></asp:TextBox>
+                    <asp:customValidator runat="server" ID="cv_tipoJuego" ControlToValidate="txb_tipo" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el tipo." Text="*" />
                     <div id="listaJuegos">
                         <ul id="milista" class="myUL">
                             <li><a style="cursor: pointer" onclick="encontroTipo(this)">Acción</a></li>
@@ -242,11 +259,15 @@
                         <asp:RadioButton runat="server" GroupName="radio" value="XBOX ONE" /><a>XBOX ONE</a>
                         <asp:RadioButton runat="server" GroupName="radio" value="XBOX360" /><a>XBOX360</a>
                 </div>
+
                 <div>
                     <div style="text-align:right; width: 480px; padding:0">
                         <button class="botonAgregar" onclick="agregarImagen(); return false">Agregar</button>
                     </div>
-                    <div><input id="txb_imagen" type="URL" placeholder="Ingrese URL imagen" style="width:370px; height: 30px" spellcheck="false"></div>
+                    <div>
+                        <input id="txb_imagen" type="URL" placeholder="Ingrese URL imagen" style="width:370px; height: 30px" spellcheck="false">
+                        <asp:customValidator runat="server" ID="cv_listaImagenes" ControlToValidate="lb_urlImagenes" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="ValidarListBox" OnServerValidate="cv_listaImagenes_ServerValidate" ForeColor="red" ErrorMessage="Ponga minimo una imagen." Text="*" />
+                    </div>
 
                     <div id="scroller" class="scroller">
 
@@ -254,10 +275,11 @@
 
                     <div style="text-align:center">
                         <a>Haga doble click sobre la imagen para eliminarla.</a>
+                        
                     </div>
 
-                    <div style="text-align:center">
-                        <asp:customValidator runat="server" ID="cv_listaImagenes" OnServerValidate="cv_listaImagenes_ServerValidate" ForeColor="red" ErrorMessage="Ponga minimo una imagen." />
+                    <div>
+                        <asp:ValidationSummary runat="server" ID="vs_datosDelJuego" CssClass="validationSummary" />
                     </div>
 
                     <div style="text-align:center; display:none">
@@ -322,6 +344,32 @@
     </div>
 
     <script>
+        function ValidarListBox(sender, args){
+            args.IsValid = document.getElementById(sender.controltovalidate).options.length > 0;
+
+            if (!args.IsValid)
+            {
+                document.getElementById("txb_imagen").style.border = "1px solid red";
+            }
+            else
+            {
+                document.getElementById("txb_imagen").style.border  = "0";
+            }
+        }
+
+        function validarTextBox(sender, args) {
+            args.IsValid = document.getElementById(sender.controltovalidate).value != "";
+
+            if (!args.IsValid)
+            {
+                document.getElementById(sender.controltovalidate).style.border = "1px solid red";
+            }
+            else
+            {
+                document.getElementById(sender.controltovalidate).style.border  = "0";
+            }
+        }
+
         function filtrarTipo() {
             var input, filter, ul, li, a, i;
             input = document.getElementById('<%=txb_tipo.ClientID%>');

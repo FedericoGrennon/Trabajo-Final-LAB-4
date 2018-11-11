@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
 
 namespace DigitalGames
 {
@@ -11,17 +12,22 @@ namespace DigitalGames
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btn_guardarCambios_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void validarTextbox_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = (args.Value != "");
         }
 
         protected void cv_listaImagenes_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            args.IsValid = lb_urlImagenes.Items.Count > 0;
+            args.IsValid = (lb_urlImagenes.Items.Count > 0);
         }
     }
 }
