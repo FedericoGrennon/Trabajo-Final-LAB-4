@@ -64,5 +64,47 @@ namespace DigitalGames
             Conexion.Close();
             return FilasCambiadas;
         }
+
+        public bool obtenerCantidad(string consulta, ref int valorAGuardar)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            conexion.ConnectionString = rutaBDDigitalGames;
+
+            try
+            {
+                comando.Connection = conexion;
+
+                comando.CommandText = consulta;
+
+                conexion.Open();
+                comando.Parameters.Clear();
+
+                SqlDataReader data = comando.ExecuteReader();
+
+                if (data.Read())
+                {
+                    valorAGuardar = data.GetInt32(0);
+                    data.Close();
+                    conexion.Dispose();
+                }
+                else
+                {
+                    data.Close();
+                    conexion.Dispose();
+                }
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+            }
+
+            conexion.Close();
+            conexion.Dispose();
+
+            return false;
+        }
+
     }
 }

@@ -199,6 +199,11 @@
             height: 15px;
         }
 
+        .radioButtons label{
+            font-size: 16px;
+            color: white;
+        }
+
         .checkDisponi{
             text-align: center;
         }
@@ -258,11 +263,13 @@
                 </div>
 
                 <div class="radioButtons">
-                        <asp:RadioButton runat="server" checked="true" GroupName="radio" value="PC" /><a>PC</a>
-                        <asp:RadioButton runat="server" GroupName="radio" value="PS4" /><a>PS4</a>
-                        <asp:RadioButton runat="server" GroupName="radio" value="PS3" /><a>PS3</a>
-                        <asp:RadioButton runat="server" GroupName="radio" value="XBOX ONE" /><a>XBOX ONE</a>
-                        <asp:RadioButton runat="server" GroupName="radio" value="XBOX360" /><a>XBOX360</a>
+                    <asp:RadioButtonList runat="server" Width="100%" ID="rbl_listaConsolas" RepeatDirection="Horizontal" >
+                        <asp:ListItem Selected="True">PC</asp:ListItem>
+                        <asp:ListItem>PS4</asp:ListItem>
+                        <asp:ListItem>PS3</asp:ListItem>
+                        <asp:ListItem>XBOX ONE</asp:ListItem>
+                        <asp:ListItem>XBOX 360</asp:ListItem>
+                    </asp:RadioButtonList>
                 </div>
 
                 <div>
@@ -271,7 +278,7 @@
                     </div>
                     <div>
                         <input id="txb_imagen" type="URL" placeholder="Ingrese URL imagen" style="width:370px; height: 30px" spellcheck="false">
-                        <asp:customValidator runat="server" ID="cv_listaImagenes" ControlToValidate="lb_urlImagenes" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="ValidarListBox" OnServerValidate="cv_listaImagenes_ServerValidate" ForeColor="red" ErrorMessage="Ponga minimo una imagen." Text="*" />
+                        <%--<asp:customValidator runat="server" ID="cv_listaImagenes" ControlToValidate="lb_urlImagenes" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="ValidarListBox" OnServerValidate="cv_listaImagenes_ServerValidate" ForeColor="red" ErrorMessage="Ponga minimo una imagen." Text="*" />--%>
                     </div>
 
                     <div id="scroller" class="scroller">
@@ -308,8 +315,6 @@
                     <a>Stock actual: </a> <asp:Label runat="server" ID="lbl_stockActual" CssClass="textoStock" Text="0" />
                 </div>
 
-                
-
                 <div style="text-align:center; width: 480px; padding:0">
                     <asp:TextBox runat="server" id="txb_codigo" placeholder="Codigo de activacion de un juego" width="380px" />
                     <button class="botonAgregar" onclick="agregarCodigo(); return false">Agregar</button>
@@ -344,27 +349,14 @@
             </button>
             <div class="paneles">
                 <div>
-                    <asp:FileUpload runat="server" ID="fu_cargadorDeArchivo" AllowMultiple="true" accept=".png,.jpg,.jpeg;" />
-                    <asp:Button runat="server" ID="btn_guardarCambios" cssClass="botonGuardar" Text="Guadar cambios" />
+                    <asp:FileUpload runat="server" ID="fu_cargadorDeArchivo" />
+                    <asp:Button runat="server" ID="btn_guardarCambios" cssClass="botonGuardar" Text="Guadar cambios" OnClick="btn_guardarCambios_Click" />
                 </div> 
             </div>
         </div>
     </div>
 
     <script>
-        function ValidarListBox(sender, args) {
-            args.IsValid = document.getElementById(sender.controltovalidate).options.length > 0;
-
-            if (!args.IsValid)
-            {
-                document.getElementById("txb_imagen").style.border = "1px solid red";
-            }
-            else
-            {
-                document.getElementById("txb_imagen").style.border  = "0";
-            }
-        }
-
         function ValidarListBox(sender, args){
             args.IsValid = document.getElementById(sender.controltovalidate).options.length > 0;
 

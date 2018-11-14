@@ -10,7 +10,7 @@
 namespace DigitalGames {
     
     
-    public partial class Juego {
+    public partial class Juegos {
         
         /// <summary>
         /// Control lbl_tituloJuego.

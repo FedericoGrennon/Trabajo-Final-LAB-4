@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace DigitalGames
+{
+    public class funcionesJuegos
+    {
+        AccesoDatos ds = new AccesoDatos();
+
+        public int AgregarJuego(ClaseJuego jue)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosAgregarJuego(ref comando, jue);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spInsertarJuego");
+        }
+
+        private void ArmarParametrosAgregarJuego(ref SqlCommand Comando, ClaseJuego jue)
+        {
+            Comando.Parameters.Add("@CODJUEGO", SqlDbType.NVarChar, 10);
+            Comando.Parameters.Add("@NOMBRE", SqlDbType.NVarChar, 100);
+            Comando.Parameters.Add("@EMPRESA", SqlDbType.NVarChar, 50);
+            Comando.Parameters.Add("@TIPO", SqlDbType.NVarChar, 15);
+            Comando.Parameters.Add("@PRECIO", SqlDbType.SmallMoney);
+            Comando.Parameters.Add("@STOCK", SqlDbType.Int);
+            Comando.Parameters.Add("@CONSOLA", SqlDbType.NVarChar, 15);
+            Comando.Parameters.Add("@DESCRIPCION", SqlDbType.NVarChar, 500);
+            Comando.Parameters.Add("@REQUISITOS", SqlDbType.NVarChar, 200);
+
+
+            Comando.Parameters["@CODJUEGO"].Value = jue.codJuego;
+            Comando.Parameters["@NOMBRE"].Value = jue.nombre;
+            Comando.Parameters["@EMPRESA"].Value = jue.empresa;
+            Comando.Parameters["@TIPO"].Value = jue.tipo;
+            Comando.Parameters["@PRECIO"].Value = jue.precio;
+            Comando.Parameters["@STOCK"].Value = jue.stock;
+            Comando.Parameters["@CONSOLA"].Value = jue.consola;
+            Comando.Parameters["@DESCRIPCION"].Value = jue.descripcion;
+            Comando.Parameters["@REQUISITOS"].Value = jue.requisitos;
+        }
+    }
+}

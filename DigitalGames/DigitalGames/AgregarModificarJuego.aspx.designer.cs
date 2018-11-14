@@ -103,13 +103,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.CustomValidator cv_tipoJuego;
         
         /// <summary>
-        /// Control cv_listaImagenes.
+        /// Control rbl_listaConsolas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cv_listaImagenes;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbl_listaConsolas;
         
         /// <summary>
         /// Control vs_datosDelJuego.
