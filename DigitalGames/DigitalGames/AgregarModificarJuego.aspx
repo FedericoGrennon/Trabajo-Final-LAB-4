@@ -327,6 +327,9 @@
                 <div style="text-align:center">
                     <a>Haga doble click sobre el codigo para eliminarlo.</a>
                 </div>
+
+                <input id="ip_listboxCodigos" type="Text" value="-" name="ip_listboxCodigos"/>
+
             </div>
         </div>
         <div class="datosCuenta">  
@@ -435,6 +438,8 @@
 
                 labelStock.textContent = listbox.options.length + "";
 
+                document.getElementById("ip_listboxCodigos").value += valor.value + "-";
+
                 valor.value = "";
             }
             
@@ -449,6 +454,15 @@
                 var opcion = document.getElementById("op" + posicion);
 
                 var labelStock = document.getElementById('<%=lbl_stockActual.ClientID%>');
+
+                var input = document.getElementById('ip_listboxCodigos');
+                var aux = input.value;
+                var cods = aux.split('-');
+                console.log(aux);
+                console.log(cods.indexOf(aux));
+                cods.splice(cods.indexOf(aux), 1);
+
+                input.value = cods.join("-");
 
                 labelStock.textContent = listbox.options.length - 1 + "";
 

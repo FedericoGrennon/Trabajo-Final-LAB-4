@@ -41,5 +41,24 @@ namespace DigitalGames
             Comando.Parameters["@DESCRIPCION"].Value = jue.descripcion;
             Comando.Parameters["@REQUISITOS"].Value = jue.requisitos;
         }
+
+        public int AgregarCodActivacion(string codActivacion, string codJuego)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosAgregarCodigo(ref comando, codActivacion, codJuego);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spInsertarCodigosActivacion");
+        }
+
+        private void ArmarParametrosAgregarCodigo(ref SqlCommand Comando, string codActivacion, string codJuego)
+        {
+            Comando.Parameters.Add("@CodActivacion", SqlDbType.NVarChar, 20);
+            Comando.Parameters.Add("@CodJuego", SqlDbType.NVarChar, 10);
+            Comando.Parameters.Add("@Disponibilidad", SqlDbType.Bit);
+
+
+            Comando.Parameters["@CodActivacion"].Value = codActivacion;
+            Comando.Parameters["@CodJuego"].Value = codJuego;
+            Comando.Parameters["@Disponibilidad"].Value = 1;
+        }
     }
 }

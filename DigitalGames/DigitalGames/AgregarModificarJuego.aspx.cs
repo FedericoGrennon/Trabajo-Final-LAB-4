@@ -12,10 +12,6 @@ namespace DigitalGames
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["ListaCodigos"] != null)
-            {
-                lb_CodJuegos.Items.AddRange(Session["ListaCodigos"] as ListItem[]);
-            }
         }
 
         protected void validarTextbox_ServerValidate(object source, ServerValidateEventArgs args)
@@ -76,13 +72,19 @@ namespace DigitalGames
                 jue.descripcion = txb_descripcion.Text;
                 jue.requisitos = txb_requisitos.Text;
 
-                Session["ListaCodigos"] = lb_CodJuegos.Items.Cast<ListItem>().ToArray();
+                string aux = Request.Form["ip_listboxCodigos"].ToString();
+                string[] codigos = aux.Split('-');
 
-                int op = fJue.AgregarJuego(jue);
-                if (op == 1)
-                    btn_guardarCambios.Visible = true;
-                else
-                    btn_guardarCambios.Visible = false;
+                lbl_stockActual.Text = (codigos.Length - 1).ToString();
+                fJue.AgregarJuego(jue);
+
+                foreach (string codigo in codigos)
+                {
+                    if (codigo != string.Empty)
+                    {
+                        fJue.AgregarCodActivacion(codigo, jue.codJuego);
+                    }
+                }
             }
 
 
