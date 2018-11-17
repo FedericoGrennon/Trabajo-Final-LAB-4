@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Globalization;
 
 namespace DigitalGames
 {
@@ -59,6 +60,30 @@ namespace DigitalGames
             Comando.Parameters["@CodActivacion"].Value = codActivacion;
             Comando.Parameters["@CodJuego"].Value = codJuego;
             Comando.Parameters["@Disponibilidad"].Value = 1;
+        }
+
+        public int AgregarDescuento(Descuento desc)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosAgregarDescuento(ref comando, desc);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spInsertarDescuento");
+        }
+
+        private void ArmarParametrosAgregarDescuento(ref SqlCommand Comando, Descuento desc)
+        {
+            Comando.Parameters.Add("@CODDESCUENTO", SqlDbType.NVarChar, 10);
+            Comando.Parameters.Add("@CODJUEGO", SqlDbType.NVarChar, 10);
+            Comando.Parameters.Add("@PORCENTAJE", SqlDbType.Int);
+            Comando.Parameters.Add("@FECHAINICIO", SqlDbType.NVarChar, 15);
+            Comando.Parameters.Add("@FECHAFIN", SqlDbType.NVarChar, 15);
+            Comando.Parameters.Add("@ESTADO", SqlDbType.Bit);
+
+            Comando.Parameters["@CODDESCUENTO"].Value = desc.codDescuento;
+            Comando.Parameters["@CODJUEGO"].Value = desc.codJuego;
+            Comando.Parameters["@PORCENTAJE"].Value = desc.porcentaje;
+            Comando.Parameters["@FECHAINICIO"].Value = desc.fechaInicio;
+            Comando.Parameters["@FECHAFIN"].Value = desc.fechaFin;
+            Comando.Parameters["@ESTADO"].Value = desc.estado;
         }
     }
 }

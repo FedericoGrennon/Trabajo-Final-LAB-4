@@ -273,29 +273,12 @@
                 </div>
 
                 <div>
-                    <div style="text-align:right; width: 480px; padding:0">
-                        <button class="botonAgregar" onclick="agregarImagen(); return false">Agregar</button>
-                    </div>
                     <div>
-                        <input id="txb_imagen" type="URL" placeholder="Ingrese URL imagen" style="width:370px; height: 30px" spellcheck="false">
-                        <%--<asp:customValidator runat="server" ID="cv_listaImagenes" ControlToValidate="lb_urlImagenes" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="ValidarListBox" OnServerValidate="cv_listaImagenes_ServerValidate" ForeColor="red" ErrorMessage="Ponga minimo una imagen." Text="*" />--%>
-                    </div>
-
-                    <div id="scroller" class="scroller">
-
-                    </div>
-
-                    <div style="text-align:center">
-                        <a>Haga doble click sobre la imagen para eliminarla.</a>
-                        
+                        <asp:FileUpload runat="server" ID="fu_cargadorDeArchivo" AllowMultiple="true" />
                     </div>
 
                     <div>
                         <asp:ValidationSummary runat="server" ID="vs_datosDelJuego" CssClass="validationSummary" />
-                    </div>
-
-                    <div style="text-align:center; display:none">
-                        <asp:ListBox runat="server" ID="lb_urlImagenes"/>
                     </div>
                 </div>
             </div>
@@ -328,7 +311,7 @@
                     <a>Haga doble click sobre el codigo para eliminarlo.</a>
                 </div>
 
-                <input id="ip_listboxCodigos" type="Text" value="-" name="ip_listboxCodigos"/>
+                <input id="ip_listboxCodigos" type="hidden" value="" name="ip_listboxCodigos"/>
 
             </div>
         </div>
@@ -342,7 +325,7 @@
                     <div><asp:TextBox runat="server" id="txb_FechaInicio" placeholder="Fecha de inicio" /></div>
                     <div><asp:TextBox runat="server" id="txb_FechaFin" placeholder="Fecha de finalizacion" /></div>
                     <div class="checkDisponi"><a>Descuento Activo / Desactivo </a></div>
-                    <div class="checkDisponi"><asp:CheckBox runat="server" id="txb_Disponibilidad" checked="true" /></div>
+                    <div class="checkDisponi"><asp:CheckBox runat="server" id="chx_Disponibilidad" checked="true" /></div>
                 </div> 
             </div>
         </div>
@@ -352,7 +335,6 @@
             </button>
             <div class="paneles">
                 <div>
-                    <asp:FileUpload runat="server" ID="fu_cargadorDeArchivo" />
                     <asp:Button runat="server" ID="btn_guardarCambios" cssClass="botonGuardar" Text="Guadar cambios" OnClick="btn_guardarCambios_Click" />
                 </div> 
             </div>
@@ -458,9 +440,14 @@
                 var input = document.getElementById('ip_listboxCodigos');
                 var aux = input.value;
                 var cods = aux.split('-');
-                console.log(aux);
-                console.log(cods.indexOf(aux));
-                cods.splice(cods.indexOf(aux), 1);
+                var pos = 0;
+
+                cods.forEach(function (elemento) {
+                    if (elemento == opcion.textContent) {
+                        cods.splice(pos, 1);
+                    }
+                    pos++;
+                });
 
                 input.value = cods.join("-");
 
@@ -469,56 +456,6 @@
                 valor.value = opcion.value;
 
                 listbox.removeChild(opcion);
-            }
-        }
-
-        var imagenes = 0;
-
-        function agregarImagen() {
-            var rutaImagen = document.getElementById("txb_imagen").value;
-
-            if (rutaImagen != "") {
-                var scroll = document.getElementById("scroller");
-                var nuevoElemento = document.createElement("div");
-                var imagen = document.createElement("img");
-                var listbox = document.getElementById('<%=lb_urlImagenes.ClientID%>');
-                var opcion = document.createElement("option");
-
-                imagenes++;
-
-                scroll.appendChild(nuevoElemento);
-                nuevoElemento.className = "column";
-                nuevoElemento.id = "imagen" + imagenes;
-                nuevoElemento.appendChild(imagen);
-                imagen.className = "cursor imagenesChicas";
-                imagen.src = rutaImagen;
-
-                opcion.id = "op" + imagenes;
-                opcion.innerHTML = rutaImagen;
-                opcion.value = rutaImagen;
-                listbox.appendChild(opcion);
-
-                imagen.alt = "" + imagenes;
-                var aux = imagenes;
-                imagen.addEventListener("dblclick", function () { eliminarImagen(aux); });
-
-                document.getElementById("txb_imagen").value = "";
-            }
-        }
-
-        function eliminarImagen(posicion) {
-            if (imagenes > 0) {
-                var imagen = document.getElementById("imagen" + posicion);
-                var scroll = document.getElementById("scroller");
-                var opcion = document.getElementById("op" + posicion);
-                var listbox = document.getElementById('<%=lb_urlImagenes.ClientID%>');
-                var rutaImagen = document.getElementById("txb_imagen");
-
-                rutaImagen.value = opcion.value;
-
-                listbox.removeChild(opcion);
-                scroll.removeChild(imagen);
-                return false;
             }
         }
 

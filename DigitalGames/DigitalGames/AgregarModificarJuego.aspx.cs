@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
+using System.IO;
 
 namespace DigitalGames
 {
@@ -12,16 +13,30 @@ namespace DigitalGames
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void limpiarPagina()
+        {
+            txb_nombre.Text = "";
+            txb_empresa.Text = "";
+            txb_descripcion.Text = "";
+            txb_requisitos.Text = "";
+            txb_tipo.Text = "";
+            rbl_listaConsolas.SelectedIndex = 0;
+
+            txb_Precio.Text = "";
+            lbl_stockActual.Text = "0";
+            txb_codigo.Text = "";
+
+            txb_Porcentaje.Text = "";
+            txb_FechaInicio.Text = "";
+            txb_FechaFin.Text = "";
         }
 
         protected void validarTextbox_ServerValidate(object source, ServerValidateEventArgs args)
         {
             args.IsValid = (args.Value != "");
-        }
-
-        protected void cv_listaImagenes_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = (lb_urlImagenes.Items.Count > 0);
         }
 
         protected void validarCodJuego_ServerValidate(object source, ServerValidateEventArgs args)
@@ -60,9 +75,14 @@ namespace DigitalGames
             {
                 funcionesJuegos fJue = new funcionesJuegos();
                 ClaseJuego jue = new ClaseJuego();
+                Descuento desc = new Descuento();
+
+                string aux = Request.Form["ip_listboxCodigos"].ToString();
+                string[] codigos = aux.Split('-');
+
+                lbl_stockActual.Text = (codigos.Length - 1).ToString();
 
                 jue.GenerarCod();
-                jue.codJuego = jue.codJuego;
                 jue.nombre = txb_nombre.Text;
                 jue.empresa = txb_empresa.Text;
                 jue.tipo = txb_tipo.Text;
@@ -72,11 +92,15 @@ namespace DigitalGames
                 jue.descripcion = txb_descripcion.Text;
                 jue.requisitos = txb_requisitos.Text;
 
-                string aux = Request.Form["ip_listboxCodigos"].ToString();
-                string[] codigos = aux.Split('-');
+                desc.GenerarCod();
+                desc.codJuego = jue.codJuego;
+                desc.porcentaje = Convert.ToInt32(txb_Porcentaje.Text);
+                desc.fechaInicio = txb_FechaInicio.Text;
+                desc.fechaFin = txb_FechaFin.Text;
+                desc.estado = chx_Disponibilidad.Checked;
 
-                lbl_stockActual.Text = (codigos.Length - 1).ToString();
                 fJue.AgregarJuego(jue);
+                fJue.AgregarDescuento(desc);
 
                 foreach (string codigo in codigos)
                 {
@@ -85,21 +109,25 @@ namespace DigitalGames
                         fJue.AgregarCodActivacion(codigo, jue.codJuego);
                     }
                 }
+
+                limpiarPagina();
             }
 
+            if (fu_cargadorDeArchivo.HasFile)
+            {
+                foreach (HttpPostedFile archivo in fu_cargadorDeArchivo.PostedFiles)
+                {
+                    try
+                    {
+                        fu_cargadorDeArchivo.SaveAs(Path.Combine(Server.MapPath("~/Imagenes/"),
+                        fu_cargadorDeArchivo.FileName));
+                    }
+                    catch (Exception ex)
+                    {
 
-            //if (fu_cargadorDeArchivo.HasFile)
-            //{
-            //    try
-            //    {
-            //        string filename = (Server.MapPath("~/Imagenes/") + fu_cargadorDeArchivo.FileName);
-            //        fu_cargadorDeArchivo.SaveAs(filename);
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-            //    }
-            //}
+                    }
+                }
+            }
         }
     }
 }

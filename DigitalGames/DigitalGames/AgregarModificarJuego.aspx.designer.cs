@@ -112,6 +112,15 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.RadioButtonList rbl_listaConsolas;
         
         /// <summary>
+        /// Control fu_cargadorDeArchivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fu_cargadorDeArchivo;
+        
+        /// <summary>
         /// Control vs_datosDelJuego.
         /// </summary>
         /// <remarks>
@@ -119,15 +128,6 @@ namespace DigitalGames {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary vs_datosDelJuego;
-        
-        /// <summary>
-        /// Control lb_urlImagenes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lb_urlImagenes;
         
         /// <summary>
         /// Control txb_Precio.
@@ -202,22 +202,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.TextBox txb_FechaFin;
         
         /// <summary>
-        /// Control txb_Disponibilidad.
+        /// Control chx_Disponibilidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox txb_Disponibilidad;
-        
-        /// <summary>
-        /// Control fu_cargadorDeArchivo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fu_cargadorDeArchivo;
+        protected global::System.Web.UI.WebControls.CheckBox chx_Disponibilidad;
         
         /// <summary>
         /// Control btn_guardarCambios.
