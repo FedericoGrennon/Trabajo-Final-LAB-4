@@ -110,24 +110,47 @@ namespace DigitalGames
                     }
                 }
 
-                limpiarPagina();
-            }
+                FileUpload[] files = new FileUpload[5];
+                files[0] = fu_cargadorDeArchivo1;
+                files[1] = fu_cargadorDeArchivo2;
+                files[2] = fu_cargadorDeArchivo3;
+                files[3] = fu_cargadorDeArchivo4;
+                files[4] = fu_cargadorDeArchivo5;
+                
 
-            if (fu_cargadorDeArchivo.HasFile)
-            {
-                foreach (HttpPostedFile archivo in fu_cargadorDeArchivo.PostedFiles)
+                for (int i = 0; i < 5; i++)
                 {
-                    try
+                    if (Session["imagen"] != null)
                     {
-                        fu_cargadorDeArchivo.SaveAs(Path.Combine(Server.MapPath("~/Imagenes/"),
-                        fu_cargadorDeArchivo.FileName));
+                        fJue.AgregarImagen(GenerarCodImagen(), jue.codJuego, Session["imagen"].ToString());
                     }
-                    catch (Exception ex)
-                    {
 
+                    if (files[i].HasFile)
+                    {
+                        string path = Server.MapPath("~/Imagenes/");
+                        string fileName = Path.GetFileName(files[i].FileName);
+
+                        files[i].SaveAs(path + fileName);
+                        Session["imagen"] = "~/ Imagenes /" + fileName;
                     }
                 }
+
+                limpiarPagina();
             }
+        }
+
+        public string GenerarCodImagen()
+        {
+            int id = 0;
+            AccesoDatos ds = new AccesoDatos();
+            if (ds.obtenerCantidad("SELECT count(codImagen) FROM Imagenes", ref id))
+            {
+                id += 1;
+                return "IMG" + id.ToString();
+
+            }
+            else
+                return "IMG1";
         }
     }
 }

@@ -85,5 +85,23 @@ namespace DigitalGames
             Comando.Parameters["@FECHAFIN"].Value = desc.fechaFin;
             Comando.Parameters["@ESTADO"].Value = desc.estado;
         }
+
+        public int AgregarImagen (string codImagen, string codJuego, string rutaImagen)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosAgregarImagen(ref comando, codImagen, codJuego, rutaImagen);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spInsertarImagenes");
+        }
+
+        private void ArmarParametrosAgregarImagen(ref SqlCommand Comando, string codImagen, string codJuego, string rutaImagen)
+        {
+            Comando.Parameters.Add("@CODIMAGEN", SqlDbType.NVarChar, 10);
+            Comando.Parameters.Add("@CODJUEGO", SqlDbType.NVarChar, 10);
+            Comando.Parameters.Add("@RUTAIMAGEN", SqlDbType.NVarChar, 100);
+
+            Comando.Parameters["@CODIMAGEN"].Value = codImagen;
+            Comando.Parameters["@CODJUEGO"].Value = codJuego;
+            Comando.Parameters["@RUTAIMAGEN"].Value = rutaImagen;
+        }
     }
 }

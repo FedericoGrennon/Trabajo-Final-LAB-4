@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script>
         $( function() {
             $("#<%=txb_FechaInicio.ClientID%>").datepicker();
@@ -218,6 +219,7 @@
             font-size: 16px;
             color: white;
         }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -273,8 +275,19 @@
                 </div>
 
                 <div>
-                    <div>
-                        <asp:FileUpload runat="server" ID="fu_cargadorDeArchivo" AllowMultiple="true" />
+                    <div style="color:white; font-size: 15px; border:2px solid white">
+                        <h5 style="text-align:center; font-size: 23px; margin:4px 0 10px 0; border-bottom: 1px solid white">Cargar Imagenes</h5>
+
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo1" AllowMultiple="true" />
+                        <%--<asp:RegularExpressionValidator runat="server" ID="valUpTest" ControlToValidate="fu_cargadorDeArchivo1" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />--%>
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo2" AllowMultiple="true" />
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator1" ControlToValidate="fu_cargadorDeArchivo2" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo3" AllowMultiple="true" />
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator2" ControlToValidate="fu_cargadorDeArchivo3" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo4" AllowMultiple="true" />
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator3" ControlToValidate="fu_cargadorDeArchivo4" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo5" AllowMultiple="true" />
+                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator4" ControlToValidate="fu_cargadorDeArchivo5" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />
                     </div>
 
                     <div>
@@ -282,7 +295,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
         <div class="datosCuenta">
             <button class="accordion" onclick="return false">
