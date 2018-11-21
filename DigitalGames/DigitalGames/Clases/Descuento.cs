@@ -10,8 +10,8 @@ namespace DigitalGames
         public string codDescuento { get; set; }
         public string codJuego { get; set; }
         public int porcentaje { get; set; }
-        public string fechaInicio { get; set; }
-        public string fechaFin { get; set; }
+        public DateTime fechaInicio { get; set; }
+        public DateTime fechaFin { get; set; }
         public bool estado { get; set; }
 
         public void GenerarCod()

@@ -105,38 +105,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="background:url(https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2013/01/205245-20-mejores-juegos-wii.jpg)no-repeat bottom;background-size:cover">
-        <div class="row">
-            <div class="column-66">
-                <h1 class="xlarge-font"><asp:Label runat="server" ID="lbl_tituloJuegoHome" Style="font-weight:bold" Text="Titulo Juego" /></h1>
-                <div><asp:Label runat="server" ID="lbl_descripcionJuegoHome" CssClass="descripciones" Text="Breve descripcion" /></div>
-                <div class="price"><a>ARS $</a><asp:Label runat="server" ID="lbl_PrecioJuegoHome" CssClass="descripcion" Text="1550" /></div>
-                <asp:Button runat="server" ID="btn_verMasHome" CssClass="button" Text="Ver mas" />
-            </div>
-        </div>
-    </div>
-
-    <div class="container" style="background:url(https://cdn4.areajugones.es/wp-content/uploads/2017/04/counter-strike-global-offensive-810x400.png)no-repeat bottom;background-size:cover">
-        <div class="row">
-            <div class="column-66"; style="text-align:right; float:right">
-                <h1 class="xlarge-font"><asp:Label runat="server" ID="Label1" Style="font-weight:bold" Text="Titulo Juego" /></h1>
-                <div><asp:Label runat="server" ID="Label2" CssClass="descripciones" Text="Breve descripcion" /></div>
-                <div class="price"><a>ARS $</a><asp:Label runat="server" ID="Label3" CssClass="descripcion" Text="1550" /></div>
-                <asp:Button runat="server" ID="Button1" CssClass="button" Text="Ver mas" />
-            </div>
-        </div>
-    </div>
-
-    <div class="container" style="background:url(https://d2skuhm0vrry40.cloudfront.net/2018/articles/2018-07-30-11-26/titan-quest-review-not-all-switch-ports-are-created-equal-1532946388292.jpg/EG11/thumbnail/1920x1080/format/jpg/1987099.jpg)no-repeat bottom;background-size:cover">
-        <div class="row">
-            <div class="column-66">
-                <h1 class="xlarge-font"><asp:Label runat="server" ID="Label4" Style="font-weight:bold" Text="Titulo Juego" /></h1>
-                <div><asp:Label runat="server" ID="Label5" CssClass="descripciones" Text="Breve descripcion" /></div>
-                <div class="price"><a>ARS $</a><asp:Label runat="server" ID="Label6" CssClass="descripcion" Text="1550" /></div>
-                <asp:Button runat="server" ID="Button2" CssClass="button" Text="Ver mas" />
-            </div>
-        </div>
-    </div>
+    <asp:Literal runat="server" ID="literal" />
 
     <div class="center">
       <div class="pagination">
@@ -150,5 +119,13 @@
         <a href="#">&raquo;</a>
       </div>
     </div>
+
+    <script>
+        function redireccionarHome(codigo) {
+            var pagina = "<%=Page.ResolveUrl("~/Juego.aspx")%>";
+
+            location.href = pagina + "?" + codigo;
+        }
+    </script>
 </asp:Content>
 

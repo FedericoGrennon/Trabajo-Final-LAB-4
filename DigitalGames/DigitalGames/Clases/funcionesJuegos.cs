@@ -74,8 +74,8 @@ namespace DigitalGames
             Comando.Parameters.Add("@CODDESCUENTO", SqlDbType.NVarChar, 10);
             Comando.Parameters.Add("@CODJUEGO", SqlDbType.NVarChar, 10);
             Comando.Parameters.Add("@PORCENTAJE", SqlDbType.Int);
-            Comando.Parameters.Add("@FECHAINICIO", SqlDbType.NVarChar, 15);
-            Comando.Parameters.Add("@FECHAFIN", SqlDbType.NVarChar, 15);
+            Comando.Parameters.Add("@FECHAINICIO", SqlDbType.SmallDateTime);
+            Comando.Parameters.Add("@FECHAFIN", SqlDbType.SmallDateTime);
             Comando.Parameters.Add("@ESTADO", SqlDbType.Bit);
 
             Comando.Parameters["@CODDESCUENTO"].Value = desc.codDescuento;

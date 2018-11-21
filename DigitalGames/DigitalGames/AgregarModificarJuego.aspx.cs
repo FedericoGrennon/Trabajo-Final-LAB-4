@@ -13,7 +13,6 @@ namespace DigitalGames
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
         protected void limpiarPagina()
@@ -22,16 +21,16 @@ namespace DigitalGames
             txb_empresa.Text = "";
             txb_descripcion.Text = "";
             txb_requisitos.Text = "";
-            txb_tipo.Text = "";
+            txb_tipo.Value = "";
             rbl_listaConsolas.SelectedIndex = 0;
 
-            txb_Precio.Text = "";
+            txb_Precio.Value = "";
             lbl_stockActual.Text = "0";
             txb_codigo.Text = "";
 
-            txb_Porcentaje.Text = "";
-            txb_FechaInicio.Text = "";
-            txb_FechaFin.Text = "";
+            txb_Porcentaje.Value = "";
+            txb_FechaInicio.Value = "";
+            txb_FechaFin.Value = "";
         }
 
         protected void validarTextbox_ServerValidate(object source, ServerValidateEventArgs args)
@@ -85,8 +84,8 @@ namespace DigitalGames
                 jue.GenerarCod();
                 jue.nombre = txb_nombre.Text;
                 jue.empresa = txb_empresa.Text;
-                jue.tipo = txb_tipo.Text;
-                jue.precio = Convert.ToDecimal(txb_Precio.Text.Replace(".", ","));
+                jue.tipo = txb_tipo.Value;
+                jue.precio = Convert.ToDecimal(txb_Precio.Value.Replace(".", ","));
                 jue.stock = Convert.ToInt32(lbl_stockActual.Text);
                 jue.consola = rbl_listaConsolas.SelectedItem.Text;
                 jue.descripcion = txb_descripcion.Text;
@@ -94,9 +93,9 @@ namespace DigitalGames
 
                 desc.GenerarCod();
                 desc.codJuego = jue.codJuego;
-                desc.porcentaje = Convert.ToInt32(txb_Porcentaje.Text);
-                desc.fechaInicio = txb_FechaInicio.Text;
-                desc.fechaFin = txb_FechaFin.Text;
+                desc.porcentaje = Convert.ToInt32(txb_Porcentaje.Value);
+                desc.fechaInicio = Convert.ToDateTime(txb_FechaInicio.Value);
+                desc.fechaFin = Convert.ToDateTime(txb_FechaFin.Value);
                 desc.estado = chx_Disponibilidad.Checked;
 
                 fJue.AgregarJuego(jue);
@@ -110,33 +109,52 @@ namespace DigitalGames
                     }
                 }
 
-                FileUpload[] files = new FileUpload[5];
-                files[0] = fu_cargadorDeArchivo1;
-                files[1] = fu_cargadorDeArchivo2;
-                files[2] = fu_cargadorDeArchivo3;
-                files[3] = fu_cargadorDeArchivo4;
-                files[4] = fu_cargadorDeArchivo5;
+                guardarImagenes();
                 
-
-                for (int i = 0; i < 5; i++)
+                if(Session["Imagenes"] != null)
                 {
-                    if (Session["imagen"] != null)
+                    string[] rutasAux = (string[])Session["Imagenes"];
+                    for(int i=0; i<rutasAux.Length; i++)
                     {
-                        fJue.AgregarImagen(GenerarCodImagen(), jue.codJuego, Session["imagen"].ToString());
+                        if(rutasAux[i] != string.Empty)
+                        {
+                            fJue.AgregarImagen(GenerarCodImagen(), jue.codJuego, rutasAux[i]);
+                        }
                     }
-
-                    if (files[i].HasFile)
-                    {
-                        string path = Server.MapPath("~/Imagenes/");
-                        string fileName = Path.GetFileName(files[i].FileName);
-
-                        files[i].SaveAs(path + fileName);
-                        Session["imagen"] = "~/ Imagenes /" + fileName;
-                    }
-                }
+                } 
 
                 limpiarPagina();
             }
+        }
+
+        public void guardarImagenes()
+        {
+            FileUpload[] files = new FileUpload[5];
+            string[] rutas = new string[5];
+            rutas[0] = "";
+            rutas[1] = "";
+            rutas[2] = "";
+            rutas[3] = "";
+            rutas[4] = "";
+            files[0] = fu_cargadorDeArchivo1;
+            files[1] = fu_cargadorDeArchivo2;
+            files[2] = fu_cargadorDeArchivo3;
+            files[3] = fu_cargadorDeArchivo4;
+            files[4] = fu_cargadorDeArchivo5;
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (files[i].HasFile)
+                {
+                    string path = Server.MapPath("~/Imagenes/");
+                    string fileName = Path.GetFileName(files[i].FileName);
+
+                    files[i].SaveAs(path + fileName);
+                    rutas[i] = "~/Imagenes/" + fileName;
+                }
+            }
+
+            Session["Imagenes"] = rutas;
         }
 
         public string GenerarCodImagen()

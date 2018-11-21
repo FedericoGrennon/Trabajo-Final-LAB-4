@@ -2,15 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-    <script>
-        $( function() {
-            $("#<%=txb_FechaInicio.ClientID%>").datepicker();
-            $( "#<%=txb_FechaFin.ClientID%>" ).datepicker();
-        } );
-    </script>
 
     <style>
         .contenedor{
@@ -18,6 +9,10 @@
             background-color: rgba(29, 46, 74, 0.70);
             max-height: 400px;
             min-width: 400px;
+        }
+
+        .contenedor input{
+            height: 40px;
         }
 
         .datosCuenta{
@@ -117,7 +112,6 @@
 
         .botonGuardar{
             color: white;
-            width: auto;
             padding: 7px 10px;
             background-color: green;
             border: 0.5px solid white;
@@ -231,26 +225,25 @@
             <div class="paneles">
                 <div>
                     <asp:TextBox Width="450px" runat="server" ID="txb_nombre" placeholder="Nombre" ></asp:TextBox>
-                    <asp:customValidator runat="server" ID="cv_nombreJuego" ControlToValidate="txb_nombre" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." Text="*" />
+                    <asp:customValidator runat="server" ID="cv_nombreJuego" ControlToValidate="txb_nombre" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
                 </div>
                 <div>
                     <asp:TextBox Width="450px" runat="server" ID="txb_empresa" placeholder="Empresa"></asp:TextBox>
-                    <asp:customValidator runat="server" ID="cv_EmpresaJuego" ControlToValidate="txb_empresa" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete la empresa." Text="*" />
+                    <asp:customValidator runat="server" ID="cv_EmpresaJuego" ControlToValidate="txb_empresa" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete la empresa."/>
                 </div>
                 
                 <div>
                     <asp:TextBox Width="450px" runat="server" ID="txb_descripcion" placeholder="Descripcion" rows="10" TextMode="MultiLine"></asp:TextBox>
-                    <asp:customValidator runat="server" ID="cv_descripcionJuego" ControlToValidate="txb_descripcion" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete la descripcion." Text="*" />
+                    <asp:customValidator runat="server" ID="cv_descripcionJuego" ControlToValidate="txb_descripcion" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete la descripcion." />
                 </div>
                 
                 <div>
                     <asp:TextBox Width="450px" runat="server" ID="txb_requisitos" placeholder="Requisitos" rows="10" TextMode="MultiLine"></asp:TextBox>
-                    <asp:customValidator runat="server" ID="cv_requisitosJuego" ControlToValidate="txb_requisitos" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete los requisitos." Text="*" />
+                    <asp:customValidator runat="server" ID="cv_requisitosJuego" ControlToValidate="txb_requisitos" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete los requisitos." />
                 </div>
                 
                 <div style="text-align:center">
-                    <asp:TextBox Width="450px" runat="server" ID="txb_tipo" placeholder="Buscar tipo..." onkeyup="filtrarTipo(); verficarVacio(this)"></asp:TextBox>
-                    <asp:customValidator runat="server" ID="cv_tipoJuego" ControlToValidate="txb_tipo" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el tipo." Text="*" />
+                    <input Width="450px" runat="server" ID="txb_tipo" type="text" value="Acción" readonly style="display:block" />
                     <div id="listaJuegos">
                         <ul id="milista" class="myUL">
                             <li><a style="cursor: pointer" onclick="encontroTipo(this)">Acción</a></li>
@@ -278,20 +271,16 @@
                     <div style="color:white; font-size: 15px; border:2px solid white">
                         <h5 style="text-align:center; font-size: 23px; margin:4px 0 10px 0; border-bottom: 1px solid white">Cargar Imagenes</h5>
 
-                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo1" AllowMultiple="true" />
-                        <%--<asp:RegularExpressionValidator runat="server" ID="valUpTest" ControlToValidate="fu_cargadorDeArchivo1" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />--%>
-                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo2" AllowMultiple="true" />
-                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator1" ControlToValidate="fu_cargadorDeArchivo2" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />
-                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo3" AllowMultiple="true" />
-                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator2" ControlToValidate="fu_cargadorDeArchivo3" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />
-                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo4" AllowMultiple="true" />
-                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator3" ControlToValidate="fu_cargadorDeArchivo4" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />
-                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo5" AllowMultiple="true" />
-                        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator4" ControlToValidate="fu_cargadorDeArchivo5" ErrorMessage="Extensiones validas (.png, .jpg, .jpeg)" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.png|.jpg|.jpeg)$" ForeColor="Red" />
-                    </div>
-
-                    <div>
-                        <asp:ValidationSummary runat="server" ID="vs_datosDelJuego" CssClass="validationSummary" />
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo1" accept=".jpg,.png,.jpeg" />
+                         
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo2" accept=".jpg,.png,.jpeg" />
+                                               
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo3" accept=".jpg,.png,.jpeg" />
+                                              
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo4" accept=".jpg,.png,.jpeg" />
+                                             
+                        <asp:FileUpload runat="server" id="fu_cargadorDeArchivo5" accept=".jpg,.png,.jpeg" />
+                        
                     </div>
                 </div>
             </div>
@@ -302,8 +291,8 @@
             </button>
             <div class="paneles">
                 <div>
-                    <asp:TextBox runat="server" id="txb_Precio" Width="450px" type="text" placeholder="Precio ARS $" />
-                    <asp:customValidator runat="server" ID="cv_PrecioJuego" ControlToValidate="txb_Precio" Font-size="25px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el precio." Text="*" />
+                    <input runat="server" id="txb_Precio" type="number" placeholder="Precio ARS $" min="0" max="999999.00" step="0.01" />
+                    <asp:customValidator runat="server" ID="cv_PrecioJuego" ControlToValidate="txb_Precio" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el precio." />
                 </div>
                 
                 <div style="text-align:center">
@@ -333,9 +322,12 @@
             </button>
             <div class="paneles">
                 <div>
-                    <div><asp:TextBox runat="server" id="txb_Porcentaje" placeholder="Porcentaje de descuento %" /></div>
-                    <div><asp:TextBox runat="server" id="txb_FechaInicio" placeholder="Fecha de inicio" /></div>
-                    <div><asp:TextBox runat="server" id="txb_FechaFin" placeholder="Fecha de finalizacion" /></div>
+                    <div><input runat="server" id="txb_Porcentaje" type="number" min="0" max="100" placeholder="Porcentaje de descuento %" /></div>
+                    <asp:customValidator runat="server" ID="CustomValidator1" ControlToValidate="txb_Porcentaje" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el porcentaje." />
+                    <div><input runat="server" id="txb_FechaInicio" type="datetime-local" placeholder="Fecha de inicio" /></div>
+                    <asp:customValidator runat="server" ID="CustomValidator2" ControlToValidate="txb_FechaInicio" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete la fecha inico." />
+                    <div><input runat="server" id="txb_FechaFin" type="datetime-local" placeholder="Fecha de finalizacion" /></div>
+                    <asp:customValidator runat="server" ID="CustomValidator3" ControlToValidate="txb_FechaFin" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete la fecha finalizacion." />
                     <div class="checkDisponi"><a>Descuento Activo / Desactivo </a></div>
                     <div class="checkDisponi"><asp:CheckBox runat="server" id="chx_Disponibilidad" checked="true" /></div>
                 </div> 
@@ -347,7 +339,7 @@
             </button>
             <div class="paneles">
                 <div>
-                    <asp:Button runat="server" ID="btn_guardarCambios" cssClass="botonGuardar" Text="Guadar cambios" OnClick="btn_guardarCambios_Click" />
+                    <asp:Button runat="server" Height="50px" ID="btn_guardarCambios" cssClass="botonGuardar" Text="Guadar cambios" OnClick="btn_guardarCambios_Click" autopostback="false" />
                 </div> 
             </div>
         </div>
@@ -380,42 +372,17 @@
             }
         }
 
-        function filtrarTipo() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById('<%=txb_tipo.ClientID%>');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("milista");
-            li = ul.getElementsByTagName("li");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-
-        function verficarVacio(valor) {
-            if (valor.value == "") {
-                document.getElementById('milista').style.display = "block";
-            }
-        }
-
         function encontroTipo(val) {
-            document.getElementById('milista').style.display = "none";
-
             document.getElementById('<%=txb_tipo.ClientID%>').value = val.text;
-            
-            document.getElementById('<%=txb_tipo.ClientID%>').readonly = true;
         }
 
         var codigos = 0;
 
         function agregarCodigo() {
             var valor = document.getElementById('<%=txb_codigo.ClientID%>');
+            var valorAguardar = valor.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
 
-            if (valor.value != "") {
+            if (valor.value != "" && valorAguardar.length <= 19) {
                 var listbox = document.getElementById('<%=lb_CodJuegos.ClientID%>');
                 var opcion = document.createElement("option");
 
@@ -424,19 +391,18 @@
                 codigos++;
 
                 opcion.id = "op" + codigos;
-                opcion.innerHTML = valor.value;
-                opcion.value = valor.value;
+                opcion.innerHTML = valorAguardar;
+                opcion.value = valorAguardar;
                 listbox.appendChild(opcion);
                 var aux = codigos;
                 opcion.addEventListener("dblclick", function () { eliminarCodigo(aux); });
 
                 labelStock.textContent = listbox.options.length + "";
 
-                document.getElementById("ip_listboxCodigos").value += valor.value + "-";
+                document.getElementById("ip_listboxCodigos").value += valorAguardar + "-";
 
                 valor.value = "";
             }
-            
 
             return false;
         }

@@ -91,16 +91,7 @@ namespace DigitalGames {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_tipo;
-        
-        /// <summary>
-        /// Control cv_tipoJuego.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cv_tipoJuego;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_tipo;
         
         /// <summary>
         /// Control rbl_listaConsolas.
@@ -130,15 +121,6 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.FileUpload fu_cargadorDeArchivo2;
         
         /// <summary>
-        /// Control RegularExpressionValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
-        
-        /// <summary>
         /// Control fu_cargadorDeArchivo3.
         /// </summary>
         /// <remarks>
@@ -146,15 +128,6 @@ namespace DigitalGames {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fu_cargadorDeArchivo3;
-        
-        /// <summary>
-        /// Control RegularExpressionValidator2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
         
         /// <summary>
         /// Control fu_cargadorDeArchivo4.
@@ -166,15 +139,6 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.FileUpload fu_cargadorDeArchivo4;
         
         /// <summary>
-        /// Control RegularExpressionValidator3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
-        
-        /// <summary>
         /// Control fu_cargadorDeArchivo5.
         /// </summary>
         /// <remarks>
@@ -184,31 +148,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.FileUpload fu_cargadorDeArchivo5;
         
         /// <summary>
-        /// Control RegularExpressionValidator4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator4;
-        
-        /// <summary>
-        /// Control vs_datosDelJuego.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vs_datosDelJuego;
-        
-        /// <summary>
         /// Control txb_Precio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_Precio;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_Precio;
         
         /// <summary>
         /// Control cv_PrecioJuego.
@@ -253,7 +199,16 @@ namespace DigitalGames {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_Porcentaje;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_Porcentaje;
+        
+        /// <summary>
+        /// Control CustomValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
         
         /// <summary>
         /// Control txb_FechaInicio.
@@ -262,7 +217,16 @@ namespace DigitalGames {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_FechaInicio;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_FechaInicio;
+        
+        /// <summary>
+        /// Control CustomValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator2;
         
         /// <summary>
         /// Control txb_FechaFin.
@@ -271,7 +235,16 @@ namespace DigitalGames {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_FechaFin;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_FechaFin;
+        
+        /// <summary>
+        /// Control CustomValidator3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator3;
         
         /// <summary>
         /// Control chx_Disponibilidad.
