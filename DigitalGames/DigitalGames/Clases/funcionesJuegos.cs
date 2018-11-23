@@ -28,8 +28,8 @@ namespace DigitalGames
             Comando.Parameters.Add("@PRECIO", SqlDbType.SmallMoney);
             Comando.Parameters.Add("@STOCK", SqlDbType.Int);
             Comando.Parameters.Add("@CONSOLA", SqlDbType.NVarChar, 15);
-            Comando.Parameters.Add("@DESCRIPCION", SqlDbType.NVarChar, 500);
-            Comando.Parameters.Add("@REQUISITOS", SqlDbType.NVarChar, 200);
+            Comando.Parameters.Add("@DESCRIPCION", SqlDbType.NVarChar, 2000);
+            Comando.Parameters.Add("@REQUISITOS", SqlDbType.NVarChar, 1000);
 
 
             Comando.Parameters["@CODJUEGO"].Value = jue.codJuego;
@@ -86,22 +86,24 @@ namespace DigitalGames
             Comando.Parameters["@ESTADO"].Value = desc.estado;
         }
 
-        public int AgregarImagen (string codImagen, string codJuego, string rutaImagen)
+        public int AgregarImagen (string codImagen, string codJuego, string rutaImagen, bool primeraImagen)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosAgregarImagen(ref comando, codImagen, codJuego, rutaImagen);
+            ArmarParametrosAgregarImagen(ref comando, codImagen, codJuego, rutaImagen, primeraImagen);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spInsertarImagenes");
         }
 
-        private void ArmarParametrosAgregarImagen(ref SqlCommand Comando, string codImagen, string codJuego, string rutaImagen)
+        private void ArmarParametrosAgregarImagen(ref SqlCommand Comando, string codImagen, string codJuego, string rutaImagen, bool primeraImagen)
         {
             Comando.Parameters.Add("@CODIMAGEN", SqlDbType.NVarChar, 10);
             Comando.Parameters.Add("@CODJUEGO", SqlDbType.NVarChar, 10);
             Comando.Parameters.Add("@RUTAIMAGEN", SqlDbType.NVarChar, 100);
+            Comando.Parameters.Add("@PRIMERAIMAGEN", SqlDbType.Bit);
 
             Comando.Parameters["@CODIMAGEN"].Value = codImagen;
             Comando.Parameters["@CODJUEGO"].Value = codJuego;
             Comando.Parameters["@RUTAIMAGEN"].Value = rutaImagen;
+            Comando.Parameters["@PRIMERAIMAGEN"].Value = primeraImagen;
         }
     }
 }

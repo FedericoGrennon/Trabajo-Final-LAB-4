@@ -359,19 +359,6 @@
             }
         }
 
-        function validarTextBox(sender, args) {
-            args.IsValid = document.getElementById(sender.controltovalidate).value != "";
-
-            if (!args.IsValid)
-            {
-                document.getElementById(sender.controltovalidate).style.border = "1px solid red";
-            }
-            else
-            {
-                document.getElementById(sender.controltovalidate).style.border  = "0";
-            }
-        }
-
         function encontroTipo(val) {
             document.getElementById('<%=txb_tipo.ClientID%>').value = val.text;
         }

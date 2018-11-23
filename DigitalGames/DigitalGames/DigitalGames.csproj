@@ -101,6 +101,7 @@
       <DependentUpon>Descuentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\funcionesJuegos.cs" />
+    <Compile Include="Clases\gestionUsuario.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,6 +131,7 @@
     <Compile Include="Usuario.aspx.designer.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

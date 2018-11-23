@@ -21,7 +21,7 @@ namespace DigitalGames
             txb_empresa.Text = "";
             txb_descripcion.Text = "";
             txb_requisitos.Text = "";
-            txb_tipo.Value = "";
+            txb_tipo.Value = "Acción";
             rbl_listaConsolas.SelectedIndex = 0;
 
             txb_Precio.Value = "";
@@ -114,11 +114,13 @@ namespace DigitalGames
                 if(Session["Imagenes"] != null)
                 {
                     string[] rutasAux = (string[])Session["Imagenes"];
+                    bool primero = true;
                     for(int i=0; i<rutasAux.Length; i++)
                     {
                         if(rutasAux[i] != string.Empty)
                         {
-                            fJue.AgregarImagen(GenerarCodImagen(), jue.codJuego, rutasAux[i]);
+                            fJue.AgregarImagen(GenerarCodImagen(), jue.codJuego, rutasAux[i], primero);
+                            primero = false;
                         }
                     }
                 } 

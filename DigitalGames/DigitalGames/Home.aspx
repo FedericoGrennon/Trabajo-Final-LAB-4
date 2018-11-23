@@ -7,7 +7,7 @@
 
         body {
           margin: 0;
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: Arial, Helvetica, sans-serif;          
         }
 
         .container {
@@ -108,23 +108,14 @@
     <asp:Literal runat="server" ID="literal" />
 
     <div class="center">
-      <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a href="#1" class="active">1</a>
-        <a href="#2">2</a>
-        <a href="#3">3</a>
-        <a href="#4">4</a>
-        <a href="#5">5</a>
-        <a href="#6">6</a>
-        <a href="#">&raquo;</a>
-      </div>
+      <asp:Button runat="server" ID="btn_masJuegos" CssClass="button" Text="Seguir viendo" OnClick="btn_masJuegos_Click" />
     </div>
 
     <script>
         function redireccionarHome(codigo) {
             var pagina = "<%=Page.ResolveUrl("~/Juego.aspx")%>";
 
-            location.href = pagina + "?" + codigo;
+            location.href = pagina + "?c=" + codigo;
         }
     </script>
 </asp:Content>
