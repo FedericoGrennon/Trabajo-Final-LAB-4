@@ -13,31 +13,40 @@ namespace DigitalGames {
     public partial class Usuario {
         
         /// <summary>
-        /// Control lbl_campoModificarUsuario.
+        /// Control txb_nombreUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_campoModificarUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_nombreUsuario;
         
         /// <summary>
-        /// Control txb_modificarUsuario.
+        /// Control cv_validaReg1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_modificarUsuario;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg1;
         
         /// <summary>
-        /// Control txb_fechaNacUsuario.
+        /// Control txb_MailUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_fechaNacUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_MailUsuario;
+        
+        /// <summary>
+        /// Control cv_validaReg2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg2;
         
         /// <summary>
         /// Control txb_contraseñaUsuario.
@@ -46,133 +55,169 @@ namespace DigitalGames {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_contraseñaUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_contraseñaUsuario;
         
         /// <summary>
-        /// Control btn_ModificarUsuario.
+        /// Control cv_validaReg3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ModificarUsuario;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg3;
         
         /// <summary>
-        /// Control lbl_nombreUsuario.
+        /// Control txb_nombreCompletoUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nombreUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_nombreCompletoUsuario;
         
         /// <summary>
-        /// Control lbl_EmailUsuario.
+        /// Control cv_validaReg6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_EmailUsuario;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg6;
         
         /// <summary>
-        /// Control lbl_contraseñaUsuario.
+        /// Control txb_apellidoUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_contraseñaUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_apellidoUsuario;
         
         /// <summary>
-        /// Control lbl_nombreCompletoUsuario.
+        /// Control cv_validaReg7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nombreCompletoUsuario;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg7;
         
         /// <summary>
-        /// Control lbl_apellidoUsuario.
+        /// Control txb_fechaNacUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_apellidoUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_fechaNacUsuario;
         
         /// <summary>
-        /// Control lbl_fechaNacUsuario.
+        /// Control cv_validaReg8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_fechaNacUsuario;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg8;
         
         /// <summary>
-        /// Control lbl_paisUsuario.
+        /// Control txb_PaisUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_paisUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_PaisUsuario;
         
         /// <summary>
-        /// Control lbl_provinciaUsuario.
+        /// Control cv_validaReg9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_provinciaUsuario;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg9;
         
         /// <summary>
-        /// Control lbl_localidadUsuario.
+        /// Control txb_ProvinciaUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_localidadUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_ProvinciaUsuario;
         
         /// <summary>
-        /// Control lbl_telefonoUsuario.
+        /// Control cv_validaReg10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_telefonoUsuario;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg10;
         
         /// <summary>
-        /// Control lbl_ultimosDigitosTarjetaUsuario.
+        /// Control txb_LocalidadUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ultimosDigitosTarjetaUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_LocalidadUsuario;
         
         /// <summary>
-        /// Control lbl_bancoUsuario.
+        /// Control cv_validaReg11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_bancoUsuario;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg11;
         
         /// <summary>
-        /// Control lbl_fechaVencUsuario.
+        /// Control txb_TelefonoUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_fechaVencUsuario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_TelefonoUsuario;
+        
+        /// <summary>
+        /// Control cv_validaReg12.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg12;
+        
+        /// <summary>
+        /// Control btn_GuardarCambios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_GuardarCambios;
+        
+        /// <summary>
+        /// Control literalTarjetas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalTarjetas;
+        
+        /// <summary>
+        /// Control txb_4DigitosAborrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txb_4DigitosAborrar;
         
         /// <summary>
         /// Control btn_eliminarTarjeta.
@@ -182,51 +227,6 @@ namespace DigitalGames {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_eliminarTarjeta;
-        
-        /// <summary>
-        /// Control lbl_nombreJuegoUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nombreJuegoUsuario;
-        
-        /// <summary>
-        /// Control lbl_precioJuegoUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_precioJuegoUsuario;
-        
-        /// <summary>
-        /// Control lbl_FechacompraUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_FechacompraUsuario;
-        
-        /// <summary>
-        /// Control lbl_ultimosDigitosCompraUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ultimosDigitosCompraUsuario;
-        
-        /// <summary>
-        /// Control lbl_codActivacionUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_codActivacionUsuario;
         
         /// <summary>
         /// Control btn_eliminarCuentaUsuario.

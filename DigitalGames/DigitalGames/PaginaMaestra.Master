@@ -114,7 +114,7 @@
 
         .modal-content {
             background-color: #fefefe;
-            margin: auto auto auto auto;
+            margin: 20px auto 20px auto;
             border: 1px solid #888;
             width: 30%;
             height: auto;
@@ -380,67 +380,6 @@
             </div>
         </div>
 
-        <div runat="server" id="InicioSesion" class="modal">
-            <div runat ="server" id="iniciar" class="modal-content animate">
-                <div class="paddingLogin">
-                    <label><b>Usuario</b></label>
-                    <asp:TextBox runat="server" ID="txb_nombreUsuarioIS" placeholder="Ingrese usuario" />
-
-                    <label for="psw"><b>Contraseña</b></label>
-                    <asp:TextBox runat="server" ID="txb_contraseñaIS" type="password" placeholder="Ingrese contraseña" />
-
-                    <asp:Button runat="server" CssClass="botonesLogin" ID="btn_LogineIS" Text="Iniciar Sesion" />
-                    <button class="botonesLogin" id="btn_registrarse" type="button" onclick="abrirRegistrarse()">Registrarse</button>
-                    <button type="button" onclick="cerrarIniciar()" class="cancelbtn">Cancel</button>
-                </div>
-            </div>
-
-            <div runat="server" id="regitrarse" class="modal-content animate" style="display:none">
-                <div class="paddingLogin">
-                    <label><b>Datos de la cuenta</b></label>
-
-                    <input runat="server" type="text" maxlength="49" ID="txb_nombreUsuarioReg" placeholder="Usuario" />
-                    <asp:CustomValidator runat="server" ID="cv_validarNombreReg" ControlToValidate="txb_nombreUsuarioReg" ValidateEmptyText="true" OnServerValidate="cv_validarNombreReg_ServerValidate" ErrorMessage="Complete el campo / Usuario repetido" ForeColor="red" Font-Size="15px" />
-
-                    <input runat="server" type="email" maxlength="99" ID="txb_MailReg" placeholder="Email" />
-                    <asp:CustomValidator runat="server" ID="cv_validarEmail" ValidateEmptyText="true" ControlToValidate="txb_MailReg" OnServerValidate="cv_validarEmail_ServerValidate" ErrorMessage="Complete el campo / Email repetido" ForeColor="red" Font-Size="15px" />
-                    
-                    <input runat="server" type="password" maxlength="49" ID="txb_contraseñaReg" placeholder="Contraseña" />
-                    <asp:customValidator runat="server" ID="cv_nombreJuego" ControlToValidate="txb_contraseñaReg" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-                    
-                    <input runat="server" type="password" maxlength="49" ID="txb_ConfirmarcontraseñaReg" placeholder="Repita contraseña" />
-                    <asp:customValidator runat="server" ID="CustomValidator1" ControlToValidate="txb_ConfirmarcontraseñaReg" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-                    <asp:CompareValidator runat="server" ControlToValidate="txb_ConfirmarcontraseñaReg" ControlToCompare="txb_contraseñaReg" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red" Font-Size="15px" />
-
-                    <div><label><b>Datos personales</b></label></div>
-                    <input runat="server" type="text" maxlength="49" id="txb_NombreReg" placeholder="Nombre completo" />
-                    <asp:customValidator runat="server" ID="CustomValidator2" ControlToValidate="txb_NombreReg" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-                    
-                    <input runat="server" type="text" maxlength="49" id="txb_ApellidoReg" placeholder="Apellido" />
-                    <asp:customValidator runat="server" ID="CustomValidator3" ControlToValidate="txb_ApellidoReg" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-                    
-                    <input runat="server" type="date" id="txb_fechaNacReg" placeholder="Fecha de nacimiento" />
-                    <asp:customValidator runat="server" ID="CustomValidator4" ControlToValidate="txb_fechaNacReg" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-                    
-                    <input runat="server" type="text" maxlength="49" id="txb_Pais" placeholder="Pais" />
-                    <asp:customValidator runat="server" ID="CustomValidator5" ControlToValidate="txb_Pais" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-                    
-                    <input runat="server" type="text" maxlength="49" id="txb_Provincia" placeholder="Provincia" />
-                    <asp:customValidator runat="server" ID="CustomValidator6" ControlToValidate="txb_Provincia" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-                    
-                    <input runat="server" type="text" maxlength="49" id="txb_Localidad" placeholder="Localidad" />
-                    <asp:customValidator runat="server" ID="CustomValidator7" ControlToValidate="txb_Localidad" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-                    
-                    <input runat="server" type="number" maxlength="49" id="txb_Telefono" placeholder="Telefono" />
-                    <asp:customValidator runat="server" ID="CustomValidator8" ControlToValidate="txb_Telefono" Font-size="15px"  ValidateEmptyText="true" ClientValidationFunction="validarTextBox" OnServerValidate="validarTextbox_ServerValidate" ForeColor="red" ErrorMessage="Complete el nombre." />
-
-                    <asp:Button runat="server" CssClass="botonesLogin" id="btn_NuevaCuentaReg" Text="Crear cuenta" OnClick="btn_NuevaCuentaReg_Click" />
-
-                    <button runat="server" id="btn_cancelReg" type="button" onclick="abrirIniciar();" class="cancelbtn">Volver</button>
-                </div>
-            </div>
-        </div>
-
         <div id="modifJuego" class="modal">
             <div id="ModificarJuego" class="modal-content animate"">
                 <div class="paddingLogin">
@@ -471,8 +410,8 @@
             <div style="float:left; margin-top: 6px;"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_Home" Text="DigitalGames" OnClick="btn_Home_Click" /></div>
             <asp:TextBox runat="server" ID="txb_buscar" Width="200px" CssClass="barraBuscar" placeholder="Buscar.." />
             <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_buscar" Text="Buscar" OnClick="btn_buscar_Click" /></div>
-            <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_agregarJuego" Text="Agregar Juego" /></div>
-            <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_ModfJuego" OnClientClick="abrirModificarJuego(); return false" Text="Modificar Juego" /></div>
+            <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_agregarJuego" Text="Agregar Juego" OnClick="btn_agregarJuego_Click" /></div>
+            <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_ModfJuego" Text="Modificar Juego" OnClick="btn_ModfJuego_Click" /></div>
             <div class="drop" onmouseover="abirFafa('2')" onmouseout="cerrarFafa('2')">
                 <a class="dropbtn">Categorias
                   <i id="2" class ="fa fa-caret-down"></i>
@@ -499,8 +438,9 @@
                     <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_XBOXONE" Text="XBOX ONE" OnClick="btn_XBOXONE_Click" />
                 </div>
             </div>
-            <asp:Button runat="server" CssClass="botonNavBar" ID="btn_usuario" Text="Usuario" />
-            <a onclick="abrirIniciar()">Inicio Sesion / Registrarse</a>
+            <asp:Button runat="server" CssClass="botonNavBar" ID="btn_usuario" Text="Usuario" OnClick="btn_usuario_Click" />
+            <asp:Button runat="server" CssClass="botonNavBar" ID="btn_cerrarSesion" Text="Cerrar sesion" OnClick="btn_cerrarSesion_Click" />
+            <asp:Button runat="server" ID="btn_inicioSes_reg" CssClass="botonNavBar" OnClick="btn_inicioSes_reg_Click" text="Inicio Sesion / Registrarse"/>
             <a onclick="openNav()">Carrito</a>
         </div>
 

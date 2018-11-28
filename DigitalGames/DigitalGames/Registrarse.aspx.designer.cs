@@ -10,330 +10,240 @@
 namespace DigitalGames {
     
     
-    public partial class PaginaMaestra {
+    public partial class Registrarse {
         
         /// <summary>
-        /// Control head.
+        /// Control regitrarse.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl regitrarse;
         
         /// <summary>
-        /// Control lbl_NombreJugoCarrito.
+        /// Control txb_nombreUsuarioReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_NombreJugoCarrito;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_nombreUsuarioReg;
         
         /// <summary>
-        /// Control lbl_precioCarrito.
+        /// Control cv_validaReg1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_precioCarrito;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg1;
         
         /// <summary>
-        /// Control btn_irCarrito.
+        /// Control txb_MailReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_irCarrito;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_MailReg;
         
         /// <summary>
-        /// Control btn_Juego1.
+        /// Control cv_validaReg2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Juego1;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg2;
         
         /// <summary>
-        /// Control btn_Juego2.
+        /// Control txb_contraseñaReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Juego2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txb_contraseñaReg;
         
         /// <summary>
-        /// Control btn_Juego3.
+        /// Control cv_validaReg3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Juego3;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg3;
         
         /// <summary>
-        /// Control btn_Juego4.
+        /// Control txb_ConfirmarcontraseñaReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Juego4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txb_ConfirmarcontraseñaReg;
         
         /// <summary>
-        /// Control btn_Juego5.
+        /// Control cv_validaReg4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Juego5;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg4;
         
         /// <summary>
-        /// Control Button1.
+        /// Control cv_validaReg5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.CompareValidator cv_validaReg5;
         
         /// <summary>
-        /// Control Button2.
+        /// Control txb_NombreReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_NombreReg;
         
         /// <summary>
-        /// Control Button3.
+        /// Control cv_validaReg6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg6;
         
         /// <summary>
-        /// Control Button4.
+        /// Control txb_ApellidoReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_ApellidoReg;
         
         /// <summary>
-        /// Control Button5.
+        /// Control cv_validaReg7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg7;
         
         /// <summary>
-        /// Control Button6.
+        /// Control txb_fechaNacReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button6;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_fechaNacReg;
         
         /// <summary>
-        /// Control btn_Home.
+        /// Control cv_validaReg8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Home;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg8;
         
         /// <summary>
-        /// Control txb_buscar.
+        /// Control txb_Pais.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_buscar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_Pais;
         
         /// <summary>
-        /// Control btn_buscar.
+        /// Control cv_validaReg9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_buscar;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg9;
         
         /// <summary>
-        /// Control btn_agregarJuego.
+        /// Control txb_Provincia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_agregarJuego;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_Provincia;
         
         /// <summary>
-        /// Control btn_ModfJuego.
+        /// Control cv_validaReg10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ModfJuego;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg10;
         
         /// <summary>
-        /// Control btn_Acción.
+        /// Control txb_Localidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Acción;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_Localidad;
         
         /// <summary>
-        /// Control btn_Aventura.
+        /// Control cv_validaReg11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Aventura;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg11;
         
         /// <summary>
-        /// Control btn_AventuraGráfica.
+        /// Control txb_Telefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_AventuraGráfica;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_Telefono;
         
         /// <summary>
-        /// Control btn_ConsolaVirtual.
+        /// Control cv_validaReg12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ConsolaVirtual;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg12;
         
         /// <summary>
-        /// Control btn_Deportes.
+        /// Control btn_NuevaCuentaReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Deportes;
+        protected global::System.Web.UI.WebControls.Button btn_NuevaCuentaReg;
         
         /// <summary>
-        /// Control btn_Estrategia.
+        /// Control btn_cancelReg.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Estrategia;
-        
-        /// <summary>
-        /// Control btn_Lucha.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Lucha;
-        
-        /// <summary>
-        /// Control btn_PC.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_PC;
-        
-        /// <summary>
-        /// Control btn_PS3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_PS3;
-        
-        /// <summary>
-        /// Control btn_PS4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_PS4;
-        
-        /// <summary>
-        /// Control btn_XBOX360.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_XBOX360;
-        
-        /// <summary>
-        /// Control btn_XBOXONE.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_XBOXONE;
-        
-        /// <summary>
-        /// Control btn_usuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_usuario;
-        
-        /// <summary>
-        /// Control btn_cerrarSesion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cerrarSesion;
-        
-        /// <summary>
-        /// Control btn_inicioSes_reg.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_inicioSes_reg;
-        
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btn_cancelReg;
     }
 }

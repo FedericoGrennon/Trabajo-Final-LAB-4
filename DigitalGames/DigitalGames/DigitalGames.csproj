@@ -71,7 +71,10 @@
     <Content Include="Carrito.aspx" />
     <Content Include="Descuentos.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="IniciarSession.aspx" />
     <Content Include="Juego.aspx" />
+    <Content Include="ModificarJuego.aspx" />
+    <Content Include="Registrarse.aspx" />
     <Content Include="Usuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -109,12 +112,26 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IniciarSession.aspx.cs">
+      <DependentUpon>IniciarSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IniciarSession.aspx.designer.cs">
+      <DependentUpon>IniciarSession.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Juego.aspx.cs">
       <DependentUpon>Juego.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Juego.aspx.designer.cs">
       <DependentUpon>Juego.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarJuego.aspx.cs">
+      <DependentUpon>ModificarJuego.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarJuego.aspx.designer.cs">
+      <DependentUpon>ModificarJuego.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
@@ -124,6 +141,13 @@
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrarse.aspx.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrarse.aspx.designer.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.aspx.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

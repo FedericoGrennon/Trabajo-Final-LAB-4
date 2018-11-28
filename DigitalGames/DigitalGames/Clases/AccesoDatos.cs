@@ -26,7 +26,6 @@ namespace DigitalGames
             }
         }
 
-
         private SqlDataAdapter ObtenerAdaptador(String consultaSql, SqlConnection cn)
         {
             SqlDataAdapter adaptador;
@@ -106,5 +105,34 @@ namespace DigitalGames
             return false;
         }
 
+        public void EliminarTarjeta(string numeroTarjeta)
+        {
+            SqlConnection sqlconect = new SqlConnection();
+
+            sqlconect = ObtenerConexion();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM Tarjetas WHERE NumeroTarjeta = '" + numeroTarjeta + "'";
+            cmd.Connection = sqlconect;
+
+            cmd.ExecuteNonQuery();
+            sqlconect.Close();
+        }
+
+        public void darBajaUsuario(string nombreUsuario)
+        {
+            SqlConnection sqlconect = new SqlConnection();
+
+            sqlconect = ObtenerConexion();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "UPDATE usuarios set estado = 'false' WHERE NombreUsuario = '" + nombreUsuario + "'";
+            cmd.Connection = sqlconect;
+
+            cmd.ExecuteNonQuery();
+            sqlconect.Close();
+        }
     }
 }

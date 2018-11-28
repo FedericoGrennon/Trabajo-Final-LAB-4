@@ -12,11 +12,33 @@ namespace DigitalGames
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!Page.IsPostBack)
+            if(Session["Usuario"] != null)
             {
-                InicioSesion.Style.Add("display", "block");
-                iniciar.Style.Add("display", "none");
-                regitrarse.Style.Add("display", "block");
+                string[] trae = (string[])Session["Usuario"];
+
+                btn_inicioSes_reg.Visible = false;
+                btn_usuario.Text = trae[0];
+                btn_usuario.Visible = true;
+                btn_cerrarSesion.Visible = true;
+
+                if (trae[1] == "Admin")
+                {
+                    btn_agregarJuego.Visible = true;
+                    btn_ModfJuego.Visible = true;
+                }
+                else
+                {
+                    btn_agregarJuego.Visible = false;
+                    btn_ModfJuego.Visible = false;
+                }
+            }
+            else
+            {
+                btn_inicioSes_reg.Visible = true;
+                btn_usuario.Visible = false;
+                btn_cerrarSesion.Visible = false;
+                btn_agregarJuego.Visible = false;
+                btn_ModfJuego.Visible = false;
             }
         }
 
@@ -27,7 +49,10 @@ namespace DigitalGames
 
         protected void btn_buscar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx?Juego=" + txb_buscar.Text);
+            if(txb_buscar.Text != "")
+                Response.Redirect("Home.aspx?Juego=" + txb_buscar.Text);
+            else
+                Response.Redirect("Home.aspx");
         }
 
         protected void btn_PC_Click(object sender, EventArgs e)
@@ -90,87 +115,30 @@ namespace DigitalGames
             Response.Redirect("Home.aspx?Cat=Lucha");
         }
 
-        protected void cargarUsuario(Usuarios us)
+        protected void btn_inicioSes_reg_Click(object sender, EventArgs e)
         {
-            us.nombreUsuario = txb_nombreUsuarioReg.Value;
-            us.contraseña = txb_contraseñaReg.Value;
-            us.mail = txb_MailReg.Value;
-            us.nombre = txb_NombreReg.Value;
-            us.apellido = txb_ApellidoReg.Value;
-            us.fechaNacimiento = Convert.ToDateTime(txb_fechaNacReg.Value);
-            us.pais = txb_Pais.Value;
-            us.provincia = txb_Provincia.Value;
-            us.localidad = txb_Localidad.Value;
-            us.telefono = txb_Telefono.Value;
+            Response.Redirect("IniciarSession.aspx");
         }
 
-        protected void btn_NuevaCuentaReg_Click(object sender, EventArgs e)
+        protected void btn_usuario_Click(object sender, EventArgs e)
         {
-            Usuarios us = new Usuarios();
-            if (txb_MailReg.Value != string.Empty)
-                cargarUsuario(us);
-
-            if (Page.IsValid)
-            {
-                gestionUsuario gUsuario = new gestionUsuario();
-                gUsuario.AgregarUsuario(us);
-            }
+            Response.Redirect("Usuario.aspx");
         }
 
-        protected void cv_validarNombreReg_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void btn_cerrarSesion_Click(object sender, EventArgs e)
         {
-            if(args.Value != "")
-            {
-                AccesoDatos ds = new AccesoDatos();
-                DataTable dt = new DataTable();
-                dt = ds.ObtenerTabla("Usuario", "SELECT NombreUsuario FROM Usuarios");
-                bool esta = true;
-                foreach (DataRow row in dt.Rows)
-                {
-                    if (txb_nombreUsuarioReg.Value == row[0].ToString())
-                    {
-                        esta = false;
-                        break;
-                    }
-                }
-
-                args.IsValid = esta;
-            }
-            else
-            {
-                args.IsValid = false;
-            }
-            
+            Session["Usuario"] = null;
+            Response.Redirect("Home.aspx");
         }
 
-        protected void cv_validarEmail_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void btn_agregarJuego_Click(object sender, EventArgs e)
         {
-            if (args.Value != "")
-            {
-                AccesoDatos ds = new AccesoDatos();
-                DataTable dt = new DataTable();
-                dt = ds.ObtenerTabla("Usuario", "SELECT mail FROM Usuarios");
-                bool esta = true;
-                foreach (DataRow row in dt.Rows)
-                {
-                    if (txb_MailReg.Value == row[0].ToString())
-                    {
-                        esta = false;
-                        break;
-                    }
-                }
-
-                args.IsValid = esta;
-            }
-            else
-            {
-                args.IsValid = false;
-            }
+            Response.Redirect("AgregarModificarJuego.aspx");
         }
 
-        protected void validarTextbox_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void btn_ModfJuego_Click(object sender, EventArgs e)
         {
-            args.IsValid = (args.Value != "");
+            Response.Redirect("ModificarJuego.aspx");
         }
     }
 }
