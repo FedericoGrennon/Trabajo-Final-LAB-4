@@ -109,7 +109,7 @@
         }
 
         .paneles {
-            display: none;
+            display: block;
             background-color: transparent;
             overflow: auto;
             max-height: 400px;
@@ -128,6 +128,20 @@
             font-weight:bold;
             font-size: 20px;
         }
+
+        .botonGuardarDatos{
+            color: #d0d0d0;
+            background-color: green;
+            padding: 15px;
+            margin: 0;
+            font-size: 25px;
+            border-radius: 5px 6px;
+            font-weight: bold;
+        }
+
+        .botonGuardarDatos:hover{
+            background-color: #005600;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
@@ -136,7 +150,7 @@
             <button class="accordion" onclick="return false">
                 <p>Datos de la cuenta</p>
             </button>
-            <div class="paneles">
+            <div runat="server" id="panelDcuenta" class="paneles">
                 <div>
                     <h4>Usuario: </h4>
                     <input runat="server" type="text" maxlength="49" ID="txb_nombreUsuario" placeholder="Usuario" />
@@ -164,7 +178,7 @@
             <button class="accordion" onclick="return false">
                 <p>Datos personales</p>
             </button>
-            <div class="paneles">
+            <div runat="server" id="panelDpersonales" class="paneles">
                 <div>
                     <h4>Nombre: </h4> 
                     <input runat="server" type="text" maxlength="49" id="txb_nombreCompletoUsuario" placeholder="Nombre completo" />
@@ -217,7 +231,7 @@
             </div>
         </div>
         <div style="text-align:center">
-            <asp:Button runat="server" ID="btn_GuardarCambios" CssClass="botonModificar" Text="Guardar datos" />
+            <asp:Button runat="server" ID="btn_GuardarCambios" CssClass="botonGuardarDatos" Width="100%" Text="Guardar datos" OnClick="btn_GuardarCambios_Click" />
         </div>
         <div class="datosCuenta">
             <button class="accordion" onclick="return false">
@@ -242,14 +256,7 @@
             </button>
             <div class="paneles">
                 <div>
-                    <div class="compra">
-                        <div><h4>Nombre de juego: </h4><a>Counter Strike</a></div>
-                        <div><h4>Cantidad: </h4><a>1</a></div>
-                        <div><h4>Precio: </h4> <a>ARS $1500</a></div>
-                        <div><h4>Fecha de compra: </h4><a>11/08/2018</a></div>
-                        <div><h4>Ultimos 4 digitos de tarjeta: </h4><a>4455</a></div>
-                        <div><h4>Codigo de activacion: </h4><a>4455 4455 4455</a></div>
-                    </div>
+                    <asp:Literal runat="server" ID="literalCompras" />
                 </div>
             </div>
         </div>
@@ -271,10 +278,10 @@
         for (i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
+                if (panel.style.display === "none") {
                     panel.style.display = "block";
+                } else {
+                    panel.style.display = "none";
                 }
             });
         }

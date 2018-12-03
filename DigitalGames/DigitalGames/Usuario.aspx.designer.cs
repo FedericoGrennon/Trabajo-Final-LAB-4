@@ -13,6 +13,15 @@ namespace DigitalGames {
     public partial class Usuario {
         
         /// <summary>
+        /// Control panelDcuenta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panelDcuenta;
+        
+        /// <summary>
         /// Control txb_nombreUsuario.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace DigitalGames {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cv_validaReg3;
+        
+        /// <summary>
+        /// Control panelDpersonales.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panelDpersonales;
         
         /// <summary>
         /// Control txb_nombreCompletoUsuario.
@@ -227,6 +245,15 @@ namespace DigitalGames {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_eliminarTarjeta;
+        
+        /// <summary>
+        /// Control literalCompras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalCompras;
         
         /// <summary>
         /// Control btn_eliminarCuentaUsuario.

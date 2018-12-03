@@ -148,42 +148,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row">
-            <div class="mySlides">
-                <img class="imagenesGrandes" src="https://http2.mlstatic.com/key-steam-counter-strike-global-offensive-cs-go-csgo-D_NQ_NP_875309-MLA27574608038_062018-F.jpg">
-            </div>
-
-            <div class="mySlides">
-                <img class="imagenesGrandes" src="https://www.instant-gaming.com/images/products/62/screenshot/62-2.jpg">
-            </div>
-
-            <div class="mySlides">
-                <img class="imagenesGrandes" src="https://cdns.kinguin.net/media/category/3/-/3-1024_826.jpg">
-            </div>
-    
-            <div class="mySlides">
-                <img class="imagenesGrandes" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJgHgjfAQCjwgF91oZpjgNElpBk7-j5uC_GZrMb24Tkw-OlyaXoQ">
-            </div>
-
-            <div class="mySlides">
-                <img class="imagenesGrandes" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGNjk5Tf2rA7cKbY8pLIyctHmVhbQVXeIIGQIjpzF6-gxMryWf">
-            </div>
+            <asp:Literal runat="server" ID="literalImgGrandes" />
         
             <div class="scroller">
-                <div class="column">
-                    <img class="cursor imagenesChicas" src="https://http2.mlstatic.com/key-steam-counter-strike-global-offensive-cs-go-csgo-D_NQ_NP_875309-MLA27574608038_062018-F.jpg" onclick="currentSlide(1)" alt="">
-                </div>
-                <div class="column">
-                    <img class="cursor imagenesChicas" src="https://www.instant-gaming.com/images/products/62/screenshot/62-2.jpg" onclick="currentSlide(2)" alt="">
-                </div>
-                <div class="column">
-                    <img class="cursor imagenesChicas" src="https://cdns.kinguin.net/media/category/3/-/3-1024_826.jpg" onclick="currentSlide(3)" alt="">
-                </div>
-                <div class="column">
-                    <img class="cursor imagenesChicas" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJgHgjfAQCjwgF91oZpjgNElpBk7-j5uC_GZrMb24Tkw-OlyaXoQ" onclick="currentSlide(4)" alt="">
-                </div>
-                <div class="column">
-                    <img class="cursor imagenesChicas" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGNjk5Tf2rA7cKbY8pLIyctHmVhbQVXeIIGQIjpzF6-gxMryWf" onclick="currentSlide(5)" alt="">
-                </div>
+                <asp:Literal runat="server" ID="literalImgChicas" />
             </div>
         </div>
 
@@ -192,7 +160,7 @@
                 <asp:Label runat="server" id="lbl_tituloJuego" CssClass="tituloLabel" Text="Counter strike: Global offensive" />
             </div>
 
-            <div id="divDescuento" style="display:block">
+            <div runat="server" id="divDescuento">
                 <div class="price"><s>ARS $</s><asp:Label runat="server" id="lbl_PrecioJuego" style="text-decoration:line-through"  Text="1558.00" /></div>
             </div>
             <div>
@@ -207,7 +175,8 @@
             
             <div class="stock">
                 <div style="float:left; width: 100px">
-                    <asp:TextBox runat="server" id="txb_cantAcomprarJuego" placeholder="Cantidad" /></div>
+                    <input runat="server" id="txb_cantAcomprarJuego" type="number"  min="1" placeholder="1" value="1" />
+                </div>
                 <div style="float:left; width: 150px; height:57px; margin-top: 15px">
                     <a>(</a>
                     <asp:Label runat="server" id="lbl_stockJuego" CssClass="stockTextBox" Text="4" />
@@ -215,8 +184,8 @@
                 </div>
             </div>
 
-            <asp:Button runat="server" CssClass="botonCarta" ID="btn_AñadirCarritoJuego" Text="Añadir al carrito" />
-            <asp:Button runat="server" CssClass="botonCarta" style="background-color:#0885e2" ID="btn_comprarJuego" Text="Comprar ahora" />
+            <asp:Button runat="server" CssClass="botonCarta" ID="btn_AñadirCarritoJuego" Text="Añadir al carrito" OnClick="btn_AñadirCarritoJuego_Click" />
+            <asp:Button runat="server" CssClass="botonCarta" style="background-color:#0885e2" ID="btn_comprarJuego" Text="Comprar ahora" OnClick="btn_comprarJuego_Click" />
         </div>
     </div>
 

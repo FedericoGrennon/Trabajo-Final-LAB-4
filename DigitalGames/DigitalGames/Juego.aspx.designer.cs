@@ -13,6 +13,24 @@ namespace DigitalGames {
     public partial class Juegos {
         
         /// <summary>
+        /// Control literalImgGrandes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalImgGrandes;
+        
+        /// <summary>
+        /// Control literalImgChicas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalImgChicas;
+        
+        /// <summary>
         /// Control lbl_tituloJuego.
         /// </summary>
         /// <remarks>
@@ -20,6 +38,15 @@ namespace DigitalGames {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_tituloJuego;
+        
+        /// <summary>
+        /// Control divDescuento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divDescuento;
         
         /// <summary>
         /// Control lbl_PrecioJuego.
@@ -46,7 +73,7 @@ namespace DigitalGames {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txb_cantAcomprarJuego;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_cantAcomprarJuego;
         
         /// <summary>
         /// Control lbl_stockJuego.

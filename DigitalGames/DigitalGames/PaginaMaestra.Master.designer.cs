@@ -22,22 +22,22 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// Control lbl_NombreJugoCarrito.
+        /// Control literalCarrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_NombreJugoCarrito;
+        protected global::System.Web.UI.WebControls.Literal literalCarrito;
         
         /// <summary>
-        /// Control lbl_precioCarrito.
+        /// Control btn_LimpiarCarrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_precioCarrito;
+        protected global::System.Web.UI.WebControls.Button btn_LimpiarCarrito;
         
         /// <summary>
         /// Control btn_irCarrito.

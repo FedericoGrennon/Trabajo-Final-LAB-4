@@ -105,5 +105,39 @@ namespace DigitalGames
             Comando.Parameters["@RUTAIMAGEN"].Value = rutaImagen;
             Comando.Parameters["@PRIMERAIMAGEN"].Value = primeraImagen;
         }
+
+        public int ActualizarUsuario(Usuarios us)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosActualizarUsuario(ref comando, us);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spActualizarUsuario");
+        }
+
+        private void ArmarParametrosActualizarUsuario(ref SqlCommand Comando, Usuarios us)
+        {
+            Comando.Parameters.Add("@NombreUsuario", SqlDbType.NVarChar, 50);
+            Comando.Parameters.Add("@Contraseña", SqlDbType.NVarChar, 50);
+            Comando.Parameters.Add("@Mail", SqlDbType.NVarChar, 100);
+            Comando.Parameters.Add("@Nombre", SqlDbType.NVarChar, 50);
+            Comando.Parameters.Add("@Apellido", SqlDbType.NVarChar, 50);
+            Comando.Parameters.Add("@FechaNacimiento", SqlDbType.SmallDateTime);
+            Comando.Parameters.Add("@Pais", SqlDbType.NVarChar, 50);
+            Comando.Parameters.Add("@Provincia", SqlDbType.NVarChar, 50);
+            Comando.Parameters.Add("@Localidad", SqlDbType.NVarChar, 50);
+            Comando.Parameters.Add("@Telefono", SqlDbType.NVarChar, 50);
+
+
+            Comando.Parameters["@NombreUsuario"].Value = us.nombreUsuario;
+            Comando.Parameters["@Contraseña"].Value = us.contraseña;
+            Comando.Parameters["@Mail"].Value = us.mail;
+            Comando.Parameters["@Nombre"].Value = us.nombre;
+            Comando.Parameters["@Apellido"].Value = us.apellido;
+            Comando.Parameters["@FechaNacimiento"].Value = us.fechaNacimiento;
+            Comando.Parameters["@Pais"].Value = us.pais;
+            Comando.Parameters["@Provincia"].Value = us.provincia;
+            Comando.Parameters["@Localidad"].Value = us.localidad;
+            Comando.Parameters["@Telefono"].Value = us.telefono;
+        }
+
     }
 }

@@ -79,6 +79,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ClaseCarrito.cs" />
     <Compile Include="Clases\AccesoDatos.cs" />
     <Compile Include="AgregarModificarJuego.aspx.cs">
       <DependentUpon>AgregarModificarJuego.aspx</DependentUpon>

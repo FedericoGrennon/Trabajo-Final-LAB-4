@@ -18,11 +18,44 @@ namespace DigitalGames
             {
                 cargarUsuario(us);
                 cargarTarjetas();
+                cargarCompras();
 
                 if (!Page.IsPostBack)
                 {
                     remplazarLabels(us);
-                }   
+                }
+            }
+        }
+
+        protected void cargarCompras()
+        {
+            AccesoDatos ad = new AccesoDatos();
+            DataTable dt = new DataTable();
+            dt = ad.ObtenerTabla("Usuarios", "SELECT v.FechaCompra, v.Numerotarjeta, dv.PrecioUnitario , j.Nombre, ca.CodActivacion"
+                                           + " FROM Ventas v"
+                                           + " INNER JOIN DetalleVenta dv"
+                                           + " ON V.CodVenta = dv.CodVenta"
+                                           + " INNER JOIN Juegos j ON j.CodJuego = dv.CodJuego"
+                                           + " INNER JOIN CodActivacionVendidos ca"
+                                           + " ON dv.CodVenta = ca.CodVenta AND dv.CodJuego = ca.CodJuego"
+                                           + " WHERE v.NombreUsuario = '" + us.nombreUsuario + "'");
+            int i = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                
+                string ultimosDigitos = row[1].ToString().Substring(row[1].ToString().Length - 4, 4);
+                string fechaCompra = row[0].ToString().Substring(0, row[0].ToString().Length - 10);
+                string precioUnitario = row[2].ToString().Substring(0, row[2].ToString().Length - 2);
+
+                if (i==0)
+                    literalCompras.Text = armarDivCompras(row[3].ToString(), precioUnitario, fechaCompra, ultimosDigitos, row[4].ToString());
+                else
+                    literalCompras.Text += armarDivCompras(row[3].ToString(), precioUnitario, fechaCompra, ultimosDigitos, row[4].ToString());
+                i++;
+            }
+            if (dt.Rows.Count <= 0)
+            {
+                literalCompras.Text = "<a>No realizo ninguna compra</a>";
             }
         }
 
@@ -32,18 +65,23 @@ namespace DigitalGames
             DataTable dt = new DataTable();
             dt = ad.ObtenerTabla("Usuarios", "SELECT numeroTarjeta, banco, fechavencimiento FROM tarjetas WHERE nombreUsuario = '" + us.nombreUsuario + "'");
             int i = 0;
-            foreach(DataRow row in dt.Rows)
+
+            foreach (DataRow row in dt.Rows)
             {
-                string unltimosDigitos = row[0].ToString().Substring(row[0].ToString().Length-4, 4);
+                string ultimosDigitos = row[0].ToString().Substring(row[0].ToString().Length-4, 4);
                 string[] aux = row[2].ToString().Split('/');
                 string fechaVencimiento = aux[1] + " / " + aux[2].Substring(0, 4);
 
                 if(i==0)
-                    literalTarjetas.Text = armarDivTarjetas(unltimosDigitos, row[1].ToString(), fechaVencimiento);
+                    literalTarjetas.Text = armarDivTarjetas(ultimosDigitos, row[1].ToString(), fechaVencimiento);
                 else
-                    literalTarjetas.Text += armarDivTarjetas(unltimosDigitos, row[1].ToString(), fechaVencimiento);
-
+                    literalTarjetas.Text += armarDivTarjetas(ultimosDigitos, row[1].ToString(), fechaVencimiento);
                 i++;
+            }
+
+            if (dt.Rows.Count <= 0)
+            {
+                literalTarjetas.Text = "<a>No tiene ninguna tarjeta cargada</a>";
             }
         }
 
@@ -64,6 +102,20 @@ namespace DigitalGames
             us.provincia = dt.Rows[0][8].ToString();
             us.localidad = dt.Rows[0][9].ToString();
             us.telefono = dt.Rows[0][10].ToString();
+        }
+
+        protected void ActualizarClaseUsuario(Usuarios us)
+        {
+            us.nombreUsuario = txb_nombreUsuario.Value;
+            us.contraseña = txb_contraseñaUsuario.Value;
+            us.mail = txb_MailUsuario.Value;
+            us.nombre = txb_nombreCompletoUsuario.Value;
+            us.apellido = txb_apellidoUsuario.Value;
+            us.fechaNacimiento = Convert.ToDateTime(txb_fechaNacUsuario.Value);
+            us.pais = txb_PaisUsuario.Value;
+            us.provincia = txb_ProvinciaUsuario.Value;
+            us.localidad = txb_LocalidadUsuario.Value;
+            us.telefono = txb_TelefonoUsuario.Value;
         }
 
         protected void remplazarLabels(Usuarios us)
@@ -146,6 +198,19 @@ namespace DigitalGames
             return div;
         }
 
+        protected string armarDivCompras(string nombreJuego, string precioUnitario, string fechaCompra, string ultimosDigitosTarj, string codActivacion)
+        {
+            string div = "<div class=\"compra\">"
+                            +"<div><h4>Nombre de juego: </h4><a>" + nombreJuego + "</a></div>"
+                            +"<div><h4>Precio: </h4> <a>ARS $" + precioUnitario + "</a></div>"
+                            +"<div><h4>Fecha de compra: </h4><a>" + fechaCompra + "</a></div>"
+                            +"<div><h4>Ultimos 4 digitos de tarjeta: </h4><a>" + ultimosDigitosTarj + "</a></div>"
+                            +"<div><h4>Codigo de activacion: </h4><a>" + codActivacion + "</a></div>"
+                        +"</div>";
+
+            return div;
+        }
+
         protected void btn_eliminarTarjeta_Click(object sender, EventArgs e)
         {
             AccesoDatos ad = new AccesoDatos();
@@ -169,6 +234,21 @@ namespace DigitalGames
             ds.darBajaUsuario(us.nombreUsuario);
             Session["Usuario"] = null;
             Response.Redirect("Home.aspx");
+        }
+
+        protected void btn_GuardarCambios_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                funcionesJuegos fJue = new funcionesJuegos();
+                ActualizarClaseUsuario(us);
+                fJue.ActualizarUsuario(us);
+            }
+            else
+            {
+                panelDcuenta.Attributes.Add("display", "block");
+                panelDpersonales.Attributes.Add("display", "block");
+            }
         }
     }
 }

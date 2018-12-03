@@ -178,6 +178,7 @@
             padding: 5px;
             border-radius: 7px;
             border: 0;
+            margin: 2px 0 2px 0;
         }
 
         .juego{
@@ -193,16 +194,11 @@
 
         .juego div{
             margin: 5px 0 5px 0;
-            display: inline-block;
         }
 
         .cantJuego a{
             color: #7d7d7d;
             font-size: 20px;
-        }
-
-        .precioJuego{
-            float:right;
         }
 
         .precioJuego a{
@@ -227,6 +223,7 @@
             padding: 5px; 
             margin:10px 10px 0 10px;
             overflow-y:auto;
+            overflow-x:hidden;
             background-color:#33526b;
         }
 
@@ -360,6 +357,16 @@
             overflow: auto;
             max-height: 300px;
         }
+
+        .botonEliminarCarrito input{
+            border:0;
+            background-color: #c22727;
+            color: white;
+            font-weight:bold;
+            width:100%;
+            font-size:15px;
+            text-align:center;
+        }
     </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -369,14 +376,11 @@
     <form runat="server">
         <div id="mySidenav" class="sidenav">    
             <div class="contenidoCarrito">
-                <div class="juego">
-                    <asp:Label runat="server" CssClass="JuegoTituloCarrito" ID="lbl_NombreJugoCarrito" Text="Counter Strike: Global Offensive"/>
-                    <div class="cantJuego"><a id="cantArtCarrito">1</a> <a> articulo/s</a></div>
-                    <div class="precioJuego"><a>ARS $ </a> <asp:Label runat="server" CssClass="precioJuegoCarrito" ID="lbl_precioCarrito" Text="250" /></div>
-                </div>
+                <asp:Literal runat="server" ID="literalCarrito" />
             </div>
             <div class="irCarrito">
-                <asp:Button runat="server" ID="btn_irCarrito" CssClass="botonIrCarrito" Text="Ir al carrito" />
+                <asp:Button runat="server" ID="btn_LimpiarCarrito" CssClass="botonIrCarrito" Text="Limpiar carrito" OnClick="btn_LimpiarCarrito_Click" />
+                <asp:Button runat="server" ID="btn_irCarrito" CssClass="botonIrCarrito" Text="Ir al carrito" OnClick="btn_irCarrito_Click" />
             </div>
         </div>
 

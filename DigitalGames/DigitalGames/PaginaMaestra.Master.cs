@@ -40,6 +40,37 @@ namespace DigitalGames
                 btn_agregarJuego.Visible = false;
                 btn_ModfJuego.Visible = false;
             }
+
+            if (Session["Carrito"] != null)
+            {
+                cargarCarrito();
+            }
+        }
+
+        protected void cargarCarrito()
+        {
+            DataTable tabla = (DataTable)Session["Carrito"];
+            int i = 0;
+            foreach (DataRow row in tabla.Rows)
+            {
+                if(i==0)
+                    literalCarrito.Text = crearDivCarrito(row[1].ToString(), row[2].ToString(), row[3].ToString(), row[0].ToString());
+                else
+                    literalCarrito.Text += crearDivCarrito(row[1].ToString(), row[2].ToString(), row[3].ToString(), row[0].ToString());
+
+                i++;
+            }
+        }
+
+        protected string crearDivCarrito(string titulo, string cantidad, string precio, string codJuego)
+        {
+            string div = "<div class=\"juego\">"
+                        + "<div class=\"JuegoTituloCarrito\"><a>" + titulo + "</a></div>"
+                        + "<div class=\"cantJuego\"><a>" + cantidad + " articulo/s</a></div>"
+                        + "<div class=\"precioJuego\"><a>ARS $" + precio + "</a></div>"
+                        + "</div>";
+
+            return div;
         }
 
         protected void btn_Home_Click(object sender, EventArgs e)
@@ -139,6 +170,20 @@ namespace DigitalGames
         protected void btn_ModfJuego_Click(object sender, EventArgs e)
         {
             Response.Redirect("ModificarJuego.aspx");
+        }
+
+        protected void btn_LimpiarCarrito_Click(object sender, EventArgs e)
+        {
+            Session["Carrito"] = null;
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void btn_irCarrito_Click(object sender, EventArgs e)
+        {
+            if (Session["Carrito"] != null)
+            {
+                Response.Redirect("Carrito.aspx");
+            }
         }
     }
 }
