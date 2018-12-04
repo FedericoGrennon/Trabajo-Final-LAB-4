@@ -60,10 +60,24 @@ namespace DigitalGames
 
             lbl_stockJuego.Text = dt.Rows[0][2].ToString();
 
+            if(Convert.ToInt32(lbl_stockJuego.Text) <= 0)
+            {
+                txb_cantAcomprarJuego.Visible = false;
+                btn_AñadirCarritoJuego.Visible = false;
+                btn_comprarJuego.Visible = false;
+            }
+            else
+            {
+                txb_cantAcomprarJuego.Visible = true;
+                btn_AñadirCarritoJuego.Visible = true;
+                btn_comprarJuego.Visible = true;
+                txb_cantAcomprarJuego.Attributes.Add("max", dt.Rows[0][2].ToString());
+            }
+
             lbl_DescripcionJuego.Text = dt.Rows[0][7].ToString();
             lbl_requisitosJuego.Text = dt.Rows[0][8].ToString();
 
-            txb_cantAcomprarJuego.Attributes.Add("max", dt.Rows[0][2].ToString());
+            
         }
 
         protected void cargarImagenes(string codJuego)
@@ -125,6 +139,8 @@ namespace DigitalGames
                 cantidad = Convert.ToInt32(txb_cantAcomprarJuego.Value);
             decimal precio = Convert.ToDecimal(lbl_PrecioConDescuento.Text);
 
+            int stock = Convert.ToInt32(lbl_stockJuego.Text);
+
             DataTable tabla = (DataTable)Session["Carrito"];
             int i = 0, cantEncontrada = 0;
             bool encontro = false;
@@ -143,8 +159,6 @@ namespace DigitalGames
                 car.AgregarFilaCarrito((DataTable)Session["Carrito"], codJuego, lbl_tituloJuego.Text, cantidad, precio);
             else
             {
-                int stock = Convert.ToInt32(lbl_stockJuego.Text);
-
                 if (cantEncontrada < stock)
                 {
                     if (cantEncontrada + cantidad <= stock)

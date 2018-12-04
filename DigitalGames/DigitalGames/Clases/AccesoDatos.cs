@@ -12,7 +12,7 @@ namespace DigitalGames
         String rutaBDDigitalGames =
       "Data Source=localhost\\sqlexpress;Initial Catalog=DigitalGames;Integrated Security=True";
 
-        private SqlConnection ObtenerConexion()
+        public SqlConnection ObtenerConexion()
         {
             SqlConnection cn = new SqlConnection(rutaBDDigitalGames);
             try

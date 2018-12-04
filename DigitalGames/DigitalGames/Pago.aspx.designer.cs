@@ -10,96 +10,87 @@
 namespace DigitalGames {
     
     
-    public partial class Carrito {
+    public partial class Pago {
         
         /// <summary>
-        /// Control lbl_nombreJuegoPago.
+        /// Control lb_tarjetas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nombreJuegoPago;
+        protected global::System.Web.UI.WebControls.ListBox lb_tarjetas;
         
         /// <summary>
-        /// Control lbl_precioPago.
+        /// Control btn_seleccionar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_precioPago;
+        protected global::System.Web.UI.WebControls.Button btn_seleccionar;
         
         /// <summary>
-        /// Control lbl_fechaPago.
+        /// Control txb_banco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_fechaPago;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_banco;
         
         /// <summary>
-        /// Control lbl_ultNumTarjeta.
+        /// Control txb_nombreTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ultNumTarjeta;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_nombreTarjeta;
         
         /// <summary>
-        /// Control lbl_codActivacion.
+        /// Control txb_fechaVencimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_codActivacion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_fechaVencimiento;
         
         /// <summary>
-        /// Control btn_finalizar.
+        /// Control txb_NombreTitular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_finalizar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_NombreTitular;
         
         /// <summary>
-        /// Control btn_continuarCompra.
+        /// Control txb_DNI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_continuarCompra;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_DNI;
         
         /// <summary>
-        /// Control literalCarr.
+        /// Control btn_finalizarCompra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalCarr;
+        protected global::System.Web.UI.WebControls.Button btn_finalizarCompra;
         
         /// <summary>
-        /// Control btn_Pagar.
+        /// Control btn_cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Pagar;
-        
-        /// <summary>
-        /// Control lbl_total.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total;
+        protected global::System.Web.UI.WebControls.Button btn_cancelar;
     }
 }
