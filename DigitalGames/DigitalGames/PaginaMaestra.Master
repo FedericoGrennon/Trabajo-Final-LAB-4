@@ -374,79 +374,56 @@
 </head>
 <body id="cuerpo">
     <form runat="server">
-        <div id="mySidenav" class="sidenav">    
-            <div class="contenidoCarrito">
-                <asp:Literal runat="server" ID="literalCarrito" />
+        <div runat="server" id="NavegadorSuperior">
+            <div id="mySidenav" class="sidenav">    
+                <div class="contenidoCarrito">
+                    <asp:Literal runat="server" ID="literalCarrito" />
+                </div>
+                <div class="irCarrito">
+                    <asp:Button runat="server" ID="btn_LimpiarCarrito" CssClass="botonIrCarrito" Text="Limpiar carrito" OnClick="btn_LimpiarCarrito_Click" />
+                    <asp:Button runat="server" ID="btn_irCarrito" CssClass="botonIrCarrito" Text="Ir al carrito" OnClick="btn_irCarrito_Click" />
+                </div>
             </div>
-            <div class="irCarrito">
-                <asp:Button runat="server" ID="btn_LimpiarCarrito" CssClass="botonIrCarrito" Text="Limpiar carrito" OnClick="btn_LimpiarCarrito_Click" />
-                <asp:Button runat="server" ID="btn_irCarrito" CssClass="botonIrCarrito" Text="Ir al carrito" OnClick="btn_irCarrito_Click" />
-            </div>
-        </div>
 
-        <div id="modifJuego" class="modal">
-            <div id="ModificarJuego" class="modal-content animate"">
-                <div class="paddingLogin">
-                    <label for="uname"><b>Nombre juego</b></label>
-                    <input id="txb_nombreJuego" type="text" placeholder="Buscar juego..." onkeyup="filtrarJuego()">
-
-                    <div id="listaJuegos">
-                        <ul id="myUL" class="myUL">
-                          <li><asp:Button runat="server" CssClass="botonListaModif" ID="btn_Juego1" Text="Counter Strike: Global Offensive" /></li>
-                          <li><asp:Button runat="server" CssClass="botonListaModif" ID="btn_Juego2" Text="Grand Theft Auto V" /></li>
-                          <li><asp:Button runat="server" CssClass="botonListaModif" ID="btn_Juego3" Text="Overwatch" /></li>
-                          <li><asp:Button runat="server" CssClass="botonListaModif" ID="btn_Juego4" Text="Maincraft" /></li>
-                          <li><asp:Button runat="server" CssClass="botonListaModif" ID="btn_Juego5" Text="Fortnite" /></li>
-                            <li><asp:Button runat="server" CssClass="botonListaModif" ID="Button1" Text="Fortnite" /></li>
-                            <li><asp:Button runat="server" CssClass="botonListaModif" ID="Button2" Text="Fortnite" /></li>
-                            <li><asp:Button runat="server" CssClass="botonListaModif" ID="Button3" Text="Fortnite" /></li>
-                            <li><asp:Button runat="server" CssClass="botonListaModif" ID="Button4" Text="Fortnite" /></li>
-                            <li><asp:Button runat="server" CssClass="botonListaModif" ID="Button5" Text="Fortnite" /></li>
-                            <li><asp:Button runat="server" CssClass="botonListaModif" ID="Button6" Text="Fortnite" /></li>
-                        </ul>
+            <div id="navbar" class="navbar">
+                <div style="float:left; margin-top: 6px;"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_Home" Text="DigitalGames" OnClick="btn_Home_Click" /></div>
+                <asp:TextBox runat="server" ID="txb_buscar" Width="200px" CssClass="barraBuscar" placeholder="Buscar.." />
+                <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_buscar" Text="Buscar" OnClick="btn_buscar_Click" /></div>
+                <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_agregarJuego" Text="Agregar Juego" OnClick="btn_agregarJuego_Click" /></div>
+                <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_ModfJuego" Text="Modificar Juego" OnClick="btn_ModfJuego_Click" /></div>
+                <div class="drop" onmouseover="abirFafa('2')" onmouseout="cerrarFafa('2')">
+                    <a class="dropbtn">Categorias
+                      <i id="2" class ="fa fa-caret-down"></i>
+                    </a>
+                    <div class="contenidoDrop">
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Acción" Text="Acción" OnClick="btn_Acción_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Aventura" Text="Aventura" OnClick="btn_Aventura_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_AventuraGráfica" Text="Aventura Gráfica" OnClick="btn_AventuraGráfica_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_ConsolaVirtual" Text="Consola Virtual" OnClick="btn_ConsolaVirtual_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Deportes" Text="Deportes" OnClick="btn_Deportes_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Estrategia" Text="Estrategia" OnClick="btn_Estrategia_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Lucha" Text="Lucha" OnClick="btn_Lucha_Click" />
                     </div>
-                    <button type="button" onclick="cerrarModificarJuego()" class="cancelbtn">Cancel</button>
                 </div>
+                <div class="drop" onmouseover="abirFafa('1')" onmouseout="cerrarFafa('1')">
+                    <a class="dropbtn">Consolas
+                      <i id="1" class ="fa fa-caret-down"></i>
+                    </a>
+                    <div class="contenidoDrop">
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_PC" Text="PC" OnClick="btn_PC_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_PS3" Text="PS3" OnClick="btn_PS3_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_PS4" Text="PS4" OnClick="btn_PS4_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_XBOX360" Text="XBOX 360" OnClick="btn_XBOX360_Click" />
+                        <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_XBOXONE" Text="XBOX ONE" OnClick="btn_XBOXONE_Click" />
+                    </div>
+                </div>
+                <asp:Button runat="server" CssClass="botonNavBar" ID="btn_usuario" Text="Usuario" OnClick="btn_usuario_Click" />
+                <asp:Button runat="server" CssClass="botonNavBar" ID="btn_cerrarSesion" Text="Cerrar sesion" OnClick="btn_cerrarSesion_Click" />
+                <asp:Button runat="server" ID="btn_inicioSes_reg" CssClass="botonNavBar" OnClick="btn_inicioSes_reg_Click" text="Inicio Sesion / Registrarse"/>
+                <a onclick="openNav()">Carrito</a>
             </div>
         </div>
-
-        <div id="navbar" class="navbar">
-            <div style="float:left; margin-top: 6px;"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_Home" Text="DigitalGames" OnClick="btn_Home_Click" /></div>
-            <asp:TextBox runat="server" ID="txb_buscar" Width="200px" CssClass="barraBuscar" placeholder="Buscar.." />
-            <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_buscar" Text="Buscar" OnClick="btn_buscar_Click" /></div>
-            <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_agregarJuego" Text="Agregar Juego" OnClick="btn_agregarJuego_Click" /></div>
-            <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_ModfJuego" Text="Modificar Juego" OnClick="btn_ModfJuego_Click" /></div>
-            <div class="drop" onmouseover="abirFafa('2')" onmouseout="cerrarFafa('2')">
-                <a class="dropbtn">Categorias
-                  <i id="2" class ="fa fa-caret-down"></i>
-                </a>
-                <div class="contenidoDrop">
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Acción" Text="Acción" OnClick="btn_Acción_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Aventura" Text="Aventura" OnClick="btn_Aventura_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_AventuraGráfica" Text="Aventura Gráfica" OnClick="btn_AventuraGráfica_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_ConsolaVirtual" Text="Consola Virtual" OnClick="btn_ConsolaVirtual_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Deportes" Text="Deportes" OnClick="btn_Deportes_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Estrategia" Text="Estrategia" OnClick="btn_Estrategia_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_Lucha" Text="Lucha" OnClick="btn_Lucha_Click" />
-                </div>
-            </div>
-            <div class="drop" onmouseover="abirFafa('1')" onmouseout="cerrarFafa('1')">
-                <a class="dropbtn">Consolas
-                  <i id="1" class ="fa fa-caret-down"></i>
-                </a>
-                <div class="contenidoDrop">
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_PC" Text="PC" OnClick="btn_PC_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_PS3" Text="PS3" OnClick="btn_PS3_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_PS4" Text="PS4" OnClick="btn_PS4_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_XBOX360" Text="XBOX 360" OnClick="btn_XBOX360_Click" />
-                    <asp:Button runat="server" Width="100%" CssClass="contenidoDropJuegos" ID="btn_XBOXONE" Text="XBOX ONE" OnClick="btn_XBOXONE_Click" />
-                </div>
-            </div>
-            <asp:Button runat="server" CssClass="botonNavBar" ID="btn_usuario" Text="Usuario" OnClick="btn_usuario_Click" />
-            <asp:Button runat="server" CssClass="botonNavBar" ID="btn_cerrarSesion" Text="Cerrar sesion" OnClick="btn_cerrarSesion_Click" />
-            <asp:Button runat="server" ID="btn_inicioSes_reg" CssClass="botonNavBar" OnClick="btn_inicioSes_reg_Click" text="Inicio Sesion / Registrarse"/>
-            <a onclick="openNav()">Carrito</a>
-        </div>
+        
 
         <div id="main">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -484,70 +461,6 @@
             document.getElementById("mySidenav").style.width = "0";
             document.getElementById("main").style.marginRight = "0";
             document.getElementById("navbar").style.width = "100%";
-        }
-
-        var modal = document.getElementById('InicioSesion');
-        var cuerpo = document.getElementById('cuerpo');
-        var modal2 = document.getElementById('Modificar');
-        var modal3 = document.getElementById('modifJuego');
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                cerrarIniciar();
-            }
-            if (event.target == modal2) {
-                cerrarModificar();
-            }
-            if (event.target == modal3) {
-                cerrarModificarJuego();
-            }
-        }
-
-        function cerrarIniciar() {
-            modal.style.display = "none";
-            cuerpo.style.overflow = "auto";
-        }
-
-        function abrirIniciar() {
-            modal.style.display = 'block';
-            document.getElementById("iniciar").style.display = "block";
-            document.getElementById("regitrarse").style.display = "none";
-
-            cuerpo.style.overflow = "hidden";
-        }
-
-        function abrirRegistrarse() {
-            document.getElementById("iniciar").style.display = "none";
-            document.getElementById("regitrarse").style.display = "block";
-
-            cuerpo.style.overflow = "hidden";
-        }
-
-        function abrirModificarJuego() {
-            modal3.style.display = "block";
-
-            cuerpo.style.overflow = "hidden";
-        }
-
-        function cerrarModificarJuego() {
-            modal3.style.display = "none";
-            cuerpo.style.overflow = "auto";
-        }
-
-        function filtrarJuego() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("txb_nombreJuego");
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myUL");
-            li = ul.getElementsByTagName("li");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsById("<%=btn_Juego1.ClientID%>");
-                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "block";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
         }
 
         function abirFafa(objeto) {

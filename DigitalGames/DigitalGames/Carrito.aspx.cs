@@ -64,5 +64,20 @@ namespace DigitalGames
         {
             Response.Redirect("Home.aspx");
         }
+
+        protected void btn_Pagar_Click(object sender, EventArgs e)
+        {
+            if(Session["Usuario"] != null)
+            {
+                if(Session["Carrito"] != null)
+                    Response.Redirect("Pago.aspx");
+                else
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nececita tener al menos 1 articulo en carrito')</script>");
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scripts", "<script>alert('Nececita inicias sesion / registrarse para realizar la compra')</script>");
+            }
+        }
     }
 }

@@ -44,7 +44,7 @@ namespace DigitalGames
             {
                 
                 string ultimosDigitos = row[1].ToString().Substring(row[1].ToString().Length - 4, 4);
-                string fechaCompra = row[0].ToString().Substring(0, row[0].ToString().Length - 10);
+                string fechaCompra = row[0].ToString().Substring(0, row[0].ToString().Length - 9);
                 string precioUnitario = row[2].ToString().Substring(0, row[2].ToString().Length - 2);
 
                 if (i==0)

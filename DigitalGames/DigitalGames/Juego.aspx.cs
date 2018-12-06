@@ -156,7 +156,21 @@ namespace DigitalGames
             }
 
             if (!encontro)
-                car.AgregarFilaCarrito((DataTable)Session["Carrito"], codJuego, lbl_tituloJuego.Text, cantidad, precio);
+            {
+                AccesoDatos ds = new AccesoDatos();
+                DataTable dt = new DataTable();
+                dt = ds.ObtenerTabla("Descuento", "SELECT Porcentaje, FechaInicio, FechaFin, Estado FROM descuentos WHERE CodJuego = '" + codJuego + "'");
+
+                if(dt.Rows[0][3].ToString() == "False")
+                    car.AgregarFilaCarrito((DataTable)Session["Carrito"], codJuego, lbl_tituloJuego.Text, cantidad, precio, 0);
+                else
+                {
+                    if (DateTime.Now >= Convert.ToDateTime(dt.Rows[0][1]) && DateTime.Now < Convert.ToDateTime(dt.Rows[0][2]))
+                        car.AgregarFilaCarrito((DataTable)Session["Carrito"], codJuego, lbl_tituloJuego.Text, cantidad, precio, Convert.ToInt32(dt.Rows[0][0].ToString()));
+                    else
+                        car.AgregarFilaCarrito((DataTable)Session["Carrito"], codJuego, lbl_tituloJuego.Text, cantidad, precio, 0);
+                }
+            }
             else
             {
                 if (cantEncontrada < stock)

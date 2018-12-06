@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .contenedor{
-            margin:auto auto auto auto;
+            margin: 20px auto auto auto;
             width: 90%;
             height: 600px;
             border: 2px solid white;
@@ -195,25 +195,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <div id="compraFinalizada" class="modal">
-            <div class="modal-content animate">
-                <div class="paddingLogin">
-                    <div class="datosCompra">
-                        <h2><b>Datos de la compra</b></h2>
-                        <div><h4>Nombre de juego: </h4> <asp:Label runat="server" ID="lbl_nombreJuegoPago" Text="Player Uknow Battelground PC LATAM" /></div>
-                        <div><h4>Precio: </h4> <a>ARS $ </a><asp:Label runat="server" ID="lbl_precioPago" Text="1500" /></div>
-                        <div><h4>Fecha de compra: </h4> <asp:Label runat="server" ID="lbl_fechaPago" Text="11/02/2015" /></div>
-                        <div><h4>Ultimos 4 digitos de tarjeta: </h4> <asp:Label runat="server" ID="lbl_ultNumTarjeta" Text="4455" /></div>
-                        <div><h4>Codigo de activacion: </h4> <asp:Label runat="server" ID="lbl_codActivacion" Text="444 555 888" /></div>
-
-                        <div><h3>Te hemos enviamos un Email con los detalles de la compra</h3></div>
-                    </div>
-
-                    <asp:Button runat="server" ID="btn_finalizar" CssClass="cancelbtn" Text="Finalizar" />
-                </div>
-            </div>
-        </div>
-    
         <div class="contenedor">
             <div class="tituloCarrito">
                 <div style="float:right; margin-top: -2px">
@@ -227,8 +208,8 @@
             </div>
 
             <div class="total">
-                <div style="width:11%; margin-top: -5px;"><asp:Button runat="server" ID="btn_Pagar" CssClass="BotonPagar" OnClientClick="abrirPago('true'); return false" Text="Pagar" /></div>
-                <div><a>Total: </a> <a>ARS $ </a><asp:Label runat="server" CssClass="totala" ID="lbl_total" Text="400" /></div>   
+                <div style="width:11%; margin-top: -5px;"><asp:Button runat="server" ID="btn_Pagar" CssClass="BotonPagar" Text="Pagar" OnClick="btn_Pagar_Click" /></div>
+                <div><a>Total: </a> <a>ARS $ </a><asp:Label runat="server" CssClass="totala" ID="lbl_total" Text="0" /></div>
             </div>
         </div>
     </div>

@@ -116,7 +116,7 @@ namespace DigitalGames
             sqlconect.Close();
         }
 
-        public void actualizarStock(string codJuego, string cantidad)
+        public void actualizarStock(string codJuego, int cantidad)
         {
             SqlConnection sqlconect = new SqlConnection();
 
@@ -129,6 +129,23 @@ namespace DigitalGames
 
             cmd.ExecuteNonQuery();
             sqlconect.Close();
+        }
+
+        public bool verifificarTarjeta(string numeroTarjeta, string usuario)
+        {
+            AccesoDatos ds = new AccesoDatos();
+            DataTable dt = new DataTable();
+
+            dt = ds.ObtenerTabla("Tarjetas", "SELECT NumeroTarjeta FROM Tarjetas WHERE NombreUsuario = '" + usuario + "' AND NumeroTarjeta = '" + numeroTarjeta + "'");
+
+            if(dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

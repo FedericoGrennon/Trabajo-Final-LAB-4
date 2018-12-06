@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AgregarModificarJuego.aspx" />
     <Content Include="Carrito.aspx" />
+    <Content Include="CompraFinalizada.aspx" />
     <Content Include="Descuentos.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="IniciarSession.aspx" />
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="Clases\ClaseJuego.cs" />
     <Compile Include="Clases\Descuento.cs" />
+    <Compile Include="CompraFinalizada.aspx.cs">
+      <DependentUpon>CompraFinalizada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompraFinalizada.aspx.designer.cs">
+      <DependentUpon>CompraFinalizada.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Descuentos.aspx.cs">
       <DependentUpon>Descuentos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

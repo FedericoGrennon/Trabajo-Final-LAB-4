@@ -19,17 +19,20 @@ namespace DigitalGames
             tabla.Columns.Add(columna);
             columna = new DataColumn("precio", Type.GetType("System.Decimal"));
             tabla.Columns.Add(columna);
+            columna = new DataColumn("porcentaje", Type.GetType("System.Int32"));
+            tabla.Columns.Add(columna);
 
             return tabla;
         }
 
-        public void AgregarFilaCarrito(DataTable tabla, string codJuego, string nombre, int cantidad, decimal precio)
+        public void AgregarFilaCarrito(DataTable tabla, string codJuego, string nombre, int cantidad, decimal precio, int porcentaje)
         {
             DataRow dr = tabla.NewRow();
             dr["codJuego"] = codJuego;
             dr["nombre"] = nombre;
             dr["cantidad"] = cantidad;
             dr["precio"] = precio;
+            dr["porcentaje"] = porcentaje;
             tabla.Rows.Add(dr);
         }
 

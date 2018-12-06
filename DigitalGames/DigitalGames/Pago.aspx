@@ -41,8 +41,8 @@
                     <label><b>Nueva trajeta</b></label>
                     <input runat="server" type="text" id="txb_banco" placeholder="Banco" />
                     <asp:CustomValidator runat="server" ControlToValidate="txb_banco" ValidateEmptyText="true" OnServerValidate="Unnamed_ServerValidate" ErrorMessage="Complete el campo" ForeColor="Red" Font-Size="15px" />
-                    <input runat="server" type="text" id="txb_nombreTarjeta" placeholder="Numero de la tarjeta" />
-                    <asp:CustomValidator runat="server" ControlToValidate="txb_nombreTarjeta" ValidateEmptyText="true" OnServerValidate="Unnamed_ServerValidate" ErrorMessage="Complete el campo" ForeColor="Red" Font-Size="15px" />
+                    <input runat="server" type="number" min="0" id="txb_numeroTarjeta" placeholder="Numero de la tarjeta" />
+                    <asp:CustomValidator runat="server" ControlToValidate="txb_numeroTarjeta" ValidateEmptyText="true" OnServerValidate="Unnamed_ServerValidate" ErrorMessage="Complete el campo" ForeColor="Red" Font-Size="15px" />
                     <input runat="server" type="date" id="txb_fechaVencimiento" placeholder="Fecha de vencimiento" />
                     <asp:CustomValidator runat="server" ControlToValidate="txb_fechaVencimiento" ValidateEmptyText="true" OnServerValidate="Unnamed_ServerValidate" ErrorMessage="Complete el campo" ForeColor="Red" Font-Size="15px" />
                     <input runat="server" type="text" id="txb_NombreTitular" placeholder="Nombre titular" />

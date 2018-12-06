@@ -40,13 +40,13 @@ namespace DigitalGames {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txb_banco;
         
         /// <summary>
-        /// Control txb_nombreTarjeta.
+        /// Control txb_numeroTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_nombreTarjeta;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_numeroTarjeta;
         
         /// <summary>
         /// Control txb_fechaVencimiento.

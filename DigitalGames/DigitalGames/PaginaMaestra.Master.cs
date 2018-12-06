@@ -45,6 +45,15 @@ namespace DigitalGames
             {
                 cargarCarrito();
             }
+
+            if (Request.Url.Segments[Request.Url.Segments.Length-1] == "Pago.aspx")
+            {
+                NavegadorSuperior.Attributes.Add("Style", "display:none");
+            }
+            else
+            {
+                NavegadorSuperior.Attributes.Add("Style", "display:block");
+            }
         }
 
         protected void cargarCarrito()
@@ -180,10 +189,7 @@ namespace DigitalGames
 
         protected void btn_irCarrito_Click(object sender, EventArgs e)
         {
-            if (Session["Carrito"] != null)
-            {
-                Response.Redirect("Carrito.aspx");
-            }
+            Response.Redirect("Carrito.aspx");
         }
     }
 }
