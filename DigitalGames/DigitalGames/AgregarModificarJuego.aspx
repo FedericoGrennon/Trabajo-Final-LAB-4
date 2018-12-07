@@ -59,15 +59,6 @@
             border: 2px solid white;
         }
 
-        .datosCuenta form{
-            border: 2px solid white;
-            border-radius: 5px 6px;
-            width: 20%;
-            overflow: auto;
-            max-height: 400px;
-            min-width: 400px;
-        }
-
         .botonModificar{
             color: #317bb2;
             width: auto;

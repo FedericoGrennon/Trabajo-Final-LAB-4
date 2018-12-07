@@ -139,5 +139,45 @@ namespace DigitalGames
             Comando.Parameters["@Telefono"].Value = us.telefono;
         }
 
+        public DataTable crearTabla()
+        {
+            DataTable tabla = new DataTable();
+            DataColumn columna = new DataColumn("codJuego", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("nombre", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("empresa", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("tipo", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("precio", Type.GetType("System.Decimal"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("stock", Type.GetType("System.Int32"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("consola", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("descripcion", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("Requisitos", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+
+            return tabla;
+        }
+
+        public void AgregarFila(DataTable tabla, ClaseJuego jue)
+        {
+            DataRow dr = tabla.NewRow();
+            dr["codJuego"] = jue.codJuego;
+            dr["nombre"] = jue.nombre;
+            dr["empresa"] = jue.empresa;
+            dr["tipo"] = jue.tipo;
+            dr["precio"] = jue.precio;
+            dr["stock"] = jue.stock;
+            dr["consola"] = jue.consola;
+            dr["descripcion"] = jue.descripcion;
+            dr["Requisitos"] = jue.requisitos;
+            tabla.Rows.Add(dr);
+        }
+
     }
 }

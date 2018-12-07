@@ -191,5 +191,10 @@ namespace DigitalGames
         {
             Response.Redirect("Carrito.aspx");
         }
+
+        protected void btn_Descuentos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Descuentos.aspx");
+        }
     }
 }

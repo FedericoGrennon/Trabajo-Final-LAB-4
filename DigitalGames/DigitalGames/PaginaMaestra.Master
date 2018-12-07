@@ -391,6 +391,7 @@
                 <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_buscar" Text="Buscar" OnClick="btn_buscar_Click" /></div>
                 <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_agregarJuego" Text="Agregar Juego" OnClick="btn_agregarJuego_Click" /></div>
                 <div style="text-align:right; display:inline-block"><asp:Button runat="server" CssClass="botonNavBar" ID="btn_ModfJuego" Text="Modificar Juego" OnClick="btn_ModfJuego_Click" /></div>
+                <asp:Button runat="server" CssClass="botonNavBar" ID="btn_Descuentos" Text="Descuentos" OnClick="btn_Descuentos_Click" />
                 <div class="drop" onmouseover="abirFafa('2')" onmouseout="cerrarFafa('2')">
                     <a class="dropbtn">Categorias
                       <i id="2" class ="fa fa-caret-down"></i>

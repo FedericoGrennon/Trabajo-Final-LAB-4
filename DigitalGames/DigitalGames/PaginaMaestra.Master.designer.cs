@@ -103,6 +103,15 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.Button btn_ModfJuego;
         
         /// <summary>
+        /// Control btn_Descuentos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Descuentos;
+        
+        /// <summary>
         /// Control btn_Acción.
         /// </summary>
         /// <remarks>
