@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="AgregarJuego(Paso2).aspx.cs" Inherits="DigitalGames.AgregarJuego_Paso2_" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="AgregarJuego(Paso4).aspx.cs" Inherits="DigitalGames.AgregarJuego_Paso4_" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .contenedor{
@@ -63,21 +63,6 @@
             text-align: center;
         }
 
-        .radioButtons{
-            text-align: center;
-        }
-
-        .radioButtons input{
-            cursor: pointer;
-            width: 15px; 
-            height: 15px;
-        }
-
-        .radioButtons label{
-            font-size: 16px;
-            color: white;
-        }
-
         .botonSiguiente{
             color: white;
             padding: 7px 10px;
@@ -100,19 +85,14 @@
             font-size: 30px;
         }
 
-        .textoStock{
-            font-size: 16px;
-            color: white;
-        }
-
         .botonAgregar{
+            text-align:center;
             color: white;
             padding: 7px 10px;
             background-color: green;
             border: 0.5px solid white;
             cursor: pointer;
             border-radius: 5px 6px;
-            float:right;
             margin-top: 8px;
         }
 
@@ -125,44 +105,90 @@
             border-radius: 5px 6px;
             margin-top: 8px;
         }
+
+        .row{
+            width: 460px;
+            height: auto;
+            display: inline-block;
+        }
+
+        .column {
+            border:2.5px solid rgba(21, 40, 56, 0.70);
+            display: inline-block;
+        }
+
+        .imagenesChicas{
+            width:115px;
+            height: 65px;
+        }
+
+        .scroller{ 
+            overflow: auto;
+            white-space: nowrap;
+            width: 460px;
+            height: auto;
+        } 
+
+        .cursor{
+            cursor: pointer;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="contenedor">
         <div class="datosCuenta">
                 <div class="accordion">
-                    <p>Datos comerciales (Paso 2/4)</p>
+                    <p>Imagenes (Paso 4/4)</p>
                 </div>
                 <div class="paneles">
+                    <asp:FileUpload runat="server" ID="fu_Imagen" accept=".jpg,.png,.jpeg" Width="300px" />
                     <div>
-                        <input runat="server" id="txb_Precio" type="number" placeholder="Precio ARS $" min="0" max="100000" step="0.01" />
-                        <asp:RequiredFieldValidator runat="server" ID="rqv_precio" ControlToValidate="txb_Precio" Font-size="15px" EnableClientScript="false" ForeColor="red" ErrorMessage="Complete el campo." />
-                    </div>
-                
-                    <div style="text-align:center">
-                        <a>Stock actual: </a> <asp:Label runat="server" ID="lbl_stockActual" CssClass="textoStock" Text="0" />
-                    </div>
-
-                    <div style="text-align:center; width: 480px; padding:0">
-                        <asp:TextBox runat="server" id="txb_codigo" placeholder="1111AAAA22221A2A" width="380px" />
                         <asp:Button runat="server" ID="btn_Agregar" Width="80px" CssClass="botonAgregar" Text="Agregar" OnClick="btn_Agregar_Click" />
-                        <asp:CustomValidator runat="server" ID="cv_codigo" ControlToValidate="txb_codigo" ValidateEmptyText="true" OnServerValidate="cv_codigo_ServerValidate" Font-Size="15px" ForeColor="Red" ErrorMessage="Complete el campo / Codigo repetio / Codigo Invalido / 16 digitos sin espacios" />
+                        <asp:Button runat="server" ID="btn_Eliminar" Width="80px" CssClass="botonEliminar" Text="Eliminar" OnClick="btn_Eliminar_Click" />
                     </div>
 
-                    <div style="text-align: center">
-                        <asp:ListBox runat="server" ID="lb_CodJuegos" Height="200px" Width="480px" />
+                    <div class="row">
+                        <div class="scroller" id="divImagenes">
+                            <asp:Literal runat="server" ID="literalImgChicas" />
+                        </div>
+                        <asp:CustomValidator runat="server" ID="cv_imagenes" OnServerValidate="cv_imagenes_ServerValidate" Font-Size="15px" ForeColor="Red" ErrorMessage="Agregue minimo una imagen." />
                     </div>
-                
+
+                    <div>
+                        <a>Para elminar una imagen seleccione la deseada y luego toque eliminar.</a>
+                    </div>
+
                     <div style="text-align:center">
-                        <asp:Button runat="server" ID="btn_eliminar" Width="80px" CssClass="botonEliminar" Text="Eliminar" OnClick="btn_eliminar_Click" />
-                        <asp:Button runat="server" ID="btn_eliminarTodo" Width="80px" CssClass="botonEliminar" Text="Vaciar" OnClick="btn_eliminarTodo_Click" />
+                        <asp:Button runat="server" ID="btn_seleccionarPortada" Width="150px" CssClass="botonAgregar" Text="Seleccionar portada" OnClick="btn_seleccionarPortada_Click" />
+                        <div><a>Portada: Imagen </a><asp:Label runat="server" ID="lbl_portada" Text ="0" ForeColor="White" /></div>
+                        <a>Seleccione una imagen y toque seleccionar portada.</a>
                     </div>
 
-                    
+                    <input runat="server" id="txb_posicionSeleccionada" type="hidden" value="null" />
+
                     <asp:Button runat="server" Width="200px" ID="btn_Volver" type="button" OnClick="btn_Volver_Click" Text="Volver" CssClass="botonCancelar" />
                     <asp:Button runat="server" Width="200px" ID="btn_Cancelar" type="button" OnClick="btn_Cancelar_Click" Text="Cancelar" CssClass="botonCancelar" />
-                    <asp:Button runat="server" Width="200px" ID="btn_siguiente" type="button" OnClick="btn_siguiente_Click" Text="Siguiente" CssClass="botonSiguiente" />
+                    <asp:Button runat="server" Width="200px" ID="btn_Finalizar" type="button" OnClick="btn_Finalizar_Click" Text="Finalizar" CssClass="botonSiguiente" Visible="false" />
+                    <asp:Button runat="server" Width="200px" ID="btn_FinalizarModificar" type="button" OnClick="btn_FinalizarModificar_Click" Text="Finalizar" CssClass="botonSiguiente" Visible="false" />
                 </div>
             </div>
         </div>
+
+    <script>
+        function cargarSession(pos)
+        {
+            var divImagenes = document.getElementById("divImagenes");
+            var cantidad = divImagenes.getElementsByTagName("img").length;
+
+            for (var i = 0; i < cantidad; i++)
+            {
+                if (pos == i)
+                    document.getElementById("img" + pos).style.border = '2px solid white';
+                else
+                    document.getElementById("img" + i).style.border = '0';
+            }
+
+            document.getElementById('<%=txb_posicionSeleccionada.ClientID%>').value = pos;
+        }
+    </script>
 </asp:Content>

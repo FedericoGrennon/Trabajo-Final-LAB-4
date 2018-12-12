@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarJuego%28Paso2%29.aspx" />
+    <Content Include="AgregarJuego%28Paso3%29.aspx" />
+    <Content Include="AgregarJuego%28Paso4%29.aspx" />
     <Content Include="AgregarJuego.aspx" />
     <Content Include="AgregarModificarJuego.aspx" />
     <Content Include="Carrito.aspx" />
@@ -89,6 +91,20 @@
     </Compile>
     <Compile Include="AgregarJuego%28Paso2%29.aspx.designer.cs">
       <DependentUpon>AgregarJuego%28Paso2%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarJuego%28Paso3%29.aspx.cs">
+      <DependentUpon>AgregarJuego%28Paso3%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarJuego%28Paso3%29.aspx.designer.cs">
+      <DependentUpon>AgregarJuego%28Paso3%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarJuego%28Paso4%29.aspx.cs">
+      <DependentUpon>AgregarJuego%28Paso4%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarJuego%28Paso4%29.aspx.designer.cs">
+      <DependentUpon>AgregarJuego%28Paso4%29.aspx</DependentUpon>
     </Compile>
     <Compile Include="AgregarJuego.aspx.cs">
       <DependentUpon>AgregarJuego.aspx</DependentUpon>

@@ -10,97 +10,88 @@
 namespace DigitalGames {
     
     
-    public partial class AgregarJuego {
+    public partial class AgregarJuego_Paso4_ {
         
         /// <summary>
-        /// Control txb_nombre.
+        /// Control fu_Imagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_nombre;
+        protected global::System.Web.UI.WebControls.FileUpload fu_Imagen;
         
         /// <summary>
-        /// Control cv_nombre.
+        /// Control btn_Agregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cv_nombre;
+        protected global::System.Web.UI.WebControls.Button btn_Agregar;
         
         /// <summary>
-        /// Control txb_empresa.
+        /// Control btn_Eliminar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_empresa;
+        protected global::System.Web.UI.WebControls.Button btn_Eliminar;
         
         /// <summary>
-        /// Control rqf_empresa.
+        /// Control literalImgChicas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqf_empresa;
+        protected global::System.Web.UI.WebControls.Literal literalImgChicas;
         
         /// <summary>
-        /// Control txb_descripcion.
+        /// Control cv_imagenes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txb_descripcion;
+        protected global::System.Web.UI.WebControls.CustomValidator cv_imagenes;
         
         /// <summary>
-        /// Control rqf_descripcion.
+        /// Control btn_seleccionarPortada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqf_descripcion;
+        protected global::System.Web.UI.WebControls.Button btn_seleccionarPortada;
         
         /// <summary>
-        /// Control txb_requisitos.
+        /// Control lbl_portada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txb_requisitos;
+        protected global::System.Web.UI.WebControls.Label lbl_portada;
         
         /// <summary>
-        /// Control rqf_requisitos.
+        /// Control txb_posicionSeleccionada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqf_requisitos;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden txb_posicionSeleccionada;
         
         /// <summary>
-        /// Control txb_tipo.
+        /// Control btn_Volver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_tipo;
-        
-        /// <summary>
-        /// Control rbl_listaConsolas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_listaConsolas;
+        protected global::System.Web.UI.WebControls.Button btn_Volver;
         
         /// <summary>
         /// Control btn_Cancelar.
@@ -112,12 +103,21 @@ namespace DigitalGames {
         protected global::System.Web.UI.WebControls.Button btn_Cancelar;
         
         /// <summary>
-        /// Control btn_siguiente.
+        /// Control btn_Finalizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_siguiente;
+        protected global::System.Web.UI.WebControls.Button btn_Finalizar;
+        
+        /// <summary>
+        /// Control btn_FinalizarModificar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_FinalizarModificar;
     }
 }

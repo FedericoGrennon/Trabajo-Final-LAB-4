@@ -53,7 +53,7 @@ namespace DigitalGames
         protected void btn_modificar_Click(object sender, EventArgs e)
         {
             if(lb_juegos.SelectedIndex >= 0)
-                Response.Redirect("AgregarModificarJuego.aspx?cod=" + lb_juegos.SelectedValue);
+                Response.Redirect("AgregarJuego.aspx?cod=" + lb_juegos.SelectedValue);
         }
     }
 }

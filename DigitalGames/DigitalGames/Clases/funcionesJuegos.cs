@@ -43,6 +43,13 @@ namespace DigitalGames
             Comando.Parameters["@REQUISITOS"].Value = jue.requisitos;
         }
 
+        public int ActualizarJuego(ClaseJuego jue)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosAgregarJuego(ref comando, jue);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spActualizarJuego");
+        }
+
         public int AgregarCodActivacion(string codActivacion, string codJuego)
         {
             SqlCommand comando = new SqlCommand();
@@ -67,6 +74,13 @@ namespace DigitalGames
             SqlCommand comando = new SqlCommand();
             ArmarParametrosAgregarDescuento(ref comando, desc);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spInsertarDescuento");
+        }
+
+        public int ActualizarDescuento(Descuento desc)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosAgregarDescuento(ref comando, desc);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spActualizarDescuento");
         }
 
         private void ArmarParametrosAgregarDescuento(ref SqlCommand Comando, Descuento desc)
@@ -179,5 +193,150 @@ namespace DigitalGames
             tabla.Rows.Add(dr);
         }
 
+        public DataTable crearTablaCodigos()
+        {
+            DataTable tabla = new DataTable();
+            DataColumn columna = new DataColumn("codActivacion", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("codJuego", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("Disponibilidad", Type.GetType("System.Boolean"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("enBD", Type.GetType("System.Boolean"));
+            tabla.Columns.Add(columna);
+
+            return tabla;
+        }
+
+        public void AgregarFilaCodigos(DataTable tabla, string codActivacion, string codJuego, bool enBD)
+        {
+            DataRow dr = tabla.NewRow();
+            dr["codActivacion"] = codActivacion;
+            dr["codJuego"] = codJuego;
+            dr["Disponibilidad"] = true;
+            dr["enBD"] = enBD;
+            tabla.Rows.Add(dr);
+        }
+
+        public DataTable crearTablaDescuento()
+        {
+            DataTable tabla = new DataTable();
+            DataColumn columna = new DataColumn("CodDescuento", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("codJuego", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("Porcentaje", Type.GetType("System.Int32"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("FechaInicio", Type.GetType("System.DateTime"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("FechaFin", Type.GetType("System.DateTime"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("Estado", Type.GetType("System.Boolean"));
+            tabla.Columns.Add(columna);
+
+            return tabla;
+        }
+
+        public void AgregarFilaDescuento(DataTable tabla, Descuento desc)
+        {
+            DataRow dr = tabla.NewRow();
+            dr["CodDescuento"] = desc.codDescuento;
+            dr["codJuego"] = desc.codJuego;
+            dr["Porcentaje"] = desc.porcentaje;
+            dr["FechaInicio"] = desc.fechaInicio;
+            dr["FechaFin"] = desc.fechaFin;
+            dr["Estado"] = desc.estado;
+            tabla.Rows.Add(dr);
+        }
+
+        public DataTable crearTablaCodActivacionEliminar()
+        {
+            DataTable tabla = new DataTable();
+            DataColumn columna = new DataColumn("CodActivacion", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+
+            return tabla;
+        }
+
+        public void AgregarFilaCodActivacionEliminar(DataTable tabla, string CodActivacion)
+        {
+            DataRow dr = tabla.NewRow();
+            dr["CodActivacion"] = CodActivacion;
+            tabla.Rows.Add(dr);
+        }
+
+        public DataTable crearTablaImagenes()
+        {
+            DataTable tabla = new DataTable();
+            DataColumn columna = new DataColumn("codImagen", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("RutaImagen", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("PrimeraImagen", Type.GetType("System.Boolean"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("imagen", Type.GetType("System.Byte[]"));
+            tabla.Columns.Add(columna);
+
+            return tabla;
+        }
+
+        public void AgregarFilaImagenes(DataTable tabla, string codImagen, string rutaImagen, bool primeraImagen, byte[] imagen)
+        {
+            DataRow dr = tabla.NewRow();
+            dr["codImagen"] = codImagen;
+            dr["RutaImagen"] = rutaImagen;
+            dr["PrimeraImagen"] = primeraImagen;
+            dr["imagen"] = imagen;
+            tabla.Rows.Add(dr);
+        }
+
+        public DataTable crearTablaImagenesEliminar()
+        {
+            DataTable tabla = new DataTable();
+            DataColumn columna = new DataColumn("codImagen", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+            columna = new DataColumn("RutaImagen", Type.GetType("System.String"));
+            tabla.Columns.Add(columna);
+
+            return tabla;
+        }
+
+        public void AgregarFilaImagenesEliminar(DataTable tabla, string codImagen, string rutaImagen)
+        {
+            DataRow dr = tabla.NewRow();
+            dr["codImagen"] = codImagen;
+            dr["RutaImagen"] = rutaImagen;
+            tabla.Rows.Add(dr);
+        }
+
+        public void cambiarEstadoImagen(string codImagen, string codJuego, string estado)
+        {
+            SqlConnection sqlconect = new SqlConnection();
+
+            sqlconect = ds.ObtenerConexion();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "UPDATE Imagenes set PrimeraImagen = '" + estado + "' WHERE CodImagen = '" + codImagen + "' AND codJuego = '" + codJuego + "'";
+            cmd.Connection = sqlconect;
+
+            cmd.ExecuteNonQuery();
+            sqlconect.Close();
+        }
+
+        public void EliminarImagenBD(string codImagen, string codJuego)
+        {
+            SqlConnection sqlconect = new SqlConnection();
+
+            sqlconect = ds.ObtenerConexion();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM Imagenes WHERE CodImagen = '" + codImagen + "' AND codJuego = '" + codJuego + "'";
+            cmd.Connection = sqlconect;
+
+            cmd.ExecuteNonQuery();
+            sqlconect.Close();
+        }
     }
 }

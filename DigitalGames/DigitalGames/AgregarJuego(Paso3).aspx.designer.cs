@@ -10,97 +10,79 @@
 namespace DigitalGames {
     
     
-    public partial class AgregarJuego {
+    public partial class AgregarJuego_Paso3_ {
         
         /// <summary>
-        /// Control txb_nombre.
+        /// Control txb_Porcentaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_nombre;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_Porcentaje;
         
         /// <summary>
-        /// Control cv_nombre.
+        /// Control rfv_porcentaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cv_nombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_porcentaje;
         
         /// <summary>
-        /// Control txb_empresa.
+        /// Control txb_FechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_empresa;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_FechaInicio;
         
         /// <summary>
-        /// Control rqf_empresa.
+        /// Control rfv_fechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqf_empresa;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_fechaInicio;
         
         /// <summary>
-        /// Control txb_descripcion.
+        /// Control txb_FechaFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txb_descripcion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txb_FechaFin;
         
         /// <summary>
-        /// Control rqf_descripcion.
+        /// Control rfv_fechaFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqf_descripcion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_fechaFin;
         
         /// <summary>
-        /// Control txb_requisitos.
+        /// Control chx_Disponibilidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txb_requisitos;
+        protected global::System.Web.UI.WebControls.CheckBox chx_Disponibilidad;
         
         /// <summary>
-        /// Control rqf_requisitos.
+        /// Control btn_Volver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqf_requisitos;
-        
-        /// <summary>
-        /// Control txb_tipo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txb_tipo;
-        
-        /// <summary>
-        /// Control rbl_listaConsolas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_listaConsolas;
+        protected global::System.Web.UI.WebControls.Button btn_Volver;
         
         /// <summary>
         /// Control btn_Cancelar.
@@ -110,6 +92,15 @@ namespace DigitalGames {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Cancelar;
+        
+        /// <summary>
+        /// Control btn_Omitir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Omitir;
         
         /// <summary>
         /// Control btn_siguiente.

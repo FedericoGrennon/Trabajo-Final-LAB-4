@@ -78,6 +78,17 @@
             color: white;
         }
 
+        .botonCancelar{
+            color: white;
+            padding: 7px 10px;
+            background-color: red;
+            border: 0.5px solid white;
+            cursor: pointer;
+            border-radius: 5px 6px;
+            margin: 10px;
+            font-size: 30px;
+        }
+
         .botonSiguiente{
             color: white;
             padding: 7px 10px;
@@ -133,14 +144,15 @@
 
                     <div class="radioButtons">
                         <asp:RadioButtonList runat="server" Width="100%" ID="rbl_listaConsolas" RepeatDirection="Horizontal" >
-                            <asp:ListItem Selected="True">PC</asp:ListItem>
-                            <asp:ListItem>PS4</asp:ListItem>
-                            <asp:ListItem>PS3</asp:ListItem>
-                            <asp:ListItem>XBOX ONE</asp:ListItem>
-                            <asp:ListItem>XBOX 360</asp:ListItem>
+                            <asp:ListItem Selected="True" Value="PC">PC</asp:ListItem>
+                            <asp:ListItem Value="PS4">PS4</asp:ListItem>
+                            <asp:ListItem Value="PS3">PS3</asp:ListItem>
+                            <asp:ListItem Value="XBOX ONE">XBOX ONE</asp:ListItem>
+                            <asp:ListItem Value="XBOX 360">XBOX 360</asp:ListItem>
                         </asp:RadioButtonList>
                     </div>
 
+                    <asp:Button runat="server" Width="200px" ID="btn_Cancelar" type="button" OnClick="btn_Cancelar_Click" Text="Cancelar" CssClass="botonCancelar" />
                     <asp:Button runat="server" Width="200px" ID="btn_siguiente" type="button" OnClick="btn_siguiente_Click" Text="Siguiente" CssClass="botonSiguiente" />
                 </div>
             </div>

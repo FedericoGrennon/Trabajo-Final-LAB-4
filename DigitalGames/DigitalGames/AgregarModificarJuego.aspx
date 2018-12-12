@@ -211,7 +211,7 @@
     <div class="contenedor">
         <div class="datosCuenta">
             <Button class="accordion" onclick="return false">
-                <p>Datos del juego</p>
+                <p>Datos del juego (Paso 1/4)</p>
             </Button>
             <div class="paneles">
                 <div>

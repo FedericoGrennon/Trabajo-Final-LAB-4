@@ -46,13 +46,28 @@ namespace DigitalGames
                 cargarCarrito();
             }
 
-            if (Request.Url.Segments[Request.Url.Segments.Length-1] == "Pago.aspx")
+            if(EsconderNavBar("Pago.aspx")
+            || EsconderNavBar("AgregarJuego(Paso2).aspx")
+            || EsconderNavBar("AgregarJuego(Paso3).aspx")
+            || EsconderNavBar("AgregarJuego(Paso4).aspx"))
             {
                 NavegadorSuperior.Attributes.Add("Style", "display:none");
             }
             else
             {
                 NavegadorSuperior.Attributes.Add("Style", "display:block");
+            }
+        }
+
+        protected bool EsconderNavBar(string paginaActual)
+        {
+            if (Request.Url.Segments[Request.Url.Segments.Length - 1] == paginaActual)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -173,7 +188,7 @@ namespace DigitalGames
 
         protected void btn_agregarJuego_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AgregarModificarJuego.aspx");
+            Response.Redirect("AgregarJuego.aspx");
         }
 
         protected void btn_ModfJuego_Click(object sender, EventArgs e)
