@@ -28,6 +28,8 @@ namespace DigitalGames
                 consulta = "SELECT j.CodJuego, Nombre, Descripcion, Precio, i.RutaImagen, d.Estado, d.Porcentaje, d.fechaInicio, d.fechaFin FROM Juegos j inner join Imagenes i on j.CodJuego = i.CodJuego inner join Descuentos d on j.CodJuego = d.CodJuego WHERE I.PrimeraImagen = 1 AND j.tipo = '" + Request.QueryString["Cat"].Replace('-', ' ') + "'";
             }
 
+            MaintainScrollPositionOnPostBack = true;
+
             if (!Page.IsPostBack)
             {
                 if (Session["UltimaPos"] == null)

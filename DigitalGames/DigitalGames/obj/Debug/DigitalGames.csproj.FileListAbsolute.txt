@@ -165,3 +165,13 @@ E:\UTN\2do AÑO\Segundo cuatrimestre\Lab 4\TP\TP Integrador\Trabajo-Final-LAB-4\
 E:\UTN\2do AÑO\Segundo cuatrimestre\Lab 4\TP\TP Integrador\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\obj\Debug\DigitalGames.csproj.CopyComplete
 E:\UTN\2do AÑO\Segundo cuatrimestre\Lab 4\TP\TP Integrador\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\obj\Debug\DigitalGames.dll
 E:\UTN\2do AÑO\Segundo cuatrimestre\Lab 4\TP\TP Integrador\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\obj\Debug\DigitalGames.pdb
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\bin\DigitalGames.dll.config
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\bin\DigitalGames.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\bin\DigitalGames.pdb
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\obj\Debug\DigitalGames.csprojResolveAssemblyReference.cache
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\obj\Debug\DigitalGames.csproj.CoreCompileInputs.cache
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\obj\Debug\DigitalGames.csproj.CopyComplete
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\obj\Debug\DigitalGames.dll
+C:\Users\fedea\Desktop\Tp Lab\Trabajo-Final-LAB-4\DigitalGames\DigitalGames\obj\Debug\DigitalGames.pdb
