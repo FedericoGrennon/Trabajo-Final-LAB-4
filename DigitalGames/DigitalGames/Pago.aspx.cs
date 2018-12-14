@@ -90,6 +90,7 @@ namespace DigitalGames
             {
                 FuncionesCompra fCompra = new FuncionesCompra();
                 string[] usuario = (string[])Session["Usuario"];
+
                 if (!fCompra.verifificarTarjeta(txb_numeroTarjeta.Value, usuario[0]))
                 {
                     Tarjeta tar = new Tarjeta();
@@ -116,7 +117,7 @@ namespace DigitalGames
                     AccesoDatos ds = new AccesoDatos();
                     DataTable dt2 = new DataTable();
                     dt2 = ds.ObtenerTabla("CodActivacion", "SELECT CodActivacion, j.Stock FROM CodigosActivacion ca INNER JOIN Juegos j ON ca.CodJuego = j.CodJuego WHERE ca.CodJuego = '" + dVen.CodJuego + "' AND Disponibilidad = 1");
-                    for (int i=0; i < dVen.cantidad; i++)
+                    for (int i = 0; i < dVen.cantidad; i++)
                     {
                         fCompra.AgregarCodActivacionVendidos(dVen.CodVenta, dVen.CodJuego, dt2.Rows[i][0].ToString());
                         fCompra.darBajaCodActivacion(dt2.Rows[i][0].ToString(), dVen.CodJuego);

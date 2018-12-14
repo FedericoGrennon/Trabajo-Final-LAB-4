@@ -95,8 +95,11 @@ namespace DigitalGames
                 if (Session["Descuento"] == null)
                     Session["Descuento"] = fJue.crearTablaDescuento();
 
-                if(Session["Modificar"] == null)
+                if (Session["Modificar"] == null)
                     desc.GenerarCod();
+                else
+                    cargarCodDescuento(desc);
+
                 desc.codJuego = tabla.Rows[0][0].ToString();
                 desc.porcentaje = Convert.ToInt32(txb_Porcentaje.Value);
                 desc.fechaInicio = Convert.ToDateTime(txb_FechaInicio.Value);

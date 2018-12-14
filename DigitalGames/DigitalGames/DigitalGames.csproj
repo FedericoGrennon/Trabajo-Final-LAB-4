@@ -81,6 +81,7 @@
     <Content Include="ModificarJuego.aspx" />
     <Content Include="Pago.aspx" />
     <Content Include="Registrarse.aspx" />
+    <Content Include="ReportesYestadisticas.aspx" />
     <Content Include="Usuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -200,6 +201,13 @@
       <DependentUpon>Registrarse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\Tarjeta.cs" />
+    <Compile Include="ReportesYestadisticas.aspx.cs">
+      <DependentUpon>ReportesYestadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesYestadisticas.aspx.designer.cs">
+      <DependentUpon>ReportesYestadisticas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.aspx.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
