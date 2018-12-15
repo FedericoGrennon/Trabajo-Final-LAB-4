@@ -338,5 +338,43 @@ namespace DigitalGames
             cmd.ExecuteNonQuery();
             sqlconect.Close();
         }
+
+        public void insertarVisualizacion(string CodJuego, string codVisualizacion, DateTime fechaVisita)
+        {
+            SqlConnection sqlconect = new SqlConnection();
+
+            sqlconect = ds.ObtenerConexion();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "INSERT INTO VisualizacionJuegos (CodVisualizacion, codJuego, fechaVisita) values(@CodVisualizacion, @codJuego, @fechaVisita)";
+
+            cmd.Parameters.Add("@CodVisualizacion", SqlDbType.NVarChar, 10);
+            cmd.Parameters.Add("@codJuego", SqlDbType.NVarChar, 10);
+            cmd.Parameters.Add("@fechaVisita", SqlDbType.SmallDateTime);
+
+            cmd.Parameters["@CodVisualizacion"].Value = codVisualizacion;
+            cmd.Parameters["@codJuego"].Value = CodJuego;
+            cmd.Parameters["@fechaVisita"].Value = fechaVisita;
+
+            cmd.Connection = sqlconect;
+
+            cmd.ExecuteNonQuery();
+            sqlconect.Close();
+        }
+
+        public string generarCodVisualizacion()
+        {
+            int id = 0;
+            AccesoDatos ds = new AccesoDatos();
+            if (ds.obtenerCantidad("SELECT count(codVisualizacion) FROM VisualizacionJuegos", ref id))
+            {
+                id += 1;
+                return "VIS" + id;
+
+            }
+            else
+                return "VIS1";
+        }
     }
 }

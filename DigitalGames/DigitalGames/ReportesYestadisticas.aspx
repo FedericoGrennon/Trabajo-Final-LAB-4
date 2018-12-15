@@ -101,6 +101,7 @@
         <div class="apartado">
             <div runat="server" id="Juegos" class="filtros" style="display:none">
                 <div class="dropDown">
+                    <a style="float: left; font-size:30px;">Estadisticas juegos vendidos</a>
                     <a>Ordenar por:</a>
                     <asp:DropDownList runat="server" ID="ddl_ordenarRecaudacion"/>
                     <asp:Button runat="server" ID="btn_ordenar" Text="Ordenar" OnClick="btn_ordenar_Click"/>
@@ -146,8 +147,87 @@
                 </asp:GridView>
             </div>
             <div runat="server" id="Usuarios" class="filtros" style="display:none">
+                <div class="dropDown">
+                    <a style="float: left; font-size:30px;">Estadisticas registro de usuarios</a>
+                    <a>Filtrar por:</a>
+                    <asp:DropDownList runat="server" ID="ddl_usuariosRegistrados"/>
+                    <asp:Button runat="server" ID="btn_filtrar" Text="Filtrar" OnClick="btn_filtrar_Click"/>
+                </div>
 
+                <asp:GridView runat="server" id="gv_usuariosRegistrados" AutoGenerateColumns="False" Font-Size="20px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Height="259px" style="margin-right: 6px" Width="100%" Enabled="False" >
+                    <Columns>
+                        <asp:TemplateField HeaderText="Nombre Usuario">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_NombreUsuario" runat="server" Text='<%# Bind("NombreUsuario") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Fecha de creación">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_fechadecreacion" runat="server" Text='<%# Bind("FechaDecreación") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Hora de creación">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_HoraDeCreación" runat="server" Text='<%# Bind("HoraDeCreación") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Administrador">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="cb_Administrador" runat="server" Checked='<%# Bind("Administrador") %>'></asp:CheckBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Estado">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="lbl_Estado" runat="server" Checked='<%# Bind("Estado") %>'></asp:CheckBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
+                </asp:GridView>
+                <div class="dropDown">
+                    <a runat="server" id="lbl_cantidadUsuariosReg" style="font-size:30px"></a>
+                </div>
+
+                <div class="dropDown">
+                    <a style="float: left; font-size:30px;">Estadisticas frecuencia de los usuarios</a>
+                    <a>Filtrar por:</a>
+                    <asp:DropDownList runat="server" ID="ddl_frecuenciaUsuarios"/>
+                    <asp:Button runat="server" ID="btn_filtrarFrecuenciaUsu" Text="Filtrar" OnClick="btn_filtrarFrecuenciaUsu_Click"/>     
+                </div>
+
+                <asp:GridView runat="server" id="gv_frecuenciaUsuarios" AutoGenerateColumns="False" Font-Size="20px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Height="259px" style="margin-right: 6px" Width="100%" Enabled="False" >
+                    <Columns>
+                        <asp:TemplateField HeaderText="Nombre Usuario">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_NombreUsuario" runat="server" Text='<%# Bind("NombreUsuario") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Cantidad de inicios">
+                            <ItemTemplate>
+                                <asp:Label ID="lbl_cantInicios" runat="server" Text='<%# Bind("cantidadUsuario") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
+                </asp:GridView>
             </div>
+
             <div runat="server" id="General" class="filtros" style="display:none">
 
             </div>

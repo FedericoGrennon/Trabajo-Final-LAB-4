@@ -24,6 +24,10 @@ namespace DigitalGames
         {
             if(Page.IsValid)
             {
+                gestionUsuario gUsuario = new gestionUsuario();
+
+                gUsuario.insertarConexion(txb_nombreUsuarioIS.Text, gUsuario.generarCodConexion(), DateTime.Now);
+
                 Response.Redirect("Home.aspx");
             }
             

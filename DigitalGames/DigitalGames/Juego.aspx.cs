@@ -20,6 +20,8 @@ namespace DigitalGames
                 {
                     cargarImagenes(codigoJuego);
                     cargarCarta(codigoJuego);
+                    funcionesJuegos fJue = new funcionesJuegos();
+                    fJue.insertarVisualizacion(codigoJuego, fJue.generarCodVisualizacion(), DateTime.Now);
                 }
                     
             }
